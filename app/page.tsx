@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
-import FeatureCard from "@/components/FeatureCard";
 import PricingCard from "@/components/PricingCard";
 import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -10,11 +9,6 @@ import ShippingFlowDiagram from "@/components/ShippingFlowDiagram";
 import {
   ShowLeadIcon,
   AIShippingIcon,
-  MarketingIcon,
-  SalesPipelineIcon,
-  BrandWebsiteIcon,
-  ReportingIcon,
-  ContentEngineIcon,
   UnifiedInboxIcon,
 } from "@/components/ModuleIcons";
 
@@ -24,101 +18,18 @@ export const metadata: Metadata = {
     "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform. Book a free demo.",
 };
 
-const painPoints = [
-  {
-    icon: "😤",
-    text: "You meet 200 people at a show and sell to maybe 10. The other 190 disappear.",
-  },
-  {
-    icon: "📱",
-    text: "You're managing leads across MorphMarket DMs, Instagram, text messages, and email — and dropping half of them.",
-  },
-  {
-    icon: "🌡️",
-    text: "You check the weather in 3 cities, do mental math on heat packs, and hope for the best when you ship.",
-  },
-  {
-    icon: "🌐",
-    text: "You know you need a website and email list but you don't have time to figure it out.",
-  },
-];
-
-const modules = [
-  {
-    icon: <ShowLeadIcon size={22} />,
-    title: "Show Lead Capture",
-    description:
-      "QR codes, instant follow-up, never lose a show lead again. Turn every handshake into a tracked contact.",
-    accent: false,
-  },
-  {
-    icon: <AIShippingIcon size={22} />,
-    title: "AI Shipping Agent",
-    description:
-      "Weather monitoring, species-safe decisions, automatic customer updates. No more manual weather checks or angry customers.",
-    accent: true,
-  },
-  {
-    icon: <UnifiedInboxIcon size={22} />,
-    title: "Unified Inbox",
-    description:
-      "Every message in one place. MorphMarket inquiries, Instagram DMs, Facebook messages, texts, and emails — all in a single inbox. AI drafts responses so you reply in seconds, not hours.",
-    accent: true,
-  },
-  {
-    icon: <MarketingIcon size={22} />,
-    title: "Marketing Automation",
-    description:
-      "Email and SMS drips, new animal alerts, referral programs. Your marketing runs even when you're at the reptile room.",
-    accent: false,
-  },
-  {
-    icon: <SalesPipelineIcon size={22} />,
-    title: "Sales Pipeline",
-    description:
-      "Visual deal tracking from first interest to delivery to repeat customer. Professional invoicing with secure payment links — no more Venmo screenshots or Zelle guesswork.",
-    accent: false,
-  },
-  {
-    icon: <BrandWebsiteIcon size={22} />,
-    title: "Brand & Website",
-    description:
-      "Your own professional website with available animals gallery. Look like the serious breeder you are.",
-    accent: false,
-  },
-  {
-    icon: <ReportingIcon size={22} />,
-    title: "Smart Reporting",
-    description:
-      "Know which shows, posts, and morphs drive your revenue. Make data-driven decisions about your breeding program.",
-    accent: false,
-  },
-  {
-    icon: <ContentEngineIcon size={22} />,
-    title: "AI Content Engine",
-    description:
-      "Daily social media posts written in your voice, automatically. Show previews, hatchling spotlights, care tips — scheduled and ready to approve.",
-    accent: false,
-  },
-];
-
 const pricingPlans = [
   {
     name: "Starter",
     price: "$149",
     setupFee: "$499",
     subtitle: "Stop Losing Leads",
-    description: "For breeders doing a few shows a year who are tired of watching potential customers disappear. Get organized, start following up, and stop leaving money on the table.",
+    description: "For breeders doing a few shows a year who are tired of watching potential customers disappear.",
     features: [
       { text: "Show lead capture with QR codes", included: true },
       { text: "Basic unified inbox (email + SMS)", included: true },
       { text: "5 automated follow-up sequences", included: true },
-      { text: "Basic CRM with contact management", included: true },
       { text: "Standard email support", included: true },
-      { text: "Social media template library (DIY)", included: true },
-      { text: "AI Shipping Agent", included: false },
-      { text: "Full unified inbox (all platforms)", included: false },
-      { text: "AI Content Engine", included: false },
     ],
     ctaLabel: "Start with Starter",
   },
@@ -127,18 +38,13 @@ const pricingPlans = [
     price: "$249",
     setupFee: "$799",
     subtitle: "Automate Your Business",
-    description: "For breeders ready to let AI handle the busy work. Automated shipping decisions, content creation, unified inbox, and marketing that runs while you focus on your animals.",
+    description: "AI handles shipping, content, and your inbox while you focus on your animals.",
     popular: true,
     features: [
-      { text: "Everything in Starter, plus:", included: true },
-      { text: "AI Shipping Agent with weather intelligence", included: true },
-      { text: "Full unified inbox (all platforms + AI-drafted responses)", included: true },
-      { text: "AI Content Engine (3 posts/week, approval queue)", included: true },
-      { text: "Professional branded website with animals gallery", included: true },
-      { text: "Full sales pipeline with payment tracking", included: true },
-      { text: "SMS automation and new animal alerts", included: true },
-      { text: "Referral program with automated tracking", included: true },
-      { text: "Priority support", included: true },
+      { text: "AI Shipping Agent + weather intelligence", included: true },
+      { text: "Full unified inbox (all platforms + AI drafts)", included: true },
+      { text: "AI Content Engine (3 posts/week)", included: true },
+      { text: "Brand website + sales pipeline", included: true },
     ],
     ctaLabel: "Get Growth",
   },
@@ -147,17 +53,12 @@ const pricingPlans = [
     price: "$399",
     setupFee: "$1,199",
     subtitle: "Scale Like a Brand",
-    description: "For serious breeders running a real operation. Advanced analytics, dedicated support, full AI autonomy, and everything you need to build a brand that dominates your market.",
+    description: "Full AI autonomy, advanced analytics, and dedicated support for serious operations.",
     features: [
-      { text: "Everything in Growth, plus:", included: true },
-      { text: "Smart Reporting dashboard with full analytics", included: true },
-      { text: "AI Content Engine (daily posts, auto-publish)", included: true },
-      { text: "Fully autonomous AI inbox (first-response without approval)", included: true },
-      { text: "Multi-species and multi-location support", included: true },
+      { text: "Full analytics dashboard", included: true },
+      { text: "Autonomous AI inbox + daily auto-publish", included: true },
       { text: "Dedicated success manager", included: true },
-      { text: "Quarterly strategy calls", included: true },
-      { text: "Custom integrations and API access", included: true },
-      { text: "Early access to new features", included: true },
+      { text: "Custom integrations + API access", included: true },
     ],
     ctaLabel: "Go Pro",
   },
@@ -275,20 +176,6 @@ export default function HomePage() {
           transform: translateY(-2px);
           box-shadow: 0 12px 40px rgba(255,111,0,0.5);
         }
-        .inbox-platform-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 14px;
-          border-radius: 100px;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: 600;
-          font-size: 13px;
-        }
-        .comparison-col {
-          padding: 28px 24px;
-          border-radius: 16px;
-        }
         .persona-card {
           background: #fff;
           border: 1px solid rgba(0,0,0,0.08);
@@ -301,9 +188,29 @@ export default function HomePage() {
           transform: translateY(-4px);
           box-shadow: 0 12px 32px rgba(0,0,0,0.08);
         }
+        .before-after-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          padding: 14px 0;
+        }
+        .before-after-item + .before-after-item {
+          border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        .hero-feature-card {
+          background: #fff;
+          border: 1px solid rgba(0,0,0,0.08);
+          border-radius: 20px;
+          padding: 36px 32px;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hero-feature-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+        }
       `}</style>
 
-      {/* HERO */}
+      {/* ===================== HERO ===================== */}
       <section
         style={{
           background: "#111111",
@@ -391,9 +298,9 @@ export default function HomePage() {
               margin: "0 auto 40px",
             }}
           >
-            HatchKit is the AI-powered growth engine built specifically for reptile
-            breeders. Capture every lead, automate your follow-up, and ship safely
-            — all from one platform.
+            You got into this because you love reptiles. HatchKit handles the business
+            side — lead capture, follow-up, shipping, and marketing — so you can
+            get back to what you actually care about.
           </p>
 
           <div
@@ -412,7 +319,6 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* HERO STATS — Option A */}
           <div
             style={{
               marginTop: "56px",
@@ -456,7 +362,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROBLEM SECTION */}
+      {/* ===================== PAIN POINTS + EMOTIONAL HOOK ===================== */}
       <section style={{ background: "#F5F5F0", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <ScrollReveal>
@@ -472,8 +378,9 @@ export default function HomePage() {
               >
                 Sound Familiar?
               </h2>
-              <p style={{ fontSize: "17px", color: "#666", maxWidth: "480px", margin: "0 auto" }}>
-                Every reptile breeder we talk to runs into the same walls.
+              <p style={{ fontSize: "17px", color: "#666", maxWidth: "520px", margin: "0 auto" }}>
+                You started breeding because you love reptiles. Somewhere along the way
+                it became a second job managing DMs, shipping logistics, and spreadsheets.
               </p>
             </div>
           </ScrollReveal>
@@ -486,7 +393,12 @@ export default function HomePage() {
                 gap: "20px",
               }}
             >
-              {painPoints.map((point, i) => (
+              {[
+                { icon: "😤", text: "You meet 200 people at a show and sell to maybe 10. The other 190 disappear." },
+                { icon: "📱", text: "You're managing leads across MorphMarket DMs, Instagram, text messages, and email — and dropping half of them." },
+                { icon: "🌡️", text: "You check the weather in 3 cities, do mental math on heat packs, and hope for the best when you ship." },
+                { icon: "🌐", text: "You know you need a website and email list but you don't have time to figure it out." },
+              ].map((point, i) => (
                 <div
                   key={i}
                   className="card-hover"
@@ -508,8 +420,131 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SOLUTION SECTION — Module Grid */}
+      {/* ===================== BEFORE / AFTER ===================== */}
       <section style={{ padding: "96px 24px", background: "#fff" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <ScrollReveal>
+            <div style={{ textAlign: "center", marginBottom: "56px" }}>
+              <h2
+                style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 800,
+                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+                  color: "#1A1A1A",
+                  marginBottom: "14px",
+                }}
+              >
+                What Changes When You Have HatchKit
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "24px",
+              }}
+            >
+              {/* BEFORE */}
+              <div style={{
+                background: "#FFF8F5",
+                border: "1px solid rgba(230,81,0,0.12)",
+                borderRadius: "20px",
+                padding: "32px 28px",
+              }}>
+                <div style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  color: "#E65100",
+                  marginBottom: "24px",
+                }}>
+                  Without HatchKit
+                </div>
+
+                {[
+                  { time: "Saturday night", text: "Leave the show with 40 phone numbers scribbled on paper. Promise yourself you'll text them tomorrow." },
+                  { time: "Monday", text: "Check MorphMarket, Instagram, texts, email, Facebook. 45 minutes gone. Half the messages are 2 days old." },
+                  { time: "Wednesday", text: "Spend 30 minutes checking weather for a shipment to Phoenix. Google says 97°F. Do you ship? You're not sure." },
+                  { time: "Friday", text: "Realize you never texted back the guy from the show. He bought from someone else." },
+                ].map((item, i) => (
+                  <div key={i} className="before-after-item">
+                    <span style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "11px",
+                      color: "#E65100",
+                      minWidth: "90px",
+                      paddingTop: "2px",
+                    }}>
+                      {item.time}
+                    </span>
+                    <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#555" }}>
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* AFTER */}
+              <div style={{
+                background: "#F5FFF5",
+                border: "1px solid rgba(27,94,32,0.15)",
+                borderRadius: "20px",
+                padding: "32px 28px",
+              }}>
+                <div style={{
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.06em",
+                  color: "#1B5E20",
+                  marginBottom: "24px",
+                }}>
+                  With HatchKit
+                </div>
+
+                {[
+                  { time: "Saturday night", text: "Buyers scan your QR code at the table. By the time you're loading your car, they've already gotten a thank-you text and care sheet." },
+                  { time: "Monday", text: "Open one inbox. Three AI-drafted responses are waiting. Tap approve, approve, edit-and-send. Done in 2 minutes. Coffee's still hot." },
+                  { time: "Wednesday", text: "HatchKit already held the Phoenix shipment automatically. Your customer got a text: \"We'll ship Thursday when it drops to 84°F.\" They thanked you for being professional." },
+                  { time: "Friday", text: "Check your dashboard. 12 show leads converted this week. Your AI Content Engine posted a hatchling spotlight that got 200 likes." },
+                ].map((item, i) => (
+                  <div key={i} className="before-after-item">
+                    <span style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "11px",
+                      color: "#1B5E20",
+                      minWidth: "90px",
+                      paddingTop: "2px",
+                    }}>
+                      {item.time}
+                    </span>
+                    <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#333" }}>
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <style>{`
+              @media (max-width: 768px) {
+                .before-after-item { flex-direction: column; gap: 4px; }
+              }
+            `}</style>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ===================== 3 HERO FEATURES ===================== */}
+      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -539,452 +574,319 @@ export default function HomePage() {
                   marginBottom: "14px",
                 }}
               >
-                HatchKit Handles All of It
+                Three Features That Change Everything
               </h2>
               <p style={{ fontSize: "17px", color: "#666", maxWidth: "500px", margin: "0 auto" }}>
-                Eight powerful modules that work together as one unified platform.
+                HatchKit has 8 modules, but these three are the ones breeders tell us
+                they can&apos;t live without.
               </p>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "20px",
-              }}
-            >
-              {modules.map((mod, i) => (
-                <FeatureCard
-                  key={i}
-                  icon={mod.icon}
-                  title={mod.title}
-                  description={mod.description}
-                  accent={mod.accent}
-                />
-              ))}
-            </div>
-          </ScrollReveal>
+          <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
+            {/* FEATURE 1: Show Lead Capture */}
+            <ScrollReveal>
+              <div className="hero-feature-card">
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "48px",
+                  alignItems: "center",
+                }}>
+                  <div>
+                    <div style={{
+                      width: "48px", height: "48px", borderRadius: "12px",
+                      background: "rgba(27,94,32,0.08)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#1B5E20", marginBottom: "16px",
+                    }}>
+                      <ShowLeadIcon size={24} />
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 800,
+                      fontSize: "22px",
+                      color: "#1A1A1A",
+                      marginBottom: "12px",
+                    }}>
+                      Show Lead Capture
+                    </h3>
+                    <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
+                      Buyers scan your QR code at the table. HatchKit captures their info, sends an instant
+                      thank-you text, and starts your follow-up sequence — all before they reach the next booth.
+                    </p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                      {[
+                        "Follow-up starts within 60 seconds of scan",
+                        "Tag leads by species interest and budget",
+                        "Real-time lead count during the show",
+                      ].map((bullet, i) => (
+                        <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                          <div style={{
+                            width: "6px", height: "6px", borderRadius: "50%",
+                            background: "#1B5E20", flexShrink: 0,
+                          }} />
+                          <span style={{ fontSize: "14px", color: "#333" }}>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Lead capture mockup */}
+                  <div style={{
+                    background: "#111",
+                    borderRadius: "16px",
+                    padding: "28px",
+                    color: "#fff",
+                  }}>
+                    <div style={{
+                      textAlign: "center",
+                      marginBottom: "20px",
+                    }}>
+                      <div style={{
+                        display: "inline-block",
+                        background: "#fff",
+                        borderRadius: "12px",
+                        padding: "16px",
+                        marginBottom: "12px",
+                      }}>
+                        {/* Simple QR code visual */}
+                        <div style={{
+                          width: "80px", height: "80px",
+                          display: "grid",
+                          gridTemplateColumns: "repeat(5, 1fr)",
+                          gridTemplateRows: "repeat(5, 1fr)",
+                          gap: "2px",
+                        }}>
+                          {[1,1,1,0,1, 1,0,1,1,0, 1,1,0,0,1, 0,1,1,0,1, 1,0,1,1,1].map((filled, i) => (
+                            <div key={i} style={{
+                              background: filled ? "#111" : "#eee",
+                              borderRadius: "2px",
+                            }} />
+                          ))}
+                        </div>
+                      </div>
+                      <p style={{
+                        fontSize: "11px",
+                        color: "rgba(255,255,255,0.4)",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: 600,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                      }}>
+                        Buyer scans at your table
+                      </p>
+                    </div>
+                    <div style={{
+                      background: "rgba(27,94,32,0.2)",
+                      border: "1px solid rgba(27,200,32,0.3)",
+                      borderRadius: "12px",
+                      padding: "16px",
+                    }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                        <div style={{
+                          width: "8px", height: "8px", borderRadius: "50%",
+                          background: "#4CAF50",
+                        }} />
+                        <span style={{
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          fontWeight: 700, fontSize: "12px",
+                          color: "#4CAF50",
+                        }}>
+                          New Lead Captured
+                        </span>
+                        <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", marginLeft: "auto" }}>
+                          Just now
+                        </span>
+                      </div>
+                      <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", marginBottom: "6px" }}>
+                        Jake Henderson — Interested in Mack Snow
+                      </p>
+                      <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
+                        ✓ Thank-you text sent &nbsp;·&nbsp; ✓ Follow-up sequence started
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* FEATURE 2: AI Shipping Agent */}
+            <ScrollReveal>
+              <div style={{
+                background: "#1B5E20",
+                borderRadius: "20px",
+                padding: "48px 32px",
+                position: "relative",
+                overflow: "hidden",
+              }} className="scale-pattern">
+                <div style={{
+                  position: "absolute",
+                  top: "50%", left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "600px", height: "400px",
+                  background: "radial-gradient(ellipse, rgba(255,111,0,0.08) 0%, transparent 70%)",
+                  pointerEvents: "none",
+                }} />
+                <div style={{ position: "relative", zIndex: 1 }}>
+                  <div style={{
+                    display: "flex", alignItems: "center", gap: "12px",
+                    marginBottom: "12px",
+                  }}>
+                    <div style={{
+                      width: "48px", height: "48px", borderRadius: "12px",
+                      background: "rgba(255,111,0,0.15)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#FF6F00",
+                    }}>
+                      <AIShippingIcon size={24} />
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 800,
+                      fontSize: "22px",
+                      color: "#fff",
+                    }}>
+                      AI Shipping Agent
+                    </h3>
+                  </div>
+                  <p style={{
+                    fontSize: "16px", lineHeight: "1.7",
+                    color: "rgba(255,255,255,0.7)",
+                    maxWidth: "560px",
+                    marginBottom: "32px",
+                  }}>
+                    It monitors weather along the route, checks species tolerances, makes the ship/hold
+                    decision, and texts your customer — all automatically. You never check a forecast again.
+                  </p>
+                  <ShippingFlowDiagram />
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* FEATURE 3: Unified Inbox */}
+            <ScrollReveal>
+              <div className="hero-feature-card">
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "48px",
+                  alignItems: "center",
+                }}>
+                  {/* Inbox mockup */}
+                  <div style={{
+                    background: "#FAFAFA",
+                    borderRadius: "16px",
+                    padding: "24px",
+                    border: "1px solid rgba(0,0,0,0.06)",
+                  }}>
+                    <div style={{
+                      display: "flex", alignItems: "center", justifyContent: "space-between",
+                      marginBottom: "16px", paddingBottom: "12px",
+                      borderBottom: "1px solid rgba(0,0,0,0.06)",
+                    }}>
+                      <span style={{
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: 700, fontSize: "13px", color: "#1A1A1A",
+                      }}>
+                        Unified Inbox
+                      </span>
+                      <span style={{
+                        background: "#FF6F00", color: "#fff",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: 700, fontSize: "11px",
+                        padding: "3px 8px", borderRadius: "100px",
+                      }}>
+                        3 new
+                      </span>
+                    </div>
+                    {[
+                      { platform: "MorphMarket", color: "#E65100", msg: "Is the Mack Snow still available?", time: "2m" },
+                      { platform: "Instagram", color: "#C13584", msg: "Saw your post — any Mack Snows left?", time: "1h" },
+                      { platform: "SMS", color: "#2196F3", msg: "Thanks for chatting at NARBC!", time: "3h" },
+                      { platform: "AI Draft", color: "#1B5E20", msg: "Yes! She's available at $185. Want photos?", time: "Auto" },
+                    ].map((m, i) => (
+                      <div key={i} style={{
+                        display: "flex", alignItems: "center", gap: "10px",
+                        padding: "10px 12px", marginBottom: "4px",
+                        borderRadius: "10px",
+                        background: i === 3 ? "rgba(27,94,32,0.06)" : "transparent",
+                        border: i === 3 ? "1px solid rgba(27,94,32,0.12)" : "1px solid transparent",
+                      }}>
+                        <div style={{
+                          width: "8px", height: "8px", borderRadius: "50%",
+                          background: m.color, flexShrink: 0,
+                        }} />
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                            <span style={{
+                              fontFamily: "'Plus Jakarta Sans', sans-serif",
+                              fontWeight: 700, fontSize: "11px", color: m.color,
+                            }}>{m.platform}</span>
+                            <span style={{ fontSize: "10px", color: "#bbb" }}>{m.time}</span>
+                          </div>
+                          <p style={{
+                            fontSize: "13px", color: "#555",
+                            overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
+                          }}>{m.msg}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div>
+                    <div style={{
+                      width: "48px", height: "48px", borderRadius: "12px",
+                      background: "rgba(255,111,0,0.1)",
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#FF6F00", marginBottom: "16px",
+                    }}>
+                      <UnifiedInboxIcon size={24} />
+                    </div>
+                    <h3 style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontWeight: 800,
+                      fontSize: "22px",
+                      color: "#1A1A1A",
+                      marginBottom: "12px",
+                    }}>
+                      Unified Inbox
+                    </h3>
+                    <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
+                      MorphMarket inquiries, Instagram DMs, Facebook messages, texts, and emails — all
+                      in one screen. AI drafts responses for you. A buyer messages at 10pm, HatchKit
+                      replies instantly. By morning, you have a warm lead ready to close.
+                    </p>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                      {[
+                        "Response time drops from 6 hours to under 2 minutes",
+                        "AI drafts replies — you approve or edit before sending",
+                        "New messages auto-create leads in your CRM",
+                      ].map((bullet, i) => (
+                        <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                          <div style={{
+                            width: "6px", height: "6px", borderRadius: "50%",
+                            background: "#FF6F00", flexShrink: 0,
+                          }} />
+                          <span style={{ fontSize: "14px", color: "#333" }}>{bullet}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
 
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <Link href="/features/" className="cta-link-green">
-              See all features in detail →
+              See all 8 modules in detail →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* COMPETITIVE DIFFERENTIATION */}
-      <section style={{ background: "#F5F5F0", padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "16px",
-                }}
-              >
-                We Don&apos;t Track Your Animals. We Grow Your Business.
-              </h2>
-              <p style={{ fontSize: "17px", color: "#555", maxWidth: "700px", margin: "0 auto", lineHeight: "1.7" }}>
-                HatchKit is not a husbandry app. Use your favorite breeding tracker for animal records — ReptiWare, Husbandry Pro, HatchLedger, whatever works for you. HatchKit handles everything else: finding customers, following up, shipping safely, and growing your brand.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "24px",
-                marginBottom: "40px",
-              }}
-            >
-              {/* Left column — Breeding trackers */}
-              <div
-                className="comparison-col"
-                style={{
-                  background: "#fff",
-                  border: "1px solid rgba(0,0,0,0.08)",
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "13px",
-                    color: "#888",
-                    marginBottom: "20px",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.06em",
-                  }}
-                >
-                  What Breeding Trackers Do
-                </h3>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
-                  {[
-                    "Track feeding schedules and weight",
-                    "Log breeding pairs and clutch data",
-                    "Manage genetics and morph calculations",
-                    "Record health and shed history",
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{
-                        width: "20px", height: "20px", borderRadius: "50%",
-                        background: "rgba(0,0,0,0.06)", display: "flex",
-                        alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                          <path d="M1 4L3.5 6.5L9 1" stroke="#999" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
-                      <span style={{ fontSize: "15px", color: "#555" }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Right column — HatchKit */}
-              <div
-                className="comparison-col"
-                style={{
-                  background: "#1B5E20",
-                  border: "1px solid #1B5E20",
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.06em",
-                    fontSize: "13px",
-                    color: "#FFA000",
-                    marginBottom: "20px",
-                  }}
-                >
-                  What HatchKit Does
-                </h3>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
-                  {[
-                    "Capture and convert leads from shows and online",
-                    "Automate follow-up so no buyer falls through the cracks",
-                    "AI-managed shipping logistics with weather intelligence",
-                    "Build your brand with a website, content, and marketing",
-                    "Manage every customer conversation in one inbox",
-                    "Turn one-time buyers into repeat customers",
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <span style={{
-                        width: "20px", height: "20px", borderRadius: "50%",
-                        background: "rgba(255,111,0,0.25)", display: "flex",
-                        alignItems: "center", justifyContent: "center", flexShrink: 0,
-                      }}>
-                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                          <path d="M1 4L3.5 6.5L9 1" stroke="#FF6F00" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
-                      <span style={{ fontSize: "15px", color: "rgba(255,255,255,0.9)" }}>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <p style={{
-              textAlign: "center",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: "17px",
-              color: "#1A1A1A",
-              maxWidth: "600px",
-              margin: "0 auto",
-            }}>
-              Think of it this way: your breeding tracker manages your animals. HatchKit manages your business.
-            </p>
-          </ScrollReveal>
-
-          <style>{`
-            @media (max-width: 768px) {
-              .comparison-col { grid-column: span 1; }
-            }
-          `}</style>
-        </div>
-      </section>
-
-      {/* AI SHIPPING AGENT SPOTLIGHT */}
-      <section
-        style={{
-          background: "#1B5E20",
-          padding: "96px 24px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "800px",
-            height: "500px",
-            background: "radial-gradient(ellipse, rgba(255,111,0,0.08) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div style={{ maxWidth: "1000px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(255,111,0,0.15)",
-                  color: "#FFA000",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                  border: "1px solid rgba(255,111,0,0.2)",
-                }}
-              >
-                Featured Module
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#fff",
-                  marginBottom: "14px",
-                }}
-              >
-                Meet the AI Shipping Agent
-              </h2>
-              <p
-                style={{
-                  fontSize: "17px",
-                  color: "rgba(255,255,255,0.65)",
-                  maxWidth: "560px",
-                  margin: "0 auto",
-                  lineHeight: "1.65",
-                }}
-              >
-                It monitors weather, checks species tolerances, makes ship/hold decisions,
-                and texts your customer — all automatically.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <ShippingFlowDiagram />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* UNIFIED INBOX SPOTLIGHT */}
-      <section
-        style={{
-          background: "#FAF8F5",
-          padding: "96px 24px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(255,111,0,0.1)",
-                  color: "#FF6F00",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                  border: "1px solid rgba(255,111,0,0.15)",
-                }}
-              >
-                Featured Module
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                One Inbox. Every Platform. Zero Missed Messages.
-              </h2>
-              <p
-                style={{
-                  fontSize: "17px",
-                  color: "#555",
-                  maxWidth: "600px",
-                  margin: "0 auto",
-                  lineHeight: "1.65",
-                }}
-              >
-                Stop checking 5 apps to manage customer conversations. Every message lands in one place.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            {/* Inbox Mockup */}
-            <div
-              style={{
-                background: "#fff",
-                border: "1px solid rgba(0,0,0,0.1)",
-                borderRadius: "20px",
-                padding: "32px",
-                maxWidth: "700px",
-                margin: "0 auto 48px",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.06)",
-              }}
-            >
-              {/* Inbox header */}
-              <div style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                marginBottom: "24px",
-                paddingBottom: "16px",
-                borderBottom: "1px solid rgba(0,0,0,0.06)",
-              }}>
-                <div style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "16px",
-                  color: "#1A1A1A",
-                }}>
-                  Unified Inbox — Jake Henderson
-                </div>
-                <div style={{
-                  background: "#1B5E20",
-                  color: "#fff",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "11px",
-                  padding: "4px 10px",
-                  borderRadius: "100px",
-                }}>
-                  Hot Lead
-                </div>
-              </div>
-
-              {/* Messages */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                {[
-                  { platform: "MorphMarket", color: "#E65100", time: "10:14 PM", msg: "Hey, is the Mack Snow female still available? What's the best price?" },
-                  { platform: "AI Draft", color: "#1B5E20", time: "10:14 PM", msg: "Yes, she's still available at $185! Want me to send more photos? I can also hold her with a $50 deposit." },
-                  { platform: "Instagram DM", color: "#C13584", time: "Yesterday", msg: "Saw your post — do you have any Mack Snows left?" },
-                  { platform: "SMS", color: "#2196F3", time: "3 days ago", msg: "Thanks for chatting at NARBC! I'm interested in the leopard geckos." },
-                ].map((message, i) => (
-                  <div key={i} style={{
-                    display: "flex",
-                    gap: "12px",
-                    padding: "14px 16px",
-                    background: i === 1 ? "rgba(27,94,32,0.04)" : "rgba(0,0,0,0.02)",
-                    borderRadius: "12px",
-                    border: i === 1 ? "1px solid rgba(27,94,32,0.15)" : "1px solid transparent",
-                  }}>
-                    <div style={{
-                      flexShrink: 0,
-                      width: "8px",
-                      height: "8px",
-                      borderRadius: "50%",
-                      background: message.color,
-                      marginTop: "6px",
-                    }} />
-                    <div style={{ flex: 1 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                        <span style={{
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                          fontWeight: 700,
-                          fontSize: "12px",
-                          color: message.color,
-                        }}>
-                          {message.platform}
-                        </span>
-                        <span style={{ fontSize: "11px", color: "#999" }}>{message.time}</span>
-                      </div>
-                      <p style={{ fontSize: "14px", color: "#333", lineHeight: "1.5" }}>
-                        {message.msg}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Scenario callout */}
-            <div style={{
-              maxWidth: "700px",
-              margin: "0 auto 40px",
-              background: "#111111",
-              borderRadius: "16px",
-              padding: "28px 32px",
-            }}>
-              <p style={{
-                fontSize: "16px",
-                lineHeight: "1.7",
-                color: "rgba(255,255,255,0.85)",
-                fontStyle: "italic",
-              }}>
-                A buyer messages you on MorphMarket at 10pm asking about a Mack Snow. HatchKit&apos;s AI responds instantly: &ldquo;Yes, she&apos;s still available at $185! Want me to send more photos?&rdquo; By morning, you have a warm lead ready to close — and you didn&apos;t lift a finger.
-              </p>
-            </div>
-
-            {/* Key callouts */}
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "16px",
-              maxWidth: "700px",
-              margin: "0 auto",
-            }}>
-              {[
-                { icon: "🤖", text: "AI-drafted responses for common questions" },
-                { icon: "⚡", text: "Average response time drops from 6 hours to under 2 minutes" },
-                { icon: "🔗", text: "Never lose a message across platforms again" },
-              ].map((item, i) => (
-                <div key={i} style={{
-                  background: "#fff",
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  borderRadius: "12px",
-                  padding: "20px",
-                  textAlign: "center",
-                }}>
-                  <div style={{ fontSize: "24px", marginBottom: "8px" }}>{item.icon}</div>
-                  <p style={{ fontSize: "14px", color: "#333", lineHeight: "1.5", fontWeight: 500 }}>{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
+      {/* ===================== TESTIMONIALS ===================== */}
       <section style={{ background: "#fff", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <ScrollReveal>
@@ -1033,8 +935,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" style={{ padding: "96px 24px", background: "#F5F5F0" }}>
+      {/* ===================== HOW IT WORKS ===================== */}
+      <section id="how-it-works" style={{ padding: "96px 24px", background: "#fff" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
@@ -1096,8 +998,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BUILT FOR BREEDERS LIKE YOU */}
-      <section style={{ padding: "96px 24px", background: "#fff" }}>
+      {/* ===================== PERSONA CARDS ===================== */}
+      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -1158,33 +1060,21 @@ export default function HomePage() {
               ].map((persona, i) => (
                 <div key={i} className="persona-card">
                   <div style={{
-                    width: "64px",
-                    height: "64px",
-                    borderRadius: "16px",
+                    width: "64px", height: "64px", borderRadius: "16px",
                     background: "rgba(27,94,32,0.07)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "28px",
-                    margin: "0 auto 20px",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: "28px", margin: "0 auto 20px",
                   }}>
                     {persona.icon}
                   </div>
                   <h3 style={{
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "18px",
-                    color: "#1A1A1A",
+                    fontWeight: 700, fontSize: "18px", color: "#1A1A1A",
                     marginBottom: "12px",
                   }}>
                     {persona.title}
                   </h3>
-                  <p style={{
-                    fontSize: "14px",
-                    lineHeight: "1.7",
-                    color: "#555",
-                    textAlign: "left",
-                  }}>
+                  <p style={{ fontSize: "14px", lineHeight: "1.7", color: "#555", textAlign: "left" }}>
                     {persona.description}
                   </p>
                 </div>
@@ -1194,8 +1084,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRICING */}
-      <section style={{ background: "#F5F5F0", padding: "96px 24px" }}>
+      {/* ===================== PRICING (SIMPLIFIED) ===================== */}
+      <section style={{ background: "#fff", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -1257,8 +1147,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section style={{ padding: "96px 24px", background: "#fff" }}>
+      {/* ===================== FAQ ===================== */}
+      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           <ScrollReveal>
             <div style={{ textAlign: "center", marginBottom: "56px" }}>
@@ -1285,7 +1175,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ===================== FINAL CTA ===================== */}
       <section
         style={{
           background: "#111111",
