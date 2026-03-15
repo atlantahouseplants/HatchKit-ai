@@ -8,12 +8,13 @@ import {
   SalesPipelineIcon,
   BrandWebsiteIcon,
   ReportingIcon,
+  ContentEngineIcon,
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "Features — All Six Modules",
+  title: "Features — All Seven Modules",
   description:
-    "HatchKit's six AI-powered modules work together to capture leads, automate marketing, manage shipping, and grow your reptile breeding business.",
+    "HatchKit's seven AI-powered modules work together to capture leads, automate marketing, generate social content, manage shipping, and grow your reptile breeding business.",
 };
 
 const modules = [
@@ -125,6 +126,24 @@ const modules = [
     breederBenefit:
       "Most breeders have no idea which shows are profitable after travel costs, which morphs move fastest, or which marketing channels drive real sales. HatchKit answers all of it.",
   },
+  {
+    icon: <ContentEngineIcon size={28} />,
+    title: "AI Content Engine",
+    tagline: "Your social media, on autopilot.",
+    color: "#FF6F00",
+    lightBg: "rgba(255,111,0,0.05)",
+    capabilities: [
+      "Daily Instagram posts written in your exact voice — never generic",
+      "Smart rotation across 8 categories: spotlights, care tips, behind the scenes, morph education, customer stories, seasonal, engagement, and promotional",
+      "Show-aware scheduling: preview posts 3 days before, recap posts 1 day after",
+      "Inventory-driven content: more animal spotlights when you have animals to sell",
+      "Seasonal awareness: spring breeding updates, summer hatchling season, fall show previews, winter planning content",
+      "Approve posts via SMS reply — '1' to post, '2' to skip, or send edits as text",
+      "Direct Instagram and Facebook publishing via Meta Graph API",
+    ],
+    breederBenefit:
+      "Most breeders know they should post more but never have time. The Content Engine generates a full week of authentic, species-accurate posts every Sunday night. You approve what you like and skip what you don't — it takes 2 minutes.",
+  },
 ];
 
 export default function FeaturesPage() {
@@ -170,7 +189,7 @@ export default function FeaturesPage() {
               border: "1px solid rgba(255,111,0,0.2)",
             }}
           >
-            All 6 Modules
+            All 7 Modules
           </div>
           <h1
             style={{
@@ -193,7 +212,7 @@ export default function FeaturesPage() {
               margin: "0 auto 36px",
             }}
           >
-            Six modules. One platform. Built specifically for reptile breeders.
+            Seven modules. One platform. Built specifically for reptile breeders.
             Every feature was designed because breeders asked for it.
           </p>
           <Link

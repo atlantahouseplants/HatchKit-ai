@@ -83,3 +83,19 @@ export function ReportingIcon({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
+
+export function ContentEngineIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Phone / post frame */}
+      <rect x="5" y="2" width="14" height="18" rx="2.5" stroke="currentColor" strokeWidth="1.8"/>
+      {/* Image placeholder in post */}
+      <rect x="7.5" y="5" width="9" height="7" rx="1.2" stroke="currentColor" strokeWidth="1.5"/>
+      <path d="M7.5 10l2.5-2.5 2 2 1.5-1.5 1.5 1.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Caption lines */}
+      <path d="M7.5 14.5h9M7.5 17h6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      {/* AI spark / star */}
+      <path d="M19.5 2l.7 1.8L22 4.5l-1.8.7-.7 1.8-.7-1.8L17 4.5l1.8-.7z" fill="currentColor"/>
+    </svg>
+  );
+}

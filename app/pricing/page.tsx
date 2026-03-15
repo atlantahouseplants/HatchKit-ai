@@ -93,6 +93,17 @@ const comparisonRows = [
     ],
   },
   {
+    category: "AI Content Engine",
+    features: [
+      { name: "AI-generated social media posts", starter: false, growth: true, pro: true },
+      { name: "8-category smart rotation", starter: false, growth: true, pro: true },
+      { name: "Show-aware scheduling (previews & recaps)", starter: false, growth: true, pro: true },
+      { name: "SMS approval flow", starter: false, growth: true, pro: true },
+      { name: "Direct Instagram/Facebook publishing", starter: false, growth: false, pro: true },
+      { name: "Engagement analytics per post", starter: false, growth: false, pro: true },
+    ],
+  },
+  {
     category: "Support & Onboarding",
     features: [
       { name: "Standard support", starter: true, growth: false, pro: false },

@@ -14,6 +14,7 @@ import {
   SalesPipelineIcon,
   BrandWebsiteIcon,
   ReportingIcon,
+  ContentEngineIcon,
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
@@ -82,6 +83,13 @@ const modules = [
     title: "Smart Reporting",
     description:
       "Know which shows, posts, and morphs drive your revenue. Make data-driven decisions about your breeding program.",
+    accent: false,
+  },
+  {
+    icon: <ContentEngineIcon size={22} />,
+    title: "AI Content Engine",
+    description:
+      "Daily social media posts written in your voice, automatically. Show previews, hatchling spotlights, care tips — scheduled and ready to approve.",
     accent: false,
   },
 ];
@@ -168,7 +176,7 @@ const faqItems = [
   {
     question: "What if I only do shows and local pickup?",
     answer:
-      "HatchKit still helps massively with lead capture, follow-up automation, and marketing. The shipping agent is just one of six modules — and you only pay for what you use.",
+      "HatchKit still helps massively with lead capture, follow-up automation, and marketing. The shipping agent is just one of seven modules — and you only pay for what you use.",
   },
   {
     question: "Can I cancel anytime?",
@@ -496,7 +504,7 @@ export default function HomePage() {
                 HatchKit Handles All of It
               </h2>
               <p style={{ fontSize: "17px", color: "#666", maxWidth: "500px", margin: "0 auto" }}>
-                Six powerful modules that work together as one unified platform.
+                Seven powerful modules that work together as one unified platform.
               </p>
             </div>
           </ScrollReveal>
