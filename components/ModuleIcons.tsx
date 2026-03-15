@@ -84,6 +84,19 @@ export function ReportingIcon({ size = 24 }: { size?: number }) {
   );
 }
 
+export function UnifiedInboxIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Chat bubble */}
+      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Multiple message indicators */}
+      <path d="M8 10h8M8 13h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+      {/* Notification dot */}
+      <circle cx="19" cy="5" r="2.5" fill="currentColor" stroke="currentColor" strokeWidth="0.5"/>
+    </svg>
+  );
+}
+
 export function ContentEngineIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

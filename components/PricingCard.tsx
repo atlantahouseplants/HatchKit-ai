@@ -11,6 +11,7 @@ interface PricingCardProps {
   name: string;
   price: string;
   setupFee: string;
+  subtitle?: string;
   description: string;
   features: PricingFeature[];
   popular?: boolean;
@@ -22,6 +23,7 @@ export default function PricingCard({
   name,
   price,
   setupFee,
+  subtitle,
   description,
   features,
   popular = false,
@@ -67,10 +69,21 @@ export default function PricingCard({
           fontWeight: 800,
           fontSize: '20px',
           color: popular ? '#fff' : '#1A1A1A',
-          marginBottom: '8px',
+          marginBottom: '4px',
         }}>
           {name}
         </h3>
+        {subtitle && (
+          <p style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontWeight: 600,
+            fontSize: '13px',
+            color: popular ? '#FFA000' : '#FF6F00',
+            marginBottom: '8px',
+          }}>
+            {subtitle}
+          </p>
+        )}
         <p style={{
           fontSize: '13px',
           color: popular ? 'rgba(255,255,255,0.65)' : '#777',

@@ -95,46 +95,9 @@ export default function Footer() {
             }}>
               Get in Touch
             </h4>
-            <p style={{ fontSize: '14px', marginBottom: '8px', color: 'rgba(255,255,255,0.6)' }}>
-              Text us: (555) 000-0000
-            </p>
             <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)' }}>
               hello@hatchkit.ai
             </p>
-            <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
-              {['Instagram', 'Facebook', 'YouTube'].map(social => (
-                <a
-                  key={social}
-                  href="#"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: 'rgba(255,255,255,0.08)',
-                    color: 'rgba(255,255,255,0.5)',
-                    fontSize: '11px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'background 0.15s ease, color 0.15s ease',
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}
-                  onMouseEnter={e => {
-                    (e.currentTarget as HTMLElement).style.background = '#FF6F00';
-                    (e.currentTarget as HTMLElement).style.color = '#fff';
-                  }}
-                  onMouseLeave={e => {
-                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)';
-                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.5)';
-                  }}
-                  aria-label={social}
-                >
-                  {social[0]}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
 

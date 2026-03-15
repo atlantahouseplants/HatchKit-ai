@@ -154,7 +154,7 @@ export default function ShippingFlowDiagram() {
           color: 'rgba(255,255,255,0.35)',
           textAlign: 'right',
         }}>
-          — SunScale Geckos via HatchKit
+          — Sent automatically by HatchKit on behalf of SunScale Geckos
         </p>
       </div>
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Pricing — Simple, Transparent Plans",
+  title: "Pricing — Plans Starting at $149/mo",
   description:
     "HatchKit offers three plans for reptile breeders at every stage. Starter at $149/mo, Growth at $249/mo, and Pro at $399/mo. Month-to-month after setup.",
 };
@@ -11,23 +11,26 @@ export const metadata: Metadata = {
 const tiers = [
   {
     name: "Starter",
+    subtitle: "Stop Losing Leads",
     price: 149,
     setupFee: 499,
-    description: "Everything you need to stop losing show leads and start converting them.",
+    description: "For breeders doing a few shows a year who are tired of watching potential customers disappear. Get organized, start following up, and stop leaving money on the table.",
     popular: false,
   },
   {
     name: "Growth",
+    subtitle: "Automate Your Business",
     price: 249,
     setupFee: 799,
-    description: "The full platform with AI shipping and brand website for serious breeders.",
+    description: "For breeders ready to let AI handle the busy work. Automated shipping decisions, content creation, unified inbox, and marketing that runs while you focus on your animals.",
     popular: true,
   },
   {
     name: "Pro",
+    subtitle: "Scale Like a Brand",
     price: 399,
     setupFee: 1199,
-    description: "For breeders running a real business who want dedicated support and advanced analytics.",
+    description: "For serious breeders running a real operation. Advanced analytics, dedicated support, full AI autonomy, and everything you need to build a brand that dominates your market.",
     popular: false,
   },
 ];
@@ -45,11 +48,23 @@ const comparisonRows = [
   {
     category: "CRM & Pipeline",
     features: [
-      { name: "Basic CRM", starter: true, growth: true, pro: true },
+      { name: "Basic CRM with contact management", starter: true, growth: true, pro: true },
       { name: "Sales pipeline (Kanban)", starter: false, growth: true, pro: true },
       { name: "Payment & deposit tracking", starter: false, growth: true, pro: true },
-      { name: "Hold list management", starter: false, growth: true, pro: true },
+      { name: "Professional invoicing (Square & Stripe)", starter: false, growth: true, pro: true },
+      { name: "Automated waitlist for upcoming clutches", starter: false, growth: true, pro: true },
       { name: "Repeat customer / VIP tagging", starter: false, growth: true, pro: true },
+    ],
+  },
+  {
+    category: "Unified Inbox",
+    features: [
+      { name: "Basic unified inbox (email + SMS)", starter: true, growth: true, pro: true },
+      { name: "Full unified inbox (all platforms)", starter: false, growth: true, pro: true },
+      { name: "AI-assisted response drafting", starter: false, growth: true, pro: true },
+      { name: "Fully autonomous AI first-response", starter: false, growth: false, pro: true },
+      { name: "Automatic lead creation from new messages", starter: false, growth: true, pro: true },
+      { name: "Conversation tagging & priority flagging", starter: false, growth: true, pro: true },
     ],
   },
   {
@@ -59,14 +74,14 @@ const comparisonRows = [
       { name: "Email automation (unlimited)", starter: false, growth: true, pro: true },
       { name: "SMS automation", starter: false, growth: true, pro: true },
       { name: "New animal listing alerts", starter: false, growth: true, pro: true },
-      { name: "Referral program", starter: false, growth: true, pro: true },
+      { name: "Referral program with automated tracking", starter: false, growth: true, pro: true },
       { name: "A/B testing", starter: false, growth: false, pro: true },
     ],
   },
   {
     category: "AI Shipping",
     features: [
-      { name: "AI Shipping Agent", starter: false, growth: true, pro: true },
+      { name: "AI Shipping Agent with weather intelligence", starter: false, growth: true, pro: true },
       { name: "Species tolerance database", starter: false, growth: true, pro: true },
       { name: "Automatic customer SMS on hold", starter: false, growth: true, pro: true },
       { name: "Heat pack recommendations", starter: false, growth: true, pro: true },
@@ -76,7 +91,7 @@ const comparisonRows = [
   {
     category: "Brand & Website",
     features: [
-      { name: "Professional breeder website", starter: false, growth: true, pro: true },
+      { name: "Professional branded website", starter: false, growth: true, pro: true },
       { name: "Available animals gallery", starter: false, growth: true, pro: true },
       { name: "Inquiry form integration", starter: false, growth: true, pro: true },
       { name: "Custom domain", starter: false, growth: true, pro: true },
@@ -86,7 +101,7 @@ const comparisonRows = [
     category: "Reporting",
     features: [
       { name: "Basic lead reports", starter: true, growth: true, pro: true },
-      { name: "Smart Reporting dashboard", starter: false, growth: false, pro: true },
+      { name: "Smart Reporting dashboard with full analytics", starter: false, growth: false, pro: true },
       { name: "Revenue by show & morph", starter: false, growth: false, pro: true },
       { name: "Custom date ranges & CSV export", starter: false, growth: false, pro: true },
       { name: "Seasonal forecasting", starter: false, growth: false, pro: true },
@@ -95,22 +110,26 @@ const comparisonRows = [
   {
     category: "AI Content Engine",
     features: [
-      { name: "AI-generated social media posts", starter: false, growth: true, pro: true },
+      { name: "Social media template library (DIY)", starter: true, growth: true, pro: true },
+      { name: "AI-generated posts (3/week, approval queue)", starter: false, growth: true, pro: true },
+      { name: "AI-generated posts (daily, auto-publish)", starter: false, growth: false, pro: true },
       { name: "8-category smart rotation", starter: false, growth: true, pro: true },
       { name: "Show-aware scheduling (previews & recaps)", starter: false, growth: true, pro: true },
       { name: "SMS approval flow", starter: false, growth: true, pro: true },
       { name: "Direct Instagram/Facebook publishing", starter: false, growth: false, pro: true },
-      { name: "Engagement analytics per post", starter: false, growth: false, pro: true },
     ],
   },
   {
     category: "Support & Onboarding",
     features: [
-      { name: "Standard support", starter: true, growth: false, pro: false },
+      { name: "Standard email support", starter: true, growth: false, pro: false },
       { name: "Priority support", starter: false, growth: true, pro: true },
       { name: "Dedicated success manager", starter: false, growth: false, pro: true },
       { name: "Quarterly strategy calls", starter: false, growth: false, pro: true },
-      { name: "Setup in 5–7 business days", starter: true, growth: true, pro: true },
+      { name: "Custom integrations and API access", starter: false, growth: false, pro: true },
+      { name: "Multi-species and multi-location support", starter: false, growth: false, pro: true },
+      { name: "Early access to new features", starter: false, growth: false, pro: true },
+      { name: "Setup in 5\u20137 business days", starter: true, growth: true, pro: true },
     ],
   },
 ];
@@ -140,7 +159,7 @@ function Check({ value, isPopular }: CheckProps) {
     );
   }
   return (
-    <div style={{ textAlign: "center", color: "#ccc", fontSize: "18px" }}>—</div>
+    <div style={{ textAlign: "center", color: "#ccc", fontSize: "18px" }}>\u2014</div>
   );
 }
 
@@ -254,10 +273,19 @@ export default function PricingPage() {
                     fontWeight: 800,
                     fontSize: "22px",
                     color: tier.popular ? "#fff" : "#1A1A1A",
-                    marginBottom: "8px",
+                    marginBottom: "4px",
                   }}>
                     {tier.name}
                   </h3>
+                  <p style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "14px",
+                    color: tier.popular ? "#FFA000" : "#FF6F00",
+                    marginBottom: "12px",
+                  }}>
+                    {tier.subtitle}
+                  </p>
                   <p style={{
                     fontSize: "14px",
                     color: tier.popular ? "rgba(255,255,255,0.6)" : "#777",
@@ -444,22 +472,22 @@ export default function PricingPage() {
             }}>
               {[
                 {
-                  icon: "🔒",
+                  icon: "\ud83d\udd12",
                   title: "Month-to-Month",
                   desc: "No long-term contracts. Cancel anytime after your initial setup period.",
                 },
                 {
-                  icon: "⚡",
-                  title: "5–7 Day Setup",
+                  icon: "\u26a1",
+                  title: "5\u20137 Day Setup",
                   desc: "We handle everything. You'll be fully live in under a week.",
                 },
                 {
-                  icon: "🎯",
+                  icon: "\ud83c\udfaf",
                   title: "ROI Guarantee",
                   desc: "If you don't recoup your setup fee in 90 days, we'll work for free until you do.",
                 },
                 {
-                  icon: "🤝",
+                  icon: "\ud83e\udd1d",
                   title: "Breeder Support",
                   desc: "Our support team actually knows reptiles. Get help from people who get it.",
                 },

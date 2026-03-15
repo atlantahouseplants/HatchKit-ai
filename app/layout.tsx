@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "HatchKit — AI-Powered Growth Platform for Reptile Breeders",
+    default: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
     template: "%s | HatchKit",
   },
   description:
-    "HatchKit is the all-in-one AI-powered growth engine built specifically for reptile breeders. Capture every show lead, automate your follow-up, and ship safely — all from one platform.",
+    "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform. Book a free demo.",
   keywords: [
     "reptile breeder software",
     "reptile business automation",
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "HatchKit",
-    title: "HatchKit — AI-Powered Growth Platform for Reptile Breeders",
+    title: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
     description:
-      "Capture every show lead, automate your follow-up, and ship safely — all from one platform.",
+      "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform.",
     url: "https://hatchkit.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HatchKit — AI-Powered Growth for Reptile Breeders",
-    description: "The AI platform built specifically for reptile breeders.",
+    title: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
+    description: "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform.",
   },
   robots: {
     index: true,

@@ -9,12 +9,13 @@ import {
   BrandWebsiteIcon,
   ReportingIcon,
   ContentEngineIcon,
+  UnifiedInboxIcon,
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "Features — All Seven Modules",
+  title: "Features — 8 Modules Built for Reptile Breeders",
   description:
-    "HatchKit's seven AI-powered modules work together to capture leads, automate marketing, generate social content, manage shipping, and grow your reptile breeding business.",
+    "HatchKit's eight AI-powered modules work together to capture leads, automate marketing, generate social content, manage shipping, unify your inbox, and grow your reptile breeding business.",
 };
 
 const modules = [
@@ -25,7 +26,7 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Custom QR codes for each show — scannable in seconds",
+      "Custom QR codes for each show \u2014 scannable in seconds",
       "Instant lead capture form with automatic thank-you text",
       "Bulk import from paper signup sheets",
       "Tag leads by species interest, budget, and timeline",
@@ -34,7 +35,7 @@ const modules = [
       "Real-time lead count dashboard during the show",
     ],
     breederBenefit:
-      "Before HatchKit, most breeders convert less than 5% of show contacts. With automated follow-up starting within 60 seconds of a scan, that number climbs to 20–35%.",
+      "Before HatchKit, most breeders convert less than 5% of show contacts. With automated follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
   },
   {
     icon: <AIShippingIcon size={28} />,
@@ -55,22 +56,41 @@ const modules = [
       "The average breeder spends 45 minutes per shipment on weather research and customer communication. HatchKit reduces that to 0. No dead animals. No angry customers. No manual work.",
   },
   {
+    icon: <UnifiedInboxIcon size={28} />,
+    title: "Unified Managed Inbox",
+    tagline: "Every message. Every platform. One screen.",
+    color: "#FF6F00",
+    lightBg: "rgba(255,111,0,0.05)",
+    capabilities: [
+      "MorphMarket inquiry integration \u2014 messages appear instantly",
+      "Instagram DM management via Meta Graph API",
+      "Facebook Messenger integration",
+      "SMS and email in the same conversation thread",
+      "AI-assisted response drafting \u2014 the agent writes replies for common questions, you approve or edit before sending",
+      "Automatic lead creation \u2014 any new message from an unknown contact creates a lead",
+      "Conversation tagging and priority flagging",
+      "Mobile app access \u2014 reply from your phone at shows",
+    ],
+    breederBenefit:
+      "The average breeder checks 5 apps to manage customer conversations and takes 6+ hours to respond. With HatchKit\u2019s unified inbox, every message lands in one place and AI drafts your response before you even see it. Breeders using HatchKit respond 12x faster than the industry average.",
+  },
+  {
     icon: <MarketingIcon size={28} />,
     title: "Marketing Automation",
-    tagline: "Your marketing runs even when you're sleeping.",
+    tagline: "Your marketing runs even when you\u2019re sleeping.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
       "Email and SMS drip sequences for new leads",
       "New animal listing alerts to interested buyers",
-      "Morph-specific nurture campaigns (e.g., 'Ball Python Newsletter')",
+      "Morph-specific nurture campaigns (e.g., \u2018Ball Python Newsletter\u2019)",
       "Seasonal breeding and hatching announcements",
       "Referral program with tracking and rewards",
       "Re-engagement campaigns for cold leads",
       "A/B testing for subject lines and send times",
     ],
     breederBenefit:
-      "Most breeders have no marketing system at all — leads are lost, past customers are never re-engaged, and new animals sit unsold. HatchKit turns your customer list into a revenue engine.",
+      "Most breeders have no marketing system at all \u2014 leads are lost, past customers are never re-engaged, and new animals sit unsold. HatchKit turns your customer list into a revenue engine.",
   },
   {
     icon: <SalesPipelineIcon size={28} />,
@@ -79,12 +99,13 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Visual Kanban-style deal board (Interest → Deposit → Paid → Shipped → Repeat)",
+      "Visual Kanban-style deal board (Interest \u2192 Deposit \u2192 Paid \u2192 Shipped \u2192 Repeat)",
       "Automatic stage progression based on payment and shipping events",
+      "Professional invoicing with secure payment links \u2014 no more Venmo screenshots or Zelle guesswork",
+      "Integrated with Square and Stripe for professional checkout",
+      "Automated waitlist for upcoming clutches \u2014 buyers join a list, get notified automatically when babies are available",
       "Deal notes and conversation history",
       "Payment tracking with deposit and balance management",
-      "Co-dom pairing probability calculator",
-      "Hold list management with expiration dates",
       "Repeat customer identification and VIP tagging",
     ],
     breederBenefit:
@@ -106,12 +127,12 @@ const modules = [
       "SEO-optimized for local reptile search queries",
     ],
     breederBenefit:
-      "A professional website builds trust and captures buyers who find you organically. Combined with HatchKit's CRM, every inquiry from your site automatically enters your pipeline.",
+      "A professional website builds trust and captures buyers who find you organically. Combined with HatchKit\u2019s CRM, every inquiry from your site automatically enters your pipeline.",
   },
   {
     icon: <ReportingIcon size={28} />,
     title: "Smart Reporting",
-    tagline: "Know what's working. Double down on it.",
+    tagline: "Know what\u2019s working. Double down on it.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
@@ -133,16 +154,25 @@ const modules = [
     color: "#FF6F00",
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
-      "Daily Instagram posts written in your exact voice — never generic",
-      "Smart rotation across 8 categories: spotlights, care tips, behind the scenes, morph education, customer stories, seasonal, engagement, and promotional",
+      "Daily Instagram posts written in your exact voice \u2014 never generic",
       "Show-aware scheduling: preview posts 3 days before, recap posts 1 day after",
       "Inventory-driven content: more animal spotlights when you have animals to sell",
       "Seasonal awareness: spring breeding updates, summer hatchling season, fall show previews, winter planning content",
-      "Approve posts via SMS reply — '1' to post, '2' to skip, or send edits as text",
+      "Approve posts via SMS reply \u2014 \u20181\u2019 to post, \u20182\u2019 to skip, or send edits as text",
       "Direct Instagram and Facebook publishing via Meta Graph API",
     ],
+    contentCategories: [
+      { emoji: "\ud83e\udd8e", label: "Animal Spotlight" },
+      { emoji: "\ud83d\udcda", label: "Care Tips" },
+      { emoji: "\ud83c\udfac", label: "Behind the Scenes" },
+      { emoji: "\ud83e\uddec", label: "Morph Education" },
+      { emoji: "\u2764\ufe0f", label: "Customer Stories" },
+      { emoji: "\ud83d\udcc5", label: "Seasonal" },
+      { emoji: "\ud83d\udcac", label: "Engagement" },
+      { emoji: "\ud83c\udff7\ufe0f", label: "Promotional" },
+    ],
     breederBenefit:
-      "Most breeders know they should post more but never have time. The Content Engine generates a full week of authentic, species-accurate posts every Sunday night. You approve what you like and skip what you don't — it takes 2 minutes.",
+      "Most breeders know they should post more but never have time. The Content Engine generates a full week of authentic, species-accurate posts every Sunday night. You approve what you like and skip what you don\u2019t \u2014 it takes 2 minutes.",
   },
 ];
 
@@ -189,7 +219,7 @@ export default function FeaturesPage() {
               border: "1px solid rgba(255,111,0,0.2)",
             }}
           >
-            All 7 Modules
+            All 8 Modules
           </div>
           <h1
             style={{
@@ -212,7 +242,7 @@ export default function FeaturesPage() {
               margin: "0 auto 36px",
             }}
           >
-            Seven modules. One platform. Built specifically for reptile breeders.
+            Eight modules. One platform. Built specifically for reptile breeders.
             Every feature was designed because breeders asked for it.
           </p>
           <Link
@@ -328,13 +358,53 @@ export default function FeaturesPage() {
                       </li>
                     ))}
                   </ul>
+
+                  {/* Content Engine categories as pills */}
+                  {"contentCategories" in mod && mod.contentCategories && (
+                    <div style={{ marginTop: "20px" }}>
+                      <p style={{
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontWeight: 600,
+                        fontSize: "13px",
+                        color: "#888",
+                        marginBottom: "10px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                      }}>
+                        Smart rotation across 8 categories:
+                      </p>
+                      <div style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "8px",
+                      }}>
+                        {(mod.contentCategories as Array<{emoji: string; label: string}>).map((cat, k) => (
+                          <span key={k} style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "4px",
+                            padding: "5px 12px",
+                            borderRadius: "100px",
+                            background: "rgba(255,111,0,0.08)",
+                            border: "1px solid rgba(255,111,0,0.15)",
+                            fontFamily: "'Plus Jakarta Sans', sans-serif",
+                            fontWeight: 600,
+                            fontSize: "13px",
+                            color: "#333",
+                          }}>
+                            {cat.emoji} {cat.label}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Benefit card */}
                 <div style={{ order: i % 2 === 0 ? 1 : 0 }}>
                   <div
                     style={{
-                      background: i === 1 ? "#1B5E20" : "#111111",
+                      background: i === 1 || i === 2 ? "#1B5E20" : "#111111",
                       borderRadius: "20px",
                       padding: "36px",
                     }}

@@ -2,10 +2,11 @@ interface TestimonialCardProps {
   quote: string;
   name: string;
   business: string;
+  subtitle?: string;
   avatar?: string;
 }
 
-export default function TestimonialCard({ quote, name, business, avatar }: TestimonialCardProps) {
+export default function TestimonialCard({ quote, name, business, subtitle, avatar }: TestimonialCardProps) {
   return (
     <div style={{
       background: '#fff',
@@ -68,6 +69,15 @@ export default function TestimonialCard({ quote, name, business, avatar }: Testi
           }}>
             {business}
           </p>
+          {subtitle && (
+            <p style={{
+              fontSize: '12px',
+              color: '#aaa',
+              marginTop: '2px',
+            }}>
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
     </div>
