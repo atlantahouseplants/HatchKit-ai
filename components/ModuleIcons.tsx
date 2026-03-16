@@ -97,6 +97,40 @@ export function UnifiedInboxIcon({ size = 24 }: { size?: number }) {
   );
 }
 
+export function AnimalProfileIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Gecko/reptile silhouette with profile card */}
+      <rect x="2" y="3" width="20" height="18" rx="2.5" stroke="currentColor" strokeWidth="1.8"/>
+      {/* Photo area */}
+      <rect x="4.5" y="5.5" width="6" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.5"/>
+      <circle cx="6.5" cy="8" r="1" fill="currentColor"/>
+      <path d="M4.5 10l1.5-1.5 1.5 1 1.5-1 1.5 1" stroke="currentColor" strokeWidth="1" strokeLinecap="round"/>
+      {/* Info lines */}
+      <path d="M13 6.5h5M13 9h4M13 11.5h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Heart / interest indicator */}
+      <path d="M5 16h3M5 18.5h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M16 15l1.2 1.2L20 13.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+export function MediaLibraryIcon({ size = 24 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Stacked photos / folder */}
+      <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
+      <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" strokeWidth="1.2" opacity="0.4"/>
+      {/* Image mountain */}
+      <path d="M4 15l4-4 3 3 2-2 5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      {/* Sun */}
+      <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+      {/* Play button for video */}
+      <path d="M8 9l3 2-3 2z" fill="currentColor"/>
+    </svg>
+  );
+}
+
 export function ContentEngineIcon({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

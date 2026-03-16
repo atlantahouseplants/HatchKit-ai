@@ -88,7 +88,7 @@ const faqItems = [
   {
     question: "What if I only do shows and local pickup?",
     answer:
-      "HatchKit still helps a ton with lead capture, automatic follow-up, and social media. Smart Shipping is just one of eight tools — and you only pay for what you use.",
+      "HatchKit still helps a ton with lead capture, automatic follow-up, and social media. Smart Shipping is just one of ten tools — and you only pay for what you use.",
   },
   {
     question: "Can I cancel anytime?",
@@ -334,7 +334,7 @@ export default function HomePage() {
             {[
               { value: "5+ Apps", label: "All in One Inbox" },
               { value: "60 Seconds", label: "From Show Scan to Follow-Up" },
-              { value: "8 Tools", label: "All Working Together" },
+              { value: "10 Tools", label: "All Working Together" },
             ].map((stat) => (
               <div key={stat.label} style={{ textAlign: "center" }}>
                 <div
@@ -885,7 +885,7 @@ export default function HomePage() {
 
           <div style={{ textAlign: "center", marginTop: "40px" }}>
             <Link href="/features/" className="cta-link-green">
-              See all 8 tools in detail →
+              See all 10 tools in detail →
             </Link>
           </div>
         </div>

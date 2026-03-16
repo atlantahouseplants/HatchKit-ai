@@ -10,12 +10,14 @@ import {
   ReportingIcon,
   ContentEngineIcon,
   UnifiedInboxIcon,
+  AnimalProfileIcon,
+  MediaLibraryIcon,
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "Features — 8 Tools Built for Reptile Breeders",
+  title: "Features — 10 Tools Built for Reptile Breeders",
   description:
-    "HatchKit does eight things for you: captures show leads, handles shipping, puts all your messages in one place, follows up with buyers, tracks your deals, posts on social media, builds your website, and shows you what's working.",
+    "HatchKit does ten things for you: captures show leads, manages your animals, handles shipping, puts all your messages in one place, follows up with buyers, tracks your deals, posts on social media, organizes your media, builds your website, and shows you what's working.",
 };
 
 const modules = [
@@ -36,6 +38,25 @@ const modules = [
     ],
     breederBenefit:
       "Before HatchKit, most breeders only sell to about 5% of the people they meet at shows. With automatic follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
+  },
+  {
+    icon: <AnimalProfileIcon size={28} />,
+    title: "Animal Profiles",
+    tagline: "Every animal gets its own page. Every question gets remembered.",
+    color: "#1B5E20",
+    lightBg: "rgba(27,94,32,0.05)",
+    capabilities: [
+      "Each animal gets a full profile: photos, morph, personality, price, and availability",
+      "Tracks who asked about each animal \u2014 never lose track of \u201cDo you still have that orange one?\u201d",
+      "See which animals are getting the most attention from buyers",
+      "When someone messages about an animal, HatchKit links them together automatically",
+      "Public profile page on your website so buyers can browse and inquire",
+      "Mark an animal as sold and inventory updates everywhere instantly",
+      "Upload videos and b-roll clips right to each animal\u2019s profile",
+      "One click to message everyone who asked about a specific animal",
+    ],
+    breederBenefit:
+      "Breeders tell us the same thing: \u201cSomeone messaged me about a gecko three weeks ago and I can\u2019t remember which one.\u201d HatchKit remembers for you. Every animal, every question, every interested buyer \u2014 all connected.",
   },
   {
     icon: <AIShippingIcon size={28} />,
@@ -63,16 +84,16 @@ const modules = [
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
       "MorphMarket messages show up instantly",
-      "Instagram DMs in the same place",
-      "Facebook messages too",
-      "Texts and emails in one thread per customer",
+      "Instagram DMs, Facebook messages, texts, and emails \u2014 all in one thread per customer",
       "AI writes draft replies for you \u2014 you just approve or edit before sending",
+      "AI automatically answers common questions (care, feeding, shipping, pricing) so you don\u2019t repeat yourself 50 times a week",
+      "Tells you who\u2019s just browsing vs. who\u2019s a serious buyer \u2014 so you know who to reply to first",
+      "Turns social media comments into leads \u2014 when someone comments \u201cHow much?\u201d, HatchKit auto-DMs them with details",
       "New messages from unknown people automatically save as new contacts",
-      "Tag and flag important conversations",
       "Works on your phone \u2014 reply from anywhere, even at shows",
     ],
     breederBenefit:
-      "Most breeders check 5 different apps and take 6+ hours to get back to people. With HatchKit, every message lands in one place and AI writes a draft reply before you even see it. Breeders using HatchKit reply 12x faster.",
+      "Most breeders check 5 different apps and take 6+ hours to get back to people. With HatchKit, every message lands in one place, AI answers the common questions for you, and it tells you who\u2019s actually ready to buy. Breeders using HatchKit reply 12x faster.",
   },
   {
     icon: <MarketingIcon size={28} />,
@@ -81,16 +102,17 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Automatic texts and emails to new leads",
-      "Alerts to interested buyers when you list new animals",
-      "Follow-up messages by species (e.g., \u2018Ball Python Updates\u2019)",
-      "Seasonal breeding and hatching announcements",
-      "Referral program \u2014 track who sends you new buyers and reward them",
+      "Automatic texts and emails to new leads \u2014 starts following up within 60 seconds",
+      "Alerts to interested buyers when you list new animals that match what they want",
+      "1-month check-in after a sale: \u201cHow\u2019s your new gecko settling in? Need feeders?\u201d",
+      "6-month upgrade reminder: \u201cTime for a bigger enclosure? Here\u2019s our guide.\u201d",
+      "1-year anniversary: \u201cHappy 1 year! Here\u2019s a special deal as a thank you.\u201d",
+      "Automatically sends care guides when people ask common questions",
+      "Gently nudges browsers toward buying with helpful info over time \u2014 no pushy sales tactics",
       "Reach back out to people who went cold",
-      "Tests different subject lines and send times to find what works best",
     ],
     breederBenefit:
-      "Most breeders don\u2019t have any system for staying in touch with buyers. Leads disappear, past customers never hear from you again, and animals sit unsold. HatchKit keeps your buyer list working for you around the clock.",
+      "Most breeders lose contact with buyers after the sale. With HatchKit, your buyers hear from you at 1 month, 6 months, and 1 year \u2014 with helpful tips, not spam. They remember you, they come back, and they send their friends.",
   },
   {
     icon: <SalesPipelineIcon size={28} />,
@@ -99,17 +121,17 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Visual board showing every deal (Interested \u2192 Deposit \u2192 Paid \u2192 Shipped \u2192 Repeat Buyer)",
+      "Visual board showing every deal (Interested \u2192 Deposit \u2192 Paid \u2192 Shipped \u2192 Delivered)",
       "Deals move forward automatically when payments and shipments happen",
       "Send real invoices with payment links \u2014 no more Venmo screenshots or Zelle guesswork",
-      "Works with Square and Stripe for easy checkout",
+      "Full purchase history for every customer \u2014 see who bought what and when",
+      "Automatically recognizes repeat buyers and VIP customers so you can prioritize them",
       "Waitlist for upcoming clutches \u2014 buyers sign up and get notified when babies are ready",
-      "Notes and conversation history on every deal",
-      "Track deposits, balances, and payments in one place",
-      "Spot your repeat buyers and VIP customers",
+      "Every sale automatically updates your inventory \u2014 no manual spreadsheet entry",
+      "Export your full sales history to a spreadsheet anytime",
     ],
     breederBenefit:
-      "Stop keeping deals in your head or a messy spreadsheet. See every active sale at a glance and never let a paid deposit sit without following up.",
+      "Stop keeping deals in your head or a messy spreadsheet. See every active sale at a glance, know your repeat buyers by name, and never let a paid deposit sit without following up. Every sale auto-updates your inventory.",
   },
   {
     icon: <BrandWebsiteIcon size={28} />,
@@ -136,16 +158,35 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Sales broken down by show, morph, and where the buyer came from",
-      "How many leads actually turn into sales, by source",
+      "See exactly where your buyers come from \u2014 Facebook, Instagram, MorphMarket, shows, or your website",
+      "Sales broken down by show, morph, and source so you know what\u2019s working",
       "Which emails and texts get the best results",
-      "How much each customer is worth over time",
-      "Shipping costs broken down by carrier and route",
+      "Repeat buyer rate \u2014 how many customers come back for more",
+      "Which animals get the most social media attention and engagement",
+      "How many people you\u2019re capturing at each show and how many turn into sales",
       "Seasonal trends so you can plan ahead",
       "Filter by any date range and export to spreadsheet",
     ],
     breederBenefit:
-      "Most breeders have no clue which shows actually make money after travel costs, which morphs sell fastest, or where their best buyers come from. HatchKit shows you all of it.",
+      "Most breeders have no clue which shows actually make money, which morphs sell fastest, or where their best buyers come from. HatchKit shows you all of it so you can stop guessing and start spending time where it pays off.",
+  },
+  {
+    icon: <MediaLibraryIcon size={28} />,
+    title: "Media Library",
+    tagline: "All your photos, videos, and clips \u2014 organized and ready to post.",
+    color: "#1B5E20",
+    lightBg: "rgba(27,94,32,0.05)",
+    capabilities: [
+      "Upload and organize photos and videos by animal, show, or folder",
+      "Every animal\u2019s photos, videos, and b-roll clips in one place",
+      "Drag-and-drop upload from your phone or computer",
+      "HatchKit pulls the right photos automatically when creating social posts",
+      "Upload b-roll clips for reels and video posts",
+      "See which photos have been used in posts and which haven\u2019t",
+      "Tag and search your media \u2014 find that photo of \u201cSunset\u201d in seconds",
+    ],
+    breederBenefit:
+      "Most breeders have thousands of photos scattered across their phone, nowhere organized, half of them never posted. HatchKit keeps everything sorted by animal so when it\u2019s time to post or reply to a buyer, the right photo is right there.",
   },
   {
     icon: <ContentEngineIcon size={28} />,
@@ -155,11 +196,13 @@ const modules = [
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
       "Daily Instagram posts written in your voice \u2014 not generic AI slop",
+      "Tells you which animal to post next based on what\u2019s getting attention and what hasn\u2019t been posted recently",
+      "Tracks how many times each animal has been posted and how much engagement it got",
       "Knows your show schedule: posts previews before shows and recaps after",
-      "Posts more animal spotlights when you have animals to sell",
       "Matches the season: breeding updates in spring, hatchling posts in summer, show previews in fall",
       "Approve posts by replying to a text \u2014 \u20181\u2019 to post, \u20182\u2019 to skip, or send edits",
       "Posts directly to your Instagram and Facebook",
+      "Turns comments on your posts into leads automatically",
     ],
     contentCategories: [
       { emoji: "\ud83e\udd8e", label: "Animal Spotlight" },
@@ -219,7 +262,7 @@ export default function FeaturesPage() {
               border: "1px solid rgba(255,111,0,0.2)",
             }}
           >
-            All 8 Tools
+            All 10 Tools
           </div>
           <h1
             style={{
@@ -242,7 +285,7 @@ export default function FeaturesPage() {
               margin: "0 auto 36px",
             }}
           >
-            Eight tools. One system. Built by reptile breeders, for reptile breeders.
+            Ten tools. One system. Built by reptile breeders, for reptile breeders.
             Every feature exists because a breeder asked for it.
           </p>
           <Link
