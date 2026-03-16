@@ -4,6 +4,8 @@ import { useState } from "react";
 
 export default function DemoPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
@@ -20,9 +22,36 @@ export default function DemoPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      // Submit to webhook if configured, otherwise just save locally
+      const webhookUrl = process.env.NEXT_PUBLIC_DEMO_WEBHOOK_URL;
+      if (webhookUrl) {
+        const res = await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            submittedAt: new Date().toISOString(),
+            source: "hatchkit.ai/demo",
+          }),
+        });
+
+        if (!res.ok) {
+          throw new Error("Something went wrong. Please try again.");
+        }
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -284,23 +313,37 @@ export default function DemoPage() {
                       </div>
                     </div>
 
+                    {error && (
+                      <div style={{
+                        padding: "12px 16px",
+                        borderRadius: "10px",
+                        background: "rgba(211,47,47,0.08)",
+                        color: "#c62828",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                      }}>
+                        {error}
+                      </div>
+                    )}
+
                     <button
                       type="submit"
+                      disabled={submitting}
                       style={{
                         padding: "15px 24px",
                         borderRadius: "10px",
-                        background: "#FF6F00",
+                        background: submitting ? "#ccc" : "#FF6F00",
                         color: "#fff",
                         fontFamily: "'Plus Jakarta Sans', sans-serif",
                         fontWeight: 700,
                         fontSize: "16px",
                         border: "none",
-                        cursor: "pointer",
+                        cursor: submitting ? "not-allowed" : "pointer",
                         transition: "all 0.15s ease",
                         marginTop: "4px",
                       }}
                     >
-                      Request My Free Demo →
+                      {submitting ? "Sending..." : "Request My Free Demo →"}
                     </button>
 
                     <p style={{ fontSize: "12px", color: "#aaa", textAlign: "center" }}>

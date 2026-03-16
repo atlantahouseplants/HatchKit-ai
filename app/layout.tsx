@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hatchkit.ai"),
   title: {
     default: "HatchKit — The All-in-One Tool for Reptile Breeders",
     template: "%s | HatchKit",

@@ -82,6 +82,51 @@ export default function Footer() {
             ))}
           </div>
 
+          {/* Legal */}
+          <div>
+            <h4 style={{
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontWeight: 700,
+              fontSize: '13px',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.4)',
+              marginBottom: '16px',
+            }}>
+              Legal
+            </h4>
+            <Link
+              href="/privacy/"
+              style={{
+                display: 'block',
+                marginBottom: '10px',
+                fontSize: '14px',
+                color: 'rgba(255,255,255,0.6)',
+                textDecoration: 'none',
+                transition: 'color 0.15s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#FF6F00')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms/"
+              style={{
+                display: 'block',
+                marginBottom: '10px',
+                fontSize: '14px',
+                color: 'rgba(255,255,255,0.6)',
+                textDecoration: 'none',
+                transition: 'color 0.15s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#FF6F00')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.6)')}
+            >
+              Terms of Service
+            </Link>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 style={{
