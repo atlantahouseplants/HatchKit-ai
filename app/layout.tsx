@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
+    default: "HatchKit — The All-in-One Tool for Reptile Breeders",
     template: "%s | HatchKit",
   },
   description:
-    "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform. Book a free demo.",
+    "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals. Book a free demo.",
   keywords: [
     "reptile breeder software",
     "reptile business automation",
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "HatchKit",
-    title: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
+    title: "HatchKit — The All-in-One Tool for Reptile Breeders",
     description:
-      "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform.",
+      "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals.",
     url: "https://hatchkit.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HatchKit — AI-Powered CRM & Marketing for Reptile Breeders",
-    description: "Stop losing show leads. HatchKit gives reptile breeders AI-powered shipping, unified inbox, automated marketing, and daily content creation — all in one platform.",
+    title: "HatchKit — The All-in-One Tool for Reptile Breeders",
+    description: "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals.",
   },
   robots: {
     index: true,

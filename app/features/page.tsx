@@ -13,9 +13,9 @@ import {
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "Features — 8 Modules Built for Reptile Breeders",
+  title: "Features — 8 Tools Built for Reptile Breeders",
   description:
-    "HatchKit's eight AI-powered modules work together to capture leads, automate marketing, generate social content, manage shipping, unify your inbox, and grow your reptile breeding business.",
+    "HatchKit does eight things for you: captures show leads, handles shipping, puts all your messages in one place, follows up with buyers, tracks your deals, posts on social media, builds your website, and shows you what's working.",
 };
 
 const modules = [
@@ -26,140 +26,140 @@ const modules = [
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Custom QR codes for each show \u2014 scannable in seconds",
-      "Instant lead capture form with automatic thank-you text",
-      "Bulk import from paper signup sheets",
-      "Tag leads by species interest, budget, and timeline",
-      "Automatic follow-up sequence starts the moment they scan",
-      "GPS show check-in to associate leads with specific events",
-      "Real-time lead count dashboard during the show",
+      "Custom QR codes for each show \u2014 buyers scan in seconds",
+      "Instantly saves their info and sends a thank-you text",
+      "Import leads from paper signup sheets",
+      "Tag people by what species they want, budget, and timeline",
+      "Automatic follow-up texts start the moment they scan",
+      "GPS show check-in so you know which leads came from which show",
+      "See how many leads you\u2019re getting in real time during the show",
     ],
     breederBenefit:
-      "Before HatchKit, most breeders convert less than 5% of show contacts. With automated follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
+      "Before HatchKit, most breeders only sell to about 5% of the people they meet at shows. With automatic follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
   },
   {
     icon: <AIShippingIcon size={28} />,
-    title: "AI Shipping Agent",
-    tagline: "Ship safely. Every time. Without manual work.",
+    title: "Smart Shipping",
+    tagline: "Ship safe. Every time. Without the headache.",
     color: "#FF6F00",
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
-      "Real-time weather monitoring along full shipping route",
-      "Species-specific temperature tolerance database (500+ species)",
-      "Automatic ship/hold decision with confidence score",
-      "Customer SMS notification with hold reason and new ETA",
-      "Heat pack quantity recommendation based on temps and duration",
-      "Carrier transit time integration (FedEx, UPS, Ship Your Reptiles)",
-      "Post-delivery follow-up for arrival confirmation",
+      "Checks the weather along the entire shipping route automatically",
+      "Knows the safe temperature range for 500+ species",
+      "Decides whether to ship or hold \u2014 no guesswork",
+      "Texts your buyer if the shipment is held, with an updated ship date",
+      "Tells you exactly how many heat packs to use",
+      "Works with FedEx, UPS, and Ship Your Reptiles",
+      "Follows up after delivery to make sure the animal arrived safe",
     ],
     breederBenefit:
-      "The average breeder spends 45 minutes per shipment on weather research and customer communication. HatchKit reduces that to 0. No dead animals. No angry customers. No manual work.",
+      "The average breeder spends 45 minutes per shipment checking weather and texting customers. HatchKit does all of it for you. No dead animals. No angry buyers. No stress.",
   },
   {
     icon: <UnifiedInboxIcon size={28} />,
-    title: "Unified Managed Inbox",
-    tagline: "Every message. Every platform. One screen.",
+    title: "One Inbox",
+    tagline: "Every message. Every app. One screen.",
     color: "#FF6F00",
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
-      "MorphMarket inquiry integration \u2014 messages appear instantly",
-      "Instagram DM management via Meta Graph API",
-      "Facebook Messenger integration",
-      "SMS and email in the same conversation thread",
-      "AI-assisted response drafting \u2014 the agent writes replies for common questions, you approve or edit before sending",
-      "Automatic lead creation \u2014 any new message from an unknown contact creates a lead",
-      "Conversation tagging and priority flagging",
-      "Mobile app access \u2014 reply from your phone at shows",
+      "MorphMarket messages show up instantly",
+      "Instagram DMs in the same place",
+      "Facebook messages too",
+      "Texts and emails in one thread per customer",
+      "AI writes draft replies for you \u2014 you just approve or edit before sending",
+      "New messages from unknown people automatically save as new contacts",
+      "Tag and flag important conversations",
+      "Works on your phone \u2014 reply from anywhere, even at shows",
     ],
     breederBenefit:
-      "The average breeder checks 5 apps to manage customer conversations and takes 6+ hours to respond. With HatchKit\u2019s unified inbox, every message lands in one place and AI drafts your response before you even see it. Breeders using HatchKit respond 12x faster than the industry average.",
+      "Most breeders check 5 different apps and take 6+ hours to get back to people. With HatchKit, every message lands in one place and AI writes a draft reply before you even see it. Breeders using HatchKit reply 12x faster.",
   },
   {
     icon: <MarketingIcon size={28} />,
-    title: "Marketing Automation",
-    tagline: "Your marketing runs even when you\u2019re sleeping.",
+    title: "Automatic Follow-Up",
+    tagline: "Stay in touch with buyers \u2014 even while you sleep.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Email and SMS drip sequences for new leads",
-      "New animal listing alerts to interested buyers",
-      "Morph-specific nurture campaigns (e.g., \u2018Ball Python Newsletter\u2019)",
+      "Automatic texts and emails to new leads",
+      "Alerts to interested buyers when you list new animals",
+      "Follow-up messages by species (e.g., \u2018Ball Python Updates\u2019)",
       "Seasonal breeding and hatching announcements",
-      "Referral program with tracking and rewards",
-      "Re-engagement campaigns for cold leads",
-      "A/B testing for subject lines and send times",
+      "Referral program \u2014 track who sends you new buyers and reward them",
+      "Reach back out to people who went cold",
+      "Tests different subject lines and send times to find what works best",
     ],
     breederBenefit:
-      "Most breeders have no marketing system at all \u2014 leads are lost, past customers are never re-engaged, and new animals sit unsold. HatchKit turns your customer list into a revenue engine.",
+      "Most breeders don\u2019t have any system for staying in touch with buyers. Leads disappear, past customers never hear from you again, and animals sit unsold. HatchKit keeps your buyer list working for you around the clock.",
   },
   {
     icon: <SalesPipelineIcon size={28} />,
-    title: "Sales Pipeline",
-    tagline: "Know exactly where every deal stands.",
+    title: "Deal Tracker",
+    tagline: "See exactly where every sale stands.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Visual Kanban-style deal board (Interest \u2192 Deposit \u2192 Paid \u2192 Shipped \u2192 Repeat)",
-      "Automatic stage progression based on payment and shipping events",
-      "Professional invoicing with secure payment links \u2014 no more Venmo screenshots or Zelle guesswork",
-      "Integrated with Square and Stripe for professional checkout",
-      "Automated waitlist for upcoming clutches \u2014 buyers join a list, get notified automatically when babies are available",
-      "Deal notes and conversation history",
-      "Payment tracking with deposit and balance management",
-      "Repeat customer identification and VIP tagging",
+      "Visual board showing every deal (Interested \u2192 Deposit \u2192 Paid \u2192 Shipped \u2192 Repeat Buyer)",
+      "Deals move forward automatically when payments and shipments happen",
+      "Send real invoices with payment links \u2014 no more Venmo screenshots or Zelle guesswork",
+      "Works with Square and Stripe for easy checkout",
+      "Waitlist for upcoming clutches \u2014 buyers sign up and get notified when babies are ready",
+      "Notes and conversation history on every deal",
+      "Track deposits, balances, and payments in one place",
+      "Spot your repeat buyers and VIP customers",
     ],
     breederBenefit:
-      "Stop keeping deals in your head or a chaotic spreadsheet. See every active sale at a glance and never let a paid deposit go stale without following up.",
+      "Stop keeping deals in your head or a messy spreadsheet. See every active sale at a glance and never let a paid deposit sit without following up.",
   },
   {
     icon: <BrandWebsiteIcon size={28} />,
-    title: "Brand & Website",
-    tagline: "Look like the professional you are.",
+    title: "Your Website",
+    tagline: "Look as professional as you are.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Custom-designed website with your logo and brand colors",
-      "Available animals gallery with morph info, photos, and price",
+      "Custom website with your logo and colors",
+      "Gallery of available animals with morph info, photos, and price",
       "Blog for care sheets, breeding updates, and hatch announcements",
-      "Integrated contact and inquiry forms",
-      "MorphMarket and social media link integration",
-      "Mobile-optimized and fast-loading",
-      "SEO-optimized for local reptile search queries",
+      "Contact forms built right in",
+      "Links to your MorphMarket and social media pages",
+      "Looks great on phones and loads fast",
+      "Shows up when people search for reptile breeders in your area",
     ],
     breederBenefit:
-      "A professional website builds trust and captures buyers who find you organically. Combined with HatchKit\u2019s CRM, every inquiry from your site automatically enters your pipeline.",
+      "A real website builds trust and catches buyers who find you through Google. Every inquiry from your site automatically gets saved as a new contact so nobody falls through the cracks.",
   },
   {
     icon: <ReportingIcon size={28} />,
-    title: "Smart Reporting",
-    tagline: "Know what\u2019s working. Double down on it.",
+    title: "Your Numbers",
+    tagline: "See what\u2019s working. Do more of it.",
     color: "#1B5E20",
     lightBg: "rgba(27,94,32,0.05)",
     capabilities: [
-      "Revenue by show, morph, and sales channel",
-      "Lead-to-sale conversion rate by source",
-      "Best-performing email and SMS campaigns",
-      "Customer lifetime value and repeat purchase rate",
-      "Shipping cost analysis by carrier and route",
-      "Seasonal revenue trends and forecasting",
-      "Custom date range filters and CSV export",
+      "Sales broken down by show, morph, and where the buyer came from",
+      "How many leads actually turn into sales, by source",
+      "Which emails and texts get the best results",
+      "How much each customer is worth over time",
+      "Shipping costs broken down by carrier and route",
+      "Seasonal trends so you can plan ahead",
+      "Filter by any date range and export to spreadsheet",
     ],
     breederBenefit:
-      "Most breeders have no idea which shows are profitable after travel costs, which morphs move fastest, or which marketing channels drive real sales. HatchKit answers all of it.",
+      "Most breeders have no clue which shows actually make money after travel costs, which morphs sell fastest, or where their best buyers come from. HatchKit shows you all of it.",
   },
   {
     icon: <ContentEngineIcon size={28} />,
-    title: "AI Content Engine",
-    tagline: "Your social media, on autopilot.",
+    title: "Auto Social Posts",
+    tagline: "Your social media, handled for you.",
     color: "#FF6F00",
     lightBg: "rgba(255,111,0,0.05)",
     capabilities: [
-      "Daily Instagram posts written in your exact voice \u2014 never generic",
-      "Show-aware scheduling: preview posts 3 days before, recap posts 1 day after",
-      "Inventory-driven content: more animal spotlights when you have animals to sell",
-      "Seasonal awareness: spring breeding updates, summer hatchling season, fall show previews, winter planning content",
-      "Approve posts via SMS reply \u2014 \u20181\u2019 to post, \u20182\u2019 to skip, or send edits as text",
-      "Direct Instagram and Facebook publishing via Meta Graph API",
+      "Daily Instagram posts written in your voice \u2014 not generic AI slop",
+      "Knows your show schedule: posts previews before shows and recaps after",
+      "Posts more animal spotlights when you have animals to sell",
+      "Matches the season: breeding updates in spring, hatchling posts in summer, show previews in fall",
+      "Approve posts by replying to a text \u2014 \u20181\u2019 to post, \u20182\u2019 to skip, or send edits",
+      "Posts directly to your Instagram and Facebook",
     ],
     contentCategories: [
       { emoji: "\ud83e\udd8e", label: "Animal Spotlight" },
@@ -168,11 +168,11 @@ const modules = [
       { emoji: "\ud83e\uddec", label: "Morph Education" },
       { emoji: "\u2764\ufe0f", label: "Customer Stories" },
       { emoji: "\ud83d\udcc5", label: "Seasonal" },
-      { emoji: "\ud83d\udcac", label: "Engagement" },
-      { emoji: "\ud83c\udff7\ufe0f", label: "Promotional" },
+      { emoji: "\ud83d\udcac", label: "Q&A" },
+      { emoji: "\ud83c\udff7\ufe0f", label: "For Sale" },
     ],
     breederBenefit:
-      "Most breeders know they should post more but never have time. The Content Engine generates a full week of authentic, species-accurate posts every Sunday night. You approve what you like and skip what you don\u2019t \u2014 it takes 2 minutes.",
+      "You know you should post more but who has the time? HatchKit writes a full week of real, species-accurate posts every Sunday night. You approve what you like and skip what you don\u2019t \u2014 takes about 2 minutes.",
   },
 ];
 
@@ -219,7 +219,7 @@ export default function FeaturesPage() {
               border: "1px solid rgba(255,111,0,0.2)",
             }}
           >
-            All 8 Modules
+            All 8 Tools
           </div>
           <h1
             style={{
@@ -231,7 +231,7 @@ export default function FeaturesPage() {
               lineHeight: 1.1,
             }}
           >
-            Everything Your Breeding Business Needs
+            Everything You Need to Sell More Reptiles
           </h1>
           <p
             style={{
@@ -242,8 +242,8 @@ export default function FeaturesPage() {
               margin: "0 auto 36px",
             }}
           >
-            Eight modules. One platform. Built specifically for reptile breeders.
-            Every feature was designed because breeders asked for it.
+            Eight tools. One system. Built by reptile breeders, for reptile breeders.
+            Every feature exists because a breeder asked for it.
           </p>
           <Link
             href="/demo/"
@@ -278,6 +278,7 @@ export default function FeaturesPage() {
           <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
             <ScrollReveal>
               <div
+                className="feature-grid"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -420,7 +421,7 @@ export default function FeaturesPage() {
                         marginBottom: "14px",
                       }}
                     >
-                      The Breeder Impact
+                      Why This Matters
                     </div>
                     <p
                       style={{
@@ -441,6 +442,7 @@ export default function FeaturesPage() {
           <style>{`
             @media (max-width: 768px) {
               .feature-grid { grid-template-columns: 1fr !important; }
+              .feature-grid > div { order: 0 !important; }
             }
           `}</style>
         </section>
@@ -465,7 +467,7 @@ export default function FeaturesPage() {
               marginBottom: "14px",
             }}
           >
-            Ready to See It in Action?
+            Want to See How It Works?
           </h2>
           <p
             style={{
@@ -477,8 +479,8 @@ export default function FeaturesPage() {
               lineHeight: "1.65",
             }}
           >
-            Book a free 15-minute demo and we&apos;ll show you exactly how each module
-            would work for your species and show schedule.
+            Book a free 15-minute call and we&apos;ll walk you through exactly how
+            each tool works for your species and your show schedule.
           </p>
           <Link
             href="/demo/"

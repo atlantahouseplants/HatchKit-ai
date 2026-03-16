@@ -37,7 +37,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.5)',
               maxWidth: '240px',
             }}>
-              The AI-powered growth platform built specifically for reptile breeders.
+              The all-in-one tool built for reptile breeders.
             </p>
             <p style={{
               marginTop: '12px',
@@ -60,7 +60,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.4)',
               marginBottom: '16px',
             }}>
-              Platform
+              HatchKit
             </h4>
             {navLinks.map(link => (
               <Link
@@ -120,7 +120,7 @@ export default function Footer() {
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontWeight: 500,
           }}>
-            Powered by AI. Built by breeders.
+            Built by breeders, for breeders.
           </p>
         </div>
       </div>

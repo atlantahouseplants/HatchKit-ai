@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "Pricing — Plans Starting at $149/mo",
   description:
-    "HatchKit offers three plans for reptile breeders at every stage. Starter at $149/mo, Growth at $249/mo, and Pro at $399/mo. Month-to-month after setup.",
+    "Three simple plans for reptile breeders at every stage. Starter at $149/mo, Growth at $249/mo, and Pro at $399/mo. Month-to-month after setup. Cancel anytime.",
 };
 
 const tiers = [
@@ -14,23 +14,23 @@ const tiers = [
     subtitle: "Stop Losing Leads",
     price: 149,
     setupFee: 499,
-    description: "For breeders doing a few shows a year who are tired of watching potential customers disappear. Get organized, start following up, and stop leaving money on the table.",
+    description: "For breeders doing a few shows a year who are tired of watching buyers disappear. Get organized, start following up, and stop leaving money on the table.",
     popular: false,
   },
   {
     name: "Growth",
-    subtitle: "Automate Your Business",
+    subtitle: "Let It Run Itself",
     price: 249,
     setupFee: 799,
-    description: "For breeders ready to let AI handle the busy work. Automated shipping decisions, content creation, unified inbox, and marketing that runs while you focus on your animals.",
+    description: "For breeders ready to let HatchKit handle the busy work. Shipping decisions, social media posts, one inbox for all your messages, and automatic follow-up that runs while you focus on your animals.",
     popular: true,
   },
   {
     name: "Pro",
-    subtitle: "Scale Like a Brand",
+    subtitle: "Go Full-Time",
     price: 399,
     setupFee: 1199,
-    description: "For serious breeders running a real operation. Advanced analytics, dedicated support, full AI autonomy, and everything you need to build a brand that dominates your market.",
+    description: "For serious breeders running a real operation. See all your numbers, get your own HatchKit helper, and let the AI handle your inbox and social media daily.",
     popular: false,
   },
 ];
@@ -39,97 +39,97 @@ const comparisonRows = [
   {
     category: "Lead Capture",
     features: [
-      { name: "Show Lead Capture (QR codes)", starter: true, growth: true, pro: true },
-      { name: "Instant follow-up automation", starter: true, growth: true, pro: true },
-      { name: "Multi-show lead tagging", starter: false, growth: true, pro: true },
+      { name: "Show lead capture (QR codes)", starter: true, growth: true, pro: true },
+      { name: "Instant automatic follow-up", starter: true, growth: true, pro: true },
+      { name: "Tag leads across multiple shows", starter: false, growth: true, pro: true },
       { name: "GPS show check-in", starter: false, growth: true, pro: true },
     ],
   },
   {
-    category: "CRM & Pipeline",
+    category: "Contacts & Deals",
     features: [
-      { name: "Basic CRM with contact management", starter: true, growth: true, pro: true },
-      { name: "Sales pipeline (Kanban)", starter: false, growth: true, pro: true },
+      { name: "Contact list with basic info", starter: true, growth: true, pro: true },
+      { name: "Deal tracker (visual board)", starter: false, growth: true, pro: true },
       { name: "Payment & deposit tracking", starter: false, growth: true, pro: true },
-      { name: "Professional invoicing (Square & Stripe)", starter: false, growth: true, pro: true },
-      { name: "Automated waitlist for upcoming clutches", starter: false, growth: true, pro: true },
-      { name: "Repeat customer / VIP tagging", starter: false, growth: true, pro: true },
+      { name: "Send real invoices (Square & Stripe)", starter: false, growth: true, pro: true },
+      { name: "Waitlist for upcoming clutches", starter: false, growth: true, pro: true },
+      { name: "Repeat buyer / VIP tagging", starter: false, growth: true, pro: true },
     ],
   },
   {
-    category: "Unified Inbox",
+    category: "One Inbox",
     features: [
-      { name: "Basic unified inbox (email + SMS)", starter: true, growth: true, pro: true },
-      { name: "Full unified inbox (all platforms)", starter: false, growth: true, pro: true },
-      { name: "AI-assisted response drafting", starter: false, growth: true, pro: true },
-      { name: "Fully autonomous AI first-response", starter: false, growth: false, pro: true },
-      { name: "Automatic lead creation from new messages", starter: false, growth: true, pro: true },
-      { name: "Conversation tagging & priority flagging", starter: false, growth: true, pro: true },
+      { name: "Basic inbox (email + text)", starter: true, growth: true, pro: true },
+      { name: "Full inbox (all apps in one place)", starter: false, growth: true, pro: true },
+      { name: "AI writes draft replies for you", starter: false, growth: true, pro: true },
+      { name: "AI answers common questions on its own", starter: false, growth: false, pro: true },
+      { name: "New messages auto-save as contacts", starter: false, growth: true, pro: true },
+      { name: "Tag and flag important conversations", starter: false, growth: true, pro: true },
     ],
   },
   {
-    category: "Marketing Automation",
+    category: "Automatic Follow-Up",
     features: [
-      { name: "Email automation (5 sequences)", starter: true, growth: true, pro: true },
-      { name: "Email automation (unlimited)", starter: false, growth: true, pro: true },
-      { name: "SMS automation", starter: false, growth: true, pro: true },
-      { name: "New animal listing alerts", starter: false, growth: true, pro: true },
-      { name: "Referral program with automated tracking", starter: false, growth: true, pro: true },
-      { name: "A/B testing", starter: false, growth: false, pro: true },
+      { name: "Email follow-up (5 sequences)", starter: true, growth: true, pro: true },
+      { name: "Email follow-up (unlimited)", starter: false, growth: true, pro: true },
+      { name: "Text message follow-up", starter: false, growth: true, pro: true },
+      { name: "New animal alerts to interested buyers", starter: false, growth: true, pro: true },
+      { name: "Referral tracking and rewards", starter: false, growth: true, pro: true },
+      { name: "Test different subject lines and send times", starter: false, growth: false, pro: true },
     ],
   },
   {
-    category: "AI Shipping",
+    category: "Smart Shipping",
     features: [
-      { name: "AI Shipping Agent with weather intelligence", starter: false, growth: true, pro: true },
-      { name: "Species tolerance database", starter: false, growth: true, pro: true },
-      { name: "Automatic customer SMS on hold", starter: false, growth: true, pro: true },
+      { name: "Weather-based ship/hold decisions", starter: false, growth: true, pro: true },
+      { name: "Safe temp ranges for 500+ species", starter: false, growth: true, pro: true },
+      { name: "Automatic text to buyer on hold", starter: false, growth: true, pro: true },
       { name: "Heat pack recommendations", starter: false, growth: true, pro: true },
-      { name: "Multi-carrier support", starter: false, growth: true, pro: true },
+      { name: "Works with multiple carriers", starter: false, growth: true, pro: true },
     ],
   },
   {
-    category: "Brand & Website",
+    category: "Your Website",
     features: [
-      { name: "Professional branded website", starter: false, growth: true, pro: true },
+      { name: "Professional website with your branding", starter: false, growth: true, pro: true },
       { name: "Available animals gallery", starter: false, growth: true, pro: true },
-      { name: "Inquiry form integration", starter: false, growth: true, pro: true },
-      { name: "Custom domain", starter: false, growth: true, pro: true },
+      { name: "Contact forms built in", starter: false, growth: true, pro: true },
+      { name: "Your own domain name", starter: false, growth: true, pro: true },
     ],
   },
   {
-    category: "Reporting",
+    category: "Your Numbers",
     features: [
       { name: "Basic lead reports", starter: true, growth: true, pro: true },
-      { name: "Smart Reporting dashboard with full analytics", starter: false, growth: false, pro: true },
-      { name: "Revenue by show & morph", starter: false, growth: false, pro: true },
-      { name: "Custom date ranges & CSV export", starter: false, growth: false, pro: true },
-      { name: "Seasonal forecasting", starter: false, growth: false, pro: true },
+      { name: "Full number tracking dashboard", starter: false, growth: false, pro: true },
+      { name: "Sales by show & morph", starter: false, growth: false, pro: true },
+      { name: "Filter by date range & export to spreadsheet", starter: false, growth: false, pro: true },
+      { name: "Seasonal trends and planning", starter: false, growth: false, pro: true },
     ],
   },
   {
-    category: "AI Content Engine",
+    category: "Auto Social Posts",
     features: [
-      { name: "Social media template library (DIY)", starter: true, growth: true, pro: true },
-      { name: "AI-generated posts (3/week, approval queue)", starter: false, growth: true, pro: true },
-      { name: "AI-generated posts (daily, auto-publish)", starter: false, growth: false, pro: true },
-      { name: "8-category smart rotation", starter: false, growth: true, pro: true },
-      { name: "Show-aware scheduling (previews & recaps)", starter: false, growth: true, pro: true },
-      { name: "SMS approval flow", starter: false, growth: true, pro: true },
-      { name: "Direct Instagram/Facebook publishing", starter: false, growth: false, pro: true },
+      { name: "Social media template library (do it yourself)", starter: true, growth: true, pro: true },
+      { name: "AI-written posts (3/week, you approve first)", starter: false, growth: true, pro: true },
+      { name: "AI-written posts (daily, posts automatically)", starter: false, growth: false, pro: true },
+      { name: "Rotates through 8 types of posts", starter: false, growth: true, pro: true },
+      { name: "Show previews and recaps", starter: false, growth: true, pro: true },
+      { name: "Approve posts by text message", starter: false, growth: true, pro: true },
+      { name: "Posts directly to Instagram/Facebook", starter: false, growth: false, pro: true },
     ],
   },
   {
-    category: "Support & Onboarding",
+    category: "Support & Setup",
     features: [
-      { name: "Standard email support", starter: true, growth: false, pro: false },
+      { name: "Email support", starter: true, growth: false, pro: false },
       { name: "Priority support", starter: false, growth: true, pro: true },
-      { name: "Dedicated success manager", starter: false, growth: false, pro: true },
-      { name: "Quarterly strategy calls", starter: false, growth: false, pro: true },
-      { name: "Custom integrations and API access", starter: false, growth: false, pro: true },
-      { name: "Multi-species and multi-location support", starter: false, growth: false, pro: true },
+      { name: "Your own HatchKit helper", starter: false, growth: false, pro: true },
+      { name: "Quarterly check-in calls", starter: false, growth: false, pro: true },
+      { name: "Custom setup and extras", starter: false, growth: false, pro: true },
+      { name: "Multiple species and locations", starter: false, growth: false, pro: true },
       { name: "Early access to new features", starter: false, growth: false, pro: true },
-      { name: "Setup in 5\u20137 business days", starter: true, growth: true, pro: true },
+      { name: "Up and running in 5\u20137 business days", starter: true, growth: true, pro: true },
     ],
   },
 ];
@@ -159,7 +159,7 @@ function Check({ value, isPopular }: CheckProps) {
     );
   }
   return (
-    <div style={{ textAlign: "center", color: "#ccc", fontSize: "18px" }}>\u2014</div>
+    <div style={{ textAlign: "center", color: "#ccc", fontSize: "18px" }}>&mdash;</div>
   );
 }
 
@@ -219,7 +219,7 @@ export default function PricingPage() {
               color: "rgba(255,255,255,0.4)",
             }}
           >
-            Most breeders recoup their investment within 60 days.
+            Most breeders make their money back within 60 days.
           </p>
         </div>
       </section>
@@ -474,22 +474,22 @@ export default function PricingPage() {
                 {
                   icon: "\ud83d\udd12",
                   title: "Month-to-Month",
-                  desc: "No long-term contracts. Cancel anytime after your initial setup period.",
+                  desc: "No long-term contracts. Cancel anytime after your initial setup.",
                 },
                 {
                   icon: "\u26a1",
                   title: "5\u20137 Day Setup",
-                  desc: "We handle everything. You'll be fully live in under a week.",
+                  desc: "We handle everything. You\u2019ll be up and running in under a week.",
                 },
                 {
                   icon: "\ud83c\udfaf",
-                  title: "ROI Guarantee",
-                  desc: "If you don't recoup your setup fee in 90 days, we'll work for free until you do.",
+                  title: "Money-Back Guarantee",
+                  desc: "If you don\u2019t make back your setup fee in 90 days, we\u2019ll work for free until you do.",
                 },
                 {
                   icon: "\ud83e\udd1d",
-                  title: "Breeder Support",
-                  desc: "Our support team actually knows reptiles. Get help from people who get it.",
+                  title: "Real Breeder Support",
+                  desc: "Our support team actually keeps reptiles. You\u2019ll get help from people who get it.",
                 },
               ].map((item, i) => (
                 <div
@@ -543,8 +543,8 @@ export default function PricingPage() {
             margin: "0 auto 32px",
             lineHeight: "1.65",
           }}>
-            Book a free 15-minute call and we&apos;ll recommend the right plan for your species,
-            show schedule, and business goals.
+            Book a free 15-minute call and we&apos;ll help you pick the right plan for your
+            species, show schedule, and how you sell.
           </p>
           <Link
             href="/demo/"

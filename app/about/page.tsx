@@ -57,8 +57,8 @@ const values = [
   },
   {
     icon: "📊",
-    title: "Data-Driven Breeding",
-    desc: "The best breeders make decisions based on data. We give you the tools to understand your business as well as you understand your animals.",
+    title: "Know Your Numbers",
+    desc: "The best breeders know what\u2019s making them money and what isn\u2019t. We give you the tools to understand your business as well as you understand your animals.",
   },
 ];
 
@@ -212,7 +212,7 @@ export default function AboutPage() {
                 marginBottom: "20px",
               }}
             >
-              Every breeder deserves the same growth tools that big e-commerce brands have.
+              Every breeder deserves the same tools the big guys have.
             </h2>
             <p
               style={{
@@ -224,8 +224,8 @@ export default function AboutPage() {
               }}
             >
               The reptile community is full of passionate, knowledgeable people running
-              incredible breeding programs. They shouldn&apos;t be held back by tools built for
-              some other industry. HatchKit is built specifically for you.
+              incredible breeding programs. You shouldn&apos;t be held back by software that
+              was made for some other industry. HatchKit is built for you.
             </p>
           </ScrollReveal>
         </div>

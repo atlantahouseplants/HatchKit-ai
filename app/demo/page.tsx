@@ -111,8 +111,8 @@ export default function DemoPage() {
               lineHeight: "1.65",
             }}
           >
-            We&apos;ll walk you through HatchKit live, tailored to your exact species,
-            show schedule, and business goals. No pitch. Just a real demo.
+            We&apos;ll walk you through HatchKit live, set up for your exact species,
+            show schedule, and how you sell. No pitch. Just a real walkthrough.
           </p>
         </div>
       </section>
@@ -373,9 +373,9 @@ export default function DemoPage() {
               </h3>
               <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "12px" }}>
                 {[
-                  "Live walkthrough of the platform tailored to your species",
-                  "See the AI Shipping Agent in action with real weather data",
-                  "We'll show you your lead capture flow from scan to sale",
+                  "Live walkthrough set up for your species",
+                  "See Smart Shipping in action with real weather data",
+                  "We'll show you how it works from QR scan to closing the sale",
                   "Honest recommendation on which plan fits you",
                   "Q&A — ask us anything, including the hard stuff",
                 ].map((item, i) => (
