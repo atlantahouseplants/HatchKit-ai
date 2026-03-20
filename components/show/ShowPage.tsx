@@ -1,9 +1,11 @@
 'use client';
 
 import HeroSection from "./HeroSection";
+import VideoSection from "./VideoSection";
 import PainSection from "./PainSection";
 import FlipSection from "./FlipSection";
 import FeaturesList from "./FeaturesList";
+import InfographicSection from "./InfographicSection";
 import SocialProof from "./SocialProof";
 import WaitlistForm from "./WaitlistForm";
 import ShowFooter from "./ShowFooter";
@@ -12,9 +14,11 @@ export default function ShowPage() {
   return (
     <>
       <HeroSection />
+      <VideoSection />
       <PainSection />
       <FlipSection />
       <FeaturesList />
+      <InfographicSection />
       <SocialProof />
       <WaitlistForm />
       <ShowFooter />
