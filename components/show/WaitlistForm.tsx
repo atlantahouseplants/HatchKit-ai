@@ -48,34 +48,26 @@ export default function WaitlistForm() {
     setSubmitting(true);
     setError("");
 
-    const webhookUrls = [
+    const webhookUrl =
       process.env.NEXT_PUBLIC_WAITLIST_WEBHOOK_URL ||
-        "https://hook.us1.make.com/wcgdt7wqcwwzsgxywfbxrvqjyl5woq5d",
-      "https://hook.us1.make.com/yd78rk7s5mjref6d78rfo9cwy33r6iwg",
-    ];
-
-    const payload = JSON.stringify({
-      name: formData.firstName,
-      email: formData.email,
-      phone: formData.phone,
-      breed: formData.breeds,
-      pain_point: formData.biggestPain,
-      submitted_at: new Date().toISOString(),
-      source: "hatchkit-ai.vercel.app/show",
-    });
+      "https://hook.us1.make.com/wcgdt7wqcwwzsgxywfbxrvqjyl5woq5d";
 
     try {
-      const results = await Promise.all(
-        webhookUrls.map((url) =>
-          fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: payload,
-          })
-        )
-      );
+      const res = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          breed: formData.breeds,
+          pain_point: formData.biggestPain,
+          submitted_at: new Date().toISOString(),
+          source: "hatchkit-ai.vercel.app/show",
+        }),
+      });
 
-      if (results.some((res) => !res.ok)) {
+      if (!res.ok) {
         throw new Error("Something went wrong. Please try again.");
       }
 
