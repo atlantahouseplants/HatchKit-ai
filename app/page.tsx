@@ -6,6 +6,8 @@ import FAQAccordion from "@/components/FAQAccordion";
 import TestimonialCard from "@/components/TestimonialCard";
 import StepCard from "@/components/StepCard";
 import ShippingFlowDiagram from "@/components/ShippingFlowDiagram";
+import VideoSection from "@/components/show/VideoSection";
+import InfographicSection from "@/components/show/InfographicSection";
 import {
   ShowLeadIcon,
   AIShippingIcon,
@@ -317,8 +319,8 @@ export default function HomePage() {
             <Link href="/demo/" className="hero-btn-primary">
               Book a Free Demo →
             </Link>
-            <Link href="#how-it-works" className="hero-btn-outline">
-              See How It Works
+            <Link href="/show/" className="hero-btn-outline">
+              Join the Waitlist →
             </Link>
           </div>
 
@@ -364,6 +366,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ===================== VIDEO ===================== */}
+      <VideoSection />
 
       {/* ===================== PAIN POINTS + EMOTIONAL HOOK ===================== */}
       <section style={{ background: "#F5F5F0", padding: "96px 24px" }}>
@@ -1088,6 +1093,9 @@ export default function HomePage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* ===================== INFOGRAPHIC ===================== */}
+      <InfographicSection />
 
       {/* ===================== PRICING (SIMPLIFIED) ===================== */}
       <section style={{ background: "#fff", padding: "96px 24px" }}>
