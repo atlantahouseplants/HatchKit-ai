@@ -48,22 +48,27 @@ export default function WaitlistForm() {
     setSubmitting(true);
     setError("");
 
-    try {
-      const webhookUrl = process.env.NEXT_PUBLIC_WAITLIST_WEBHOOK_URL;
-      if (webhookUrl) {
-        const res = await fetch(webhookUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...formData,
-            submittedAt: new Date().toISOString(),
-            source: "hatchkit.ai/show",
-          }),
-        });
+    const webhookUrl =
+      process.env.NEXT_PUBLIC_WAITLIST_WEBHOOK_URL ||
+      "https://hook.us1.make.com/wcgdt7wqcwwzsgxywfbxrvqjyl5woq5d";
 
-        if (!res.ok) {
-          throw new Error("Something went wrong. Please try again.");
-        }
+    try {
+      const res = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.firstName,
+          email: formData.email,
+          phone: formData.phone,
+          breed: formData.breeds,
+          pain_point: formData.biggestPain,
+          submitted_at: new Date().toISOString(),
+          source: "hatchkit-ai.vercel.app/show",
+        }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Something went wrong. Please try again.");
       }
 
       setSubmitted(true);
