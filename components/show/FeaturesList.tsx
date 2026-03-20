@@ -83,7 +83,7 @@ export default function FeaturesList() {
             }}
           >
             Plans start at{" "}
-            <strong style={{ color: "#1A1A1A" }}>$149/month</strong>.{" "}
+            <strong style={{ color: "#1A1A1A" }}>$199/month</strong>.{" "}
             <strong style={{ color: "#FF6F00" }}>
               We set everything up for you
             </strong>

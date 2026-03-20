@@ -3,34 +3,34 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Pricing — Plans Starting at $149/mo",
+  title: "Pricing — Plans Starting at $199/mo",
   description:
-    "Three simple plans for reptile breeders at every stage. Starter at $149/mo, Growth at $249/mo, and Pro at $399/mo. Month-to-month after setup. Cancel anytime.",
+    "Three simple plans for reptile breeders at every stage. Starter at $199/mo, Growth at $299/mo, and Pro at $399/mo. Month-to-month after setup. Cancel anytime.",
 };
 
 const tiers = [
   {
     name: "Starter",
     subtitle: "Stop Losing Leads",
-    price: 149,
+    price: 199,
     setupFee: 499,
-    description: "For breeders doing a few shows a year who are tired of watching buyers disappear. Get organized, start following up, and stop leaving money on the table.",
+    description: "For breeders doing a few shows a year who are tired of watching buyers disappear. Capture every lead, send automatic follow-ups, and stop leaving money on the table.",
     popular: false,
   },
   {
     name: "Growth",
-    subtitle: "Let It Run Itself",
-    price: 249,
+    subtitle: "Let the Marketing Run Itself",
+    price: 299,
     setupFee: 799,
-    description: "For breeders ready to let HatchKit handle the busy work. Shipping decisions, social media posts, one inbox for all your messages, and automatic follow-up that runs while you focus on your animals.",
+    description: "For breeders who want HatchKit handling their marketing, inbox, and social media automatically — so you can focus on your animals, not your phone.",
     popular: true,
   },
   {
     name: "Pro",
-    subtitle: "Go Full-Time",
+    subtitle: "Run the Full Operation",
     price: 399,
     setupFee: 1199,
-    description: "For serious breeders running a real operation. See all your numbers, get your own HatchKit helper, and let the AI handle your inbox and social media daily.",
+    description: "For serious breeders who want complete automation — including smart shipping that checks the weather, deep analytics, and your own dedicated HatchKit helper.",
     popular: false,
   },
 ];
@@ -100,11 +100,11 @@ const comparisonRows = [
   {
     category: "Smart Shipping",
     features: [
-      { name: "Weather-based ship/hold decisions", starter: false, growth: true, pro: true },
-      { name: "Safe temp ranges for 500+ species", starter: false, growth: true, pro: true },
-      { name: "Automatic text to buyer on hold", starter: false, growth: true, pro: true },
-      { name: "Heat pack recommendations", starter: false, growth: true, pro: true },
-      { name: "Works with multiple carriers", starter: false, growth: true, pro: true },
+      { name: "Weather-based ship/hold decisions", starter: false, growth: false, pro: true },
+      { name: "Safe temp ranges for 500+ species", starter: false, growth: false, pro: true },
+      { name: "Automatic text to buyer on hold", starter: false, growth: false, pro: true },
+      { name: "Heat pack recommendations", starter: false, growth: false, pro: true },
+      { name: "Works with multiple carriers", starter: false, growth: false, pro: true },
     ],
   },
   {
@@ -121,13 +121,13 @@ const comparisonRows = [
     features: [
       { name: "Social media template library (do it yourself)", starter: true, growth: true, pro: true },
       { name: "AI-written posts (3/week, you approve first)", starter: false, growth: true, pro: true },
-      { name: "AI-written posts (daily, posts automatically)", starter: false, growth: false, pro: true },
+      { name: "Posts directly to Instagram/Facebook", starter: false, growth: true, pro: true },
+      { name: "AI-written posts (daily, posts automatically — no approval)", starter: false, growth: false, pro: true },
       { name: "Tells you which animal to post next", starter: false, growth: true, pro: true },
       { name: "Tracks engagement per animal across all posts", starter: false, growth: true, pro: true },
       { name: "Rotates through 8 types of posts", starter: false, growth: true, pro: true },
       { name: "Approve posts by text message", starter: false, growth: true, pro: true },
-      { name: "Posts directly to Instagram/Facebook", starter: false, growth: false, pro: true },
-      { name: "Turns comments into leads automatically", starter: false, growth: false, pro: true },
+      { name: "Turns comments into leads automatically", starter: false, growth: true, pro: true },
     ],
   },
   {
