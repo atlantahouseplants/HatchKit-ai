@@ -169,12 +169,24 @@ export default function WaitlistForm() {
                   fontSize: "16px",
                   color: "#555",
                   lineHeight: 1.65,
+                  marginBottom: "8px",
+                }}
+              >
+                Check your email at{" "}
+                <strong style={{ color: "#1A1A1A" }}>{formData.email}</strong>{" "}
+                — we just sent you something.
+              </p>
+              <p
+                style={{
+                  fontSize: "15px",
+                  color: "#777",
+                  lineHeight: 1.65,
                   marginBottom: "20px",
                 }}
               >
-                We&apos;ll text you at{" "}
+                That&apos;s HatchKit in action. We&apos;ll also be in touch at{" "}
                 <strong style={{ color: "#1A1A1A" }}>{formData.phone}</strong>{" "}
-                when HatchKit is ready for you.
+                to get you set up.
               </p>
               <div
                 style={{
@@ -186,7 +198,7 @@ export default function WaitlistForm() {
                   fontWeight: 500,
                 }}
               >
-                We&apos;ll be in touch soon.
+                Your confirmation email is on its way.
               </div>
             </div>
           ) : (
