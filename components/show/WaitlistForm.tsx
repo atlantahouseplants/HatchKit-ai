@@ -63,7 +63,7 @@ export default function WaitlistForm() {
           breed: formData.breeds,
           pain_point: formData.biggestPain,
           submitted_at: new Date().toISOString(),
-          source: "hatchkit-ai.vercel.app/show",
+          source: "hatchkitai.com/show",
         }),
       });
 

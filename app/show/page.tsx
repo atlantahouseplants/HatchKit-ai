@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Nashville Reptile Show — Join the HatchKit Waitlist",
     description:
       "The all-in-one tool for reptile vendors. Capture leads, automate follow-up, smart shipping, unified inbox. Built by breeders, for breeders.",
-    url: "https://hatchkit-ai.vercel.app/show/",
+    url: "https://hatchkitai.com/show/",
     siteName: "HatchKit",
     type: "website",
   },
