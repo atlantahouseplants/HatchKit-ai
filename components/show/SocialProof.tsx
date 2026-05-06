@@ -4,7 +4,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 const smallQuotes = [
   {
     quote:
-      "I had a shipment to Phoenix that HatchKit held automatically because of a heat wave. My buyer actually thanked me for being careful. That used to be 45 minutes of me checking weather apps.",
+      "I had a shipment to Phoenix that Reptiscale held automatically because of a heat wave. My buyer actually thanked me for being careful. That used to be 45 minutes of me checking weather apps.",
     name: "Marcus R.",
     business: "Desert Edge Reptiles",
   },
@@ -38,7 +38,7 @@ export default function SocialProof() {
         {/* Featured large testimonial */}
         <ScrollReveal>
           <TestimonialCard
-            quote="I used to go home from every show and forget to text half the people I talked to. Now HatchKit does it for me. I sold 4 geckos to people I met at NARBC — and I didn't send a single text myself."
+            quote="I used to go home from every show and forget to text half the people I talked to. Now Reptiscale does it for me. I sold 4 geckos to people I met at NARBC — and I didn't send a single text myself."
             name="Sarah M."
             business="SunScale Geckos"
             subtitle="Leopard Gecko Breeder · Raleigh, NC"

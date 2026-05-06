@@ -57,7 +57,7 @@ export default function HatchKitLogo({ size = 40, variant = 'dark', showText = t
             letterSpacing: '-0.5px',
           }}
         >
-          HatchKit
+          Reptiscale
         </span>
       )}
     </div>

@@ -45,7 +45,7 @@ export default function PainSection() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
-            HatchKit handles all of it. Here&apos;s how.
+            Reptiscale handles all of it. Here&apos;s how.
           </p>
         </ScrollReveal>
       </div>

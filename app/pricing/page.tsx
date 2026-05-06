@@ -3,34 +3,34 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Pricing — Plans Starting at $199/mo",
+  title: "Pricing - Plans Starting at $199/mo",
   description:
-    "Three simple plans for reptile breeders at every stage. Starter at $199/mo, Growth at $299/mo, and Pro at $399/mo. Month-to-month after setup. Cancel anytime.",
+    "Three productized Reptiscale plans for reptile breeders: Starter at $199/mo, Growth at $349/mo, and Scale at $599/mo.",
 };
 
 const tiers = [
   {
     name: "Starter",
-    subtitle: "Stop Losing Leads",
+    subtitle: "Capture the Buyers You Already Meet",
     price: 199,
-    setupFee: 499,
-    description: "For breeders doing a few shows a year who are tired of watching buyers disappear. Capture every lead, send automatic follow-ups, and stop leaving money on the table.",
+    setupFee: 799,
+    description: "For small breeders who need lead capture, follow-up, and a simple online presence.",
     popular: false,
   },
   {
     name: "Growth",
-    subtitle: "Let the Marketing Run Itself",
-    price: 299,
-    setupFee: 799,
-    description: "For breeders who want HatchKit handling their marketing, inbox, and social media automatically — so you can focus on your animals, not your phone.",
+    subtitle: "Run the Full Buyer Journey",
+    price: 349,
+    setupFee: 1499,
+    description: "For active sellers who need the full buyer journey, shipping workflow, and content engine.",
     popular: true,
   },
   {
-    name: "Pro",
-    subtitle: "Run the Full Operation",
-    price: 399,
-    setupFee: 1199,
-    description: "For serious breeders who want complete automation — including smart shipping that checks the weather, deep analytics, and your own dedicated HatchKit helper.",
+    name: "Scale",
+    subtitle: "Grow Multiple Species or Drops",
+    price: 599,
+    setupFee: 2499,
+    description: "For established breeders with multiple species, regular drops, and higher support needs.",
     popular: false,
   },
 ];
@@ -155,7 +155,7 @@ const comparisonRows = [
     features: [
       { name: "Email support", starter: true, growth: false, pro: false },
       { name: "Priority support", starter: false, growth: true, pro: true },
-      { name: "Your own HatchKit helper", starter: false, growth: false, pro: true },
+      { name: "Priority Reptiscale support", starter: false, growth: false, pro: true },
       { name: "Quarterly check-in calls", starter: false, growth: false, pro: true },
       { name: "Custom setup and extras", starter: false, growth: false, pro: true },
       { name: "Multiple species and locations", starter: false, growth: false, pro: true },

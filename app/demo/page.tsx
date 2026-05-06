@@ -37,7 +37,7 @@ export default function DemoPage() {
           body: JSON.stringify({
             ...formData,
             submittedAt: new Date().toISOString(),
-            source: "hatchkit.ai/demo",
+            source: "Reptiscale.ai/demo",
           }),
         });
 
@@ -140,7 +140,7 @@ export default function DemoPage() {
               lineHeight: "1.65",
             }}
           >
-            We&apos;ll walk you through HatchKit live, set up for your exact species,
+            We&apos;ll walk you through Reptiscale live, set up for your exact species,
             show schedule, and how you sell. No pitch. Just a real walkthrough.
           </p>
         </div>

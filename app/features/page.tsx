@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Features — 10 Tools Built for Reptile Breeders",
   description:
-    "HatchKit does ten things for you: captures show leads, manages your animals, handles shipping, puts all your messages in one place, follows up with buyers, tracks your deals, posts on social media, organizes your media, builds your website, and shows you what's working.",
+    "Reptiscale does ten things for you: captures show leads, manages your animals, handles shipping, puts all your messages in one place, follows up with buyers, tracks your deals, posts on social media, organizes your media, builds your website, and shows you what's working.",
 };
 
 const modules = [
@@ -37,7 +37,7 @@ const modules = [
       "See how many leads you\u2019re getting in real time during the show",
     ],
     breederBenefit:
-      "Before HatchKit, most breeders only sell to about 5% of the people they meet at shows. With automatic follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
+      "Before Reptiscale, most breeders only sell to about 5% of the people they meet at shows. With automatic follow-up starting within 60 seconds of a scan, that number climbs to 20\u201335%.",
   },
   {
     icon: <AnimalProfileIcon size={28} />,
@@ -49,14 +49,14 @@ const modules = [
       "Each animal gets a full profile: photos, morph, personality, price, and availability",
       "Tracks who asked about each animal \u2014 never lose track of \u201cDo you still have that orange one?\u201d",
       "See which animals are getting the most attention from buyers",
-      "When someone messages about an animal, HatchKit links them together automatically",
+      "When someone messages about an animal, Reptiscale links them together automatically",
       "Public profile page on your website so buyers can browse and inquire",
       "Mark an animal as sold and inventory updates everywhere instantly",
       "Upload videos and b-roll clips right to each animal\u2019s profile",
       "One click to message everyone who asked about a specific animal",
     ],
     breederBenefit:
-      "Breeders tell us the same thing: \u201cSomeone messaged me about a gecko three weeks ago and I can\u2019t remember which one.\u201d HatchKit remembers for you. Every animal, every question, every interested buyer \u2014 all connected.",
+      "Breeders tell us the same thing: \u201cSomeone messaged me about a gecko three weeks ago and I can\u2019t remember which one.\u201d Reptiscale remembers for you. Every animal, every question, every interested buyer \u2014 all connected.",
   },
   {
     icon: <AIShippingIcon size={28} />,
@@ -74,7 +74,7 @@ const modules = [
       "Follows up after delivery to make sure the animal arrived safe",
     ],
     breederBenefit:
-      "The average breeder spends 45 minutes per shipment checking weather and texting customers. HatchKit does all of it for you. No dead animals. No angry buyers. No stress.",
+      "The average breeder spends 45 minutes per shipment checking weather and texting customers. Reptiscale does all of it for you. No dead animals. No angry buyers. No stress.",
   },
   {
     icon: <UnifiedInboxIcon size={28} />,
@@ -88,12 +88,12 @@ const modules = [
       "AI writes draft replies for you \u2014 you just approve or edit before sending",
       "AI automatically answers common questions (care, feeding, shipping, pricing) so you don\u2019t repeat yourself 50 times a week",
       "Tells you who\u2019s just browsing vs. who\u2019s a serious buyer \u2014 so you know who to reply to first",
-      "Turns social media comments into leads \u2014 when someone comments \u201cHow much?\u201d, HatchKit auto-DMs them with details",
+      "Turns social media comments into leads \u2014 when someone comments \u201cHow much?\u201d, Reptiscale auto-DMs them with details",
       "New messages from unknown people automatically save as new contacts",
       "Works on your phone \u2014 reply from anywhere, even at shows",
     ],
     breederBenefit:
-      "Most breeders check 5 different apps and take 6+ hours to get back to people. With HatchKit, every message lands in one place, AI answers the common questions for you, and it tells you who\u2019s actually ready to buy. Breeders using HatchKit reply 12x faster.",
+      "Most breeders check 5 different apps and take 6+ hours to get back to people. With Reptiscale, every message lands in one place, AI answers the common questions for you, and it tells you who\u2019s actually ready to buy. Breeders using Reptiscale reply 12x faster.",
   },
   {
     icon: <MarketingIcon size={28} />,
@@ -112,7 +112,7 @@ const modules = [
       "Reach back out to people who went cold",
     ],
     breederBenefit:
-      "Most breeders lose contact with buyers after the sale. With HatchKit, your buyers hear from you at 1 month, 6 months, and 1 year \u2014 with helpful tips, not spam. They remember you, they come back, and they send their friends.",
+      "Most breeders lose contact with buyers after the sale. With Reptiscale, your buyers hear from you at 1 month, 6 months, and 1 year \u2014 with helpful tips, not spam. They remember you, they come back, and they send their friends.",
   },
   {
     icon: <SalesPipelineIcon size={28} />,
@@ -168,7 +168,7 @@ const modules = [
       "Filter by any date range and export to spreadsheet",
     ],
     breederBenefit:
-      "Most breeders have no clue which shows actually make money, which morphs sell fastest, or where their best buyers come from. HatchKit shows you all of it so you can stop guessing and start spending time where it pays off.",
+      "Most breeders have no clue which shows actually make money, which morphs sell fastest, or where their best buyers come from. Reptiscale shows you all of it so you can stop guessing and start spending time where it pays off.",
   },
   {
     icon: <MediaLibraryIcon size={28} />,
@@ -180,13 +180,13 @@ const modules = [
       "Upload and organize photos and videos by animal, show, or folder",
       "Every animal\u2019s photos, videos, and b-roll clips in one place",
       "Drag-and-drop upload from your phone or computer",
-      "HatchKit pulls the right photos automatically when creating social posts",
+      "Reptiscale pulls the right photos automatically when creating social posts",
       "Upload b-roll clips for reels and video posts",
       "See which photos have been used in posts and which haven\u2019t",
       "Tag and search your media \u2014 find that photo of \u201cSunset\u201d in seconds",
     ],
     breederBenefit:
-      "Most breeders have thousands of photos scattered across their phone, nowhere organized, half of them never posted. HatchKit keeps everything sorted by animal so when it\u2019s time to post or reply to a buyer, the right photo is right there.",
+      "Most breeders have thousands of photos scattered across their phone, nowhere organized, half of them never posted. Reptiscale keeps everything sorted by animal so when it\u2019s time to post or reply to a buyer, the right photo is right there.",
   },
   {
     icon: <ContentEngineIcon size={28} />,
@@ -215,7 +215,7 @@ const modules = [
       { emoji: "\ud83c\udff7\ufe0f", label: "For Sale" },
     ],
     breederBenefit:
-      "You know you should post more but who has the time? HatchKit writes a full week of real, species-accurate posts every Sunday night. You approve what you like and skip what you don\u2019t \u2014 takes about 2 minutes.",
+      "You know you should post more but who has the time? Reptiscale writes a full week of real, species-accurate posts every Sunday night. You approve what you like and skip what you don\u2019t \u2014 takes about 2 minutes.",
   },
 ];
 

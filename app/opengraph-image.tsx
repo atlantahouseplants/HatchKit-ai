@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
 
-export const alt = "HatchKit — The All-in-One Tool for Reptile Breeders";
+export const alt = "Reptiscale — The All-in-One Tool for Reptile Breeders";
 export const size = {
   width: 1200,
   height: 630,
@@ -74,7 +74,7 @@ export default function OGImage() {
               letterSpacing: "-1px",
             }}
           >
-            HatchKit
+            Reptiscale
           </span>
         </div>
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "HatchKit privacy policy. How we collect, use, and protect your information.",
+    "Reptiscale privacy policy. How we collect, use, and protect your information.",
 };
 
 export default function PrivacyPage() {
@@ -62,9 +62,9 @@ export default function PrivacyPage() {
           }}
         >
           <p style={pStyle}>
-            HatchKit (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting
+            Reptiscale (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting
             your privacy. This Privacy Policy explains how we collect, use, and safeguard your
-            information when you visit our website at hatchkit.ai or use our services.
+            information when you visit our website at Reptiscale.ai or use our services.
           </p>
 
           <h2 style={headingStyle}>Information We Collect</h2>
@@ -84,8 +84,8 @@ export default function PrivacyPage() {
           <p style={pStyle}>We use your information to:</p>
           <ul style={{ ...pStyle, paddingLeft: "24px" }}>
             <li style={{ marginBottom: "8px" }}>Schedule and personalize your demo call</li>
-            <li style={{ marginBottom: "8px" }}>Follow up about HatchKit services</li>
-            <li style={{ marginBottom: "8px" }}>Send you updates about HatchKit (only if you opt in)</li>
+            <li style={{ marginBottom: "8px" }}>Follow up about Reptiscale services</li>
+            <li style={{ marginBottom: "8px" }}>Send you updates about Reptiscale (only if you opt in)</li>
             <li style={{ marginBottom: "8px" }}>Improve our website and services</li>
           </ul>
           <p style={pStyle}>
@@ -124,14 +124,14 @@ export default function PrivacyPage() {
           </ul>
           <p style={pStyle}>
             To exercise any of these rights, email us at{" "}
-            <a href="mailto:hello@hatchkit.ai" style={{ color: "#1B5E20", fontWeight: 600 }}>
-              hello@hatchkit.ai
+            <a href="mailto:hello@Reptiscale.ai" style={{ color: "#1B5E20", fontWeight: 600 }}>
+              hello@Reptiscale.ai
             </a>.
           </p>
 
           <h2 style={headingStyle}>Children&apos;s Privacy</h2>
           <p style={pStyle}>
-            HatchKit is not intended for children under 13. We do not knowingly collect
+            Reptiscale is not intended for children under 13. We do not knowingly collect
             personal information from children under 13. If you believe we have collected
             information from a child under 13, please contact us and we will delete it.
           </p>
@@ -146,8 +146,8 @@ export default function PrivacyPage() {
           <h2 style={headingStyle}>Contact Us</h2>
           <p style={pStyle}>
             If you have any questions about this Privacy Policy, contact us at{" "}
-            <a href="mailto:hello@hatchkit.ai" style={{ color: "#1B5E20", fontWeight: 600 }}>
-              hello@hatchkit.ai
+            <a href="mailto:hello@Reptiscale.ai" style={{ color: "#1B5E20", fontWeight: 600 }}>
+              hello@Reptiscale.ai
             </a>.
           </p>
 

@@ -37,7 +37,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.5)',
               maxWidth: '240px',
             }}>
-              The all-in-one tool built for reptile breeders.
+              The customer journey engine for reptile breeders.
             </p>
             <p style={{
               marginTop: '12px',
@@ -45,7 +45,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.35)',
               fontStyle: 'italic',
             }}>
-              Built with love for the reptile community.
+              Built for reptile sellers who want a real business system.
             </p>
           </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
               color: 'rgba(255,255,255,0.4)',
               marginBottom: '16px',
             }}>
-              HatchKit
+              Reptiscale
             </h4>
             {navLinks.map(link => (
               <Link
@@ -157,7 +157,7 @@ export default function Footer() {
           gap: '12px',
         }}>
           <p style={{ fontSize: '13px', color: 'rgba(255,255,255,0.3)' }}>
-            © {new Date().getFullYear()} HatchKit. All rights reserved.
+            © {new Date().getFullYear()} Reptiscale. All rights reserved.
           </p>
           <p style={{
             fontSize: '13px',

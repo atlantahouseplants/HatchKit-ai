@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://hatchkit.ai"),
   title: {
-    default: "HatchKit — The All-in-One Tool for Reptile Breeders",
-    template: "%s | HatchKit",
+    default: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
+    template: "%s | Reptiscale",
   },
   description:
-    "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals. Book a free demo.",
+    "Reptiscale gives reptile sellers the storefront, CRM, follow-up, social content, checkout, safe shipping, care onboarding, reviews, referrals, and repeat-buyer campaigns they need.",
   keywords: [
     "reptile breeder software",
     "reptile business automation",
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    siteName: "HatchKit",
-    title: "HatchKit — The All-in-One Tool for Reptile Breeders",
+    siteName: "Reptiscale",
+    title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
     description:
-      "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals.",
+      "Reptiscale gives reptile sellers a complete buyer journey from first lead to repeat customer.",
     url: "https://hatchkit.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HatchKit — The All-in-One Tool for Reptile Breeders",
-    description: "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals.",
+    title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
+    description: "Reptiscale gives reptile sellers a complete buyer journey from first lead to repeat customer.",
   },
   robots: {
     index: true,

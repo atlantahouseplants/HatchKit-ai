@@ -37,7 +37,7 @@ export default function InfographicSection() {
             lineHeight: 1.2,
           }}
         >
-          Everything HatchKit does for you
+          Everything Reptiscale does for you
         </h2>
         <p
           style={{
@@ -61,8 +61,8 @@ export default function InfographicSection() {
           }}
         >
           <Image
-            src="/hatchkit-infographic.png"
-            alt="HatchKit — full platform overview infographic showing the journey from show lead capture to automated follow-up, smart shipping, and repeat customers"
+            src="/Reptiscale-infographic.png"
+            alt="Reptiscale — full platform overview infographic showing the journey from show lead capture to automated follow-up, smart shipping, and repeat customers"
             width={800}
             height={1600}
             style={{

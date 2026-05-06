@@ -5,7 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 export const metadata: Metadata = {
   title: "About — Built by Breeders",
   description:
-    "HatchKit was built because we lived the problem. Learn about our origin story, mission, and the team behind the platform.",
+    "Reptiscale was built because we lived the problem. Learn about our origin story, mission, and the team behind the platform.",
 };
 
 const team = [
@@ -99,7 +99,7 @@ export default function AboutPage() {
               lineHeight: 1.1,
             }}
           >
-            We Built HatchKit Because We Lived the Problem
+            We Built Reptiscale Because We Lived the Problem
           </h1>
           <p
             style={{
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 "Two weeks later, he followed up. Out of 200+ contacts he'd met, he had 40 email addresses — and only 12 responded to his follow-up. He'd lost over 150 potential customers in a single weekend.",
                 "That same month, he shipped a ball python to Dallas during a heat wave. He'd checked the weather, thought it would be fine. The animal made it — barely — and the customer never bought from him again.",
                 "Marcus started building a spreadsheet. Then another. Then he called his friend Elena, who was knee-deep in crested geckos and equally frustrated. She started coding.",
-                "Two years, hundreds of breeder interviews, and one real shipping AI later — HatchKit was born. We've been refining it ever since, with our own animals and yours.",
+                "Two years, hundreds of breeder interviews, and one real shipping AI later — Reptiscale was born. We've been refining it ever since, with our own animals and yours.",
               ].map((para, i) => (
                 <p
                   key={i}
@@ -225,7 +225,7 @@ export default function AboutPage() {
             >
               The reptile community is full of passionate, knowledgeable people running
               incredible breeding programs. You shouldn&apos;t be held back by software that
-              was made for some other industry. HatchKit is built for you.
+              was made for some other industry. Reptiscale is built for you.
             </p>
           </ScrollReveal>
         </div>
@@ -404,7 +404,7 @@ export default function AboutPage() {
             lineHeight: "1.65",
           }}>
             Or book a call. Either way, we&apos;d love to learn about your breeding program
-            and show you what HatchKit can do for it.
+            and show you what Reptiscale can do for it.
           </p>
           <Link
             href="/demo/"

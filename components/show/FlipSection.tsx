@@ -14,22 +14,22 @@ const sections = [
   {
     emoji: "📱",
     title: "Automatic social media posts from your brand.",
-    desc: "HatchKit creates posts in your voice and posts them to your accounts. Animal spotlights, care tips, behind-the-scenes content — all written like you actually wrote it. You just approve and it goes live.",
+    desc: "Reptiscale creates posts in your voice and posts them to your accounts. Animal spotlights, care tips, behind-the-scenes content — all written like you actually wrote it. You just approve and it goes live.",
   },
   {
     emoji: "📩",
     title: "Automatic follow-ups, emails, and reminders.",
-    desc: "After someone shows interest, HatchKit texts and emails them for you — day 1, day 3, day 7, day 14. Thank-you messages, available animals, care guides. You don't write any of it.",
+    desc: "After someone shows interest, Reptiscale texts and emails them for you — day 1, day 3, day 7, day 14. Thank-you messages, available animals, care guides. You don't write any of it.",
   },
   {
     emoji: "🗂️",
     title: "Every message in one place. AI writes your replies.",
-    desc: "Instagram DMs, MorphMarket messages, texts, emails — all on one screen. HatchKit drafts a reply for each one. You read it, tap send, done. No more switching between 5 apps.",
+    desc: "Instagram DMs, MorphMarket messages, texts, emails — all on one screen. Reptiscale drafts a reply for each one. You read it, tap send, done. No more switching between 5 apps.",
   },
   {
     emoji: "📦",
     title: "Shipping that checks the weather for you.",
-    desc: "HatchKit looks at the forecast along the entire route — your city, the carrier hubs, the buyer's city. If it's not safe to ship, it texts your buyer automatically and explains the hold. You never google weather again.",
+    desc: "Reptiscale looks at the forecast along the entire route — your city, the carrier hubs, the buyer's city. If it's not safe to ship, it texts your buyer automatically and explains the hold. You never google weather again.",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function FlipSection() {
               lineHeight: 1.6,
             }}
           >
-            From the show floor to the shipping label — HatchKit handles it all.
+            From the show floor to the shipping label — Reptiscale handles it all.
             You set it up once. It runs while you focus on your animals.
           </p>
         </ScrollReveal>

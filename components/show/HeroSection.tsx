@@ -99,7 +99,7 @@ export default function HeroSection() {
               margin: "0 auto 32px",
             }}
           >
-            Unless you have a way to stay in touch. HatchKit gives you one — it
+            Unless you have a way to stay in touch. Reptiscale gives you one — it
             texts them for you, follows up automatically, and helps you actually
             sell to the people who showed interest. You set it up once. It runs
             while you focus on your animals.

@@ -17,7 +17,7 @@ export default function ShowFooter() {
             marginBottom: "6px",
           }}
         >
-          HatchKit
+          Reptiscale
         </p>
         <p
           style={{
@@ -36,7 +36,7 @@ export default function ShowFooter() {
             color: "rgba(255,255,255,0.3)",
           }}
         >
-          © 2026 HatchKit. Built by breeders, for breeders.
+          © 2026 Reptiscale. Built by breeders, for breeders.
         </p>
       </div>
     </section>

@@ -15,54 +15,54 @@ import {
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "HatchKit — The All-in-One Tool for Reptile Breeders",
+  title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
   description:
-    "Stop losing show leads. HatchKit handles shipping, follow-up, your inbox, social media, and more — so you can focus on your animals. Book a free demo.",
+    "Reptiscale gives reptile sellers a storefront, CRM, follow-up, social content, checkout, safe shipping, care onboarding, reviews, referrals, and repeat-buyer campaigns.",
 };
 
 const pricingPlans = [
   {
     name: "Starter",
     price: "$199",
-    setupFee: "$499",
-    subtitle: "Stop Losing Leads",
-    description: "For breeders doing a few shows a year who are tired of watching buyers disappear.",
+    setupFee: "$799",
+    subtitle: "Capture the Buyers You Already Meet",
+    description: "For small breeders who need lead capture, follow-up, and a simple online presence.",
     features: [
-      { text: "Show lead capture with QR codes", included: true },
-      { text: "Basic inbox (email + text)", included: true },
-      { text: "5 automatic follow-up sequences", included: true },
-      { text: "Your own breeder website", included: true },
+      { text: "Lead magnet and QR lead capture funnel", included: true },
+      { text: "Starter storefront template", included: true },
+      { text: "Core CRM fields, tags, and smart lists", included: true },
+      { text: "New lead nurture plus review/referral workflow", included: true },
     ],
     ctaLabel: "Start with Starter",
   },
   {
     name: "Growth",
-    price: "$299",
-    setupFee: "$799",
-    subtitle: "Let the Marketing Run Itself",
-    description: "HatchKit handles your social media, inbox, and marketing automatically while you focus on your animals.",
+    price: "$349",
+    setupFee: "$1,499",
+    subtitle: "Run the Full Buyer Journey",
+    description: "For active sellers who need the full buyer journey, shipping workflow, and content engine.",
     popular: true,
     features: [
-      { text: "All messages in one inbox + AI draft replies", included: true },
-      { text: "Auto social posts to Instagram/Facebook (3/week)", included: true },
-      { text: "Unlimited SMS + email follow-up sequences", included: true },
-      { text: "Deal tracker + payment tracking", included: true },
+      { text: "Everything in Starter", included: true },
+      { text: "Animal reservation offer funnel", included: true },
+      { text: "Post-purchase care onboarding", included: true },
+      { text: "Safe shipping workflow and social content calendar", included: true },
     ],
     ctaLabel: "Get Growth",
   },
   {
-    name: "Pro",
-    price: "$399",
-    setupFee: "$1,199",
-    subtitle: "Run the Full Operation",
-    description: "Everything in Growth plus smart shipping, full analytics, and your own dedicated HatchKit helper.",
+    name: "Scale",
+    price: "$599",
+    setupFee: "$2,499",
+    subtitle: "Grow Multiple Species or Drops",
+    description: "For established breeders with multiple species, regular drops, and higher support needs.",
     features: [
-      { text: "Smart Shipping — weather checked automatically", included: true },
-      { text: "Full analytics dashboard (sales by show & morph)", included: true },
-      { text: "Your own HatchKit helper + quarterly calls", included: true },
-      { text: "Daily AI posts, no approval needed", included: true },
+      { text: "Everything in Growth", included: true },
+      { text: "Multi-species campaigns", included: true },
+      { text: "Drop launch campaign planning", included: true },
+      { text: "Advanced segmentation, VIP program, and priority support", included: true },
     ],
-    ctaLabel: "Go Pro",
+    ctaLabel: "Go Scale",
   },
 ];
 
@@ -70,17 +70,17 @@ const faqItems = [
   {
     question: "Do I need to be technical?",
     answer:
-      "Nope. We set everything up for you. If you can use Instagram, you can use HatchKit. Our team handles all the technical stuff — you just show up to your next show.",
+      "Nope. We set everything up for you. If you can use Instagram, you can use Reptiscale. Our team handles all the technical stuff — you just show up to your next show.",
   },
   {
     question: "Will this work for snakes, feeders, tarantulas, or frogs?",
     answer:
-      "Yes. HatchKit works for any live animal or feeder business. Smart Shipping knows the safe temperature ranges for hundreds of species — and we can add more. We also work with feeder insect and rodent sellers. If you ship live animals or sell at shows, HatchKit is built for you.",
+      "Yes. Reptiscale works for any live animal or feeder business. Smart Shipping knows the safe temperature ranges for hundreds of species — and we can add more. We also work with feeder insect and rodent sellers. If you ship live animals or sell at shows, Reptiscale is built for you.",
   },
   {
     question: "What about MorphMarket? Does this replace it?",
     answer:
-      "No. MorphMarket is where buyers find you. HatchKit is what happens before and after — follow-up, shipping, staying in touch with buyers, and keeping track of your deals. MorphMarket sends you leads, HatchKit helps you close and keep them.",
+      "No. MorphMarket is where buyers find you. Reptiscale is what happens before and after — follow-up, shipping, staying in touch with buyers, and keeping track of your deals. MorphMarket sends you leads, Reptiscale helps you close and keep them.",
   },
   {
     question: "How does Smart Shipping work?",
@@ -90,7 +90,7 @@ const faqItems = [
   {
     question: "What if I only do shows and local pickup?",
     answer:
-      "HatchKit still helps a ton with lead capture, automatic follow-up, and social media. Smart Shipping is just one of ten tools — and you only pay for what you use.",
+      "Reptiscale still helps a ton with lead capture, automatic follow-up, and social media. Smart Shipping is just one of ten tools — and you only pay for what you use.",
   },
   {
     question: "Can I cancel anytime?",
@@ -303,7 +303,7 @@ export default function HomePage() {
               margin: "0 auto 40px",
             }}
           >
-            You got into this because you love reptiles. HatchKit handles the business
+            You got into this because you love reptiles. Reptiscale handles the business
             side — lead capture, follow-up, shipping, and marketing — so you can
             get back to what you actually care about.
           </p>
@@ -442,7 +442,7 @@ export default function HomePage() {
                   marginBottom: "14px",
                 }}
               >
-                What Changes When You Have HatchKit
+                What Changes When You Have Reptiscale
               </h2>
             </div>
           </ScrollReveal>
@@ -472,7 +472,7 @@ export default function HomePage() {
                   color: "#E65100",
                   marginBottom: "24px",
                 }}>
-                  Without HatchKit
+                  Without Reptiscale
                 </div>
 
                 {[
@@ -515,14 +515,14 @@ export default function HomePage() {
                   color: "#1B5E20",
                   marginBottom: "24px",
                 }}>
-                  With HatchKit
+                  With Reptiscale
                 </div>
 
                 {[
                   { time: "Saturday night", text: "Buyers scan your QR code at the table. By the time you're loading your car, they've already gotten a thank-you text and care sheet." },
                   { time: "Monday", text: "Open one inbox. Three AI-drafted responses are waiting. Tap approve, approve, edit-and-send. Done in 2 minutes. Coffee's still hot." },
-                  { time: "Wednesday", text: "HatchKit already held the Phoenix shipment automatically. Your customer got a text: \"We'll ship Thursday when it drops to 84°F.\" They thanked you for being professional." },
-                  { time: "Friday", text: "Check your numbers. 12 show leads turned into sales this week. HatchKit posted a hatchling spotlight on your Instagram that got 200 likes." },
+                  { time: "Wednesday", text: "Reptiscale already held the Phoenix shipment automatically. Your customer got a text: \"We'll ship Thursday when it drops to 84°F.\" They thanked you for being professional." },
+                  { time: "Friday", text: "Check your numbers. 12 show leads turned into sales this week. Reptiscale posted a hatchling spotlight on your Instagram that got 200 likes." },
                 ].map((item, i) => (
                   <div key={i} className="before-after-item">
                     <span style={{
@@ -587,7 +587,7 @@ export default function HomePage() {
                 Three Features That Change Everything
               </h2>
               <p style={{ fontSize: "17px", color: "#666", maxWidth: "500px", margin: "0 auto" }}>
-                HatchKit does 8 things for you, but these three are the ones breeders
+                Reptiscale does 8 things for you, but these three are the ones breeders
                 say they can&apos;t live without.
               </p>
             </div>
@@ -622,7 +622,7 @@ export default function HomePage() {
                       Show Lead Capture
                     </h3>
                     <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
-                      Buyers scan your QR code at the table. HatchKit captures their info, sends an instant
+                      Buyers scan your QR code at the table. Reptiscale captures their info, sends an instant
                       thank-you text, and starts your follow-up sequence — all before they reach the next booth.
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -864,7 +864,7 @@ export default function HomePage() {
                     </h3>
                     <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
                       MorphMarket messages, Instagram DMs, Facebook messages, texts, and emails — all
-                      on one screen. AI writes draft replies for you. A buyer messages at 10pm, HatchKit
+                      on one screen. AI writes draft replies for you. A buyer messages at 10pm, Reptiscale
                       answers right away. By morning, you\u2019ve got a buyer ready to go.
                     </p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
@@ -923,19 +923,19 @@ export default function HomePage() {
               gap: "24px",
             }}>
               <TestimonialCard
-                quote="I used to leave every show with a pocket full of phone numbers I'd never call. After 3 months on HatchKit, I'm converting 35% of my show leads into sales. Last month I sold 4 geckos to people I met at NARBC Arlington — all through the automated follow-up. I didn't send a single manual text."
+                quote="I used to leave every show with a pocket full of phone numbers I'd never call. After 3 months on Reptiscale, I'm converting 35% of my show leads into sales. Last month I sold 4 geckos to people I met at NARBC Arlington — all through the automated follow-up. I didn't send a single manual text."
                 name="Sarah M."
                 business="SunScale Geckos"
                 subtitle="Leopard Gecko Breeder, Raleigh NC"
               />
               <TestimonialCard
-                quote="Smart Shipping alone is worth the subscription. I used to spend 30 minutes checking weather before every shipment. Now HatchKit handles it and texts my buyers for me. I had a shipment to Phoenix held automatically last week because of a heat wave — the buyer actually thanked me for being so professional."
+                quote="Smart Shipping alone is worth the subscription. I used to spend 30 minutes checking weather before every shipment. Now Reptiscale handles it and texts my buyers for me. I had a shipment to Phoenix held automatically last week because of a heat wave — the buyer actually thanked me for being so professional."
                 name="Marcus R."
                 business="Desert Edge Reptiles"
                 subtitle="Ball Python Breeder, Atlanta GA"
               />
               <TestimonialCard
-                quote="I'm not a tech person at all. I was nervous about the setup but the HatchKit team had everything running in 4 days. Now my Instagram posts basically write themselves and I haven't missed a lead since."
+                quote="I'm not a tech person at all. I was nervous about the setup but the Reptiscale team had everything running in 4 days. Now my Instagram posts basically write themselves and I haven't missed a lead since."
                 name="Jen T."
                 business="Emerald Scales"
                 subtitle="Crested Gecko Breeder, Nashville TN"
@@ -996,7 +996,7 @@ export default function HomePage() {
               <StepCard
                 number={2}
                 title="You focus on your animals"
-                description="Go to shows, breed your animals, do what you love. HatchKit runs in the background capturing leads and following up."
+                description="Go to shows, breed your animals, do what you love. Reptiscale runs in the background capturing leads and following up."
               />
               <StepCard
                 number={3}
@@ -1055,17 +1055,17 @@ export default function HomePage() {
                 {
                   icon: "🎪",
                   title: "The Show Vendor",
-                  description: "You attend 6\u201312 expos a year and meet hundreds of potential buyers. Your table is packed but your follow-up is nonexistent. HatchKit captures every lead the moment they scan your QR code and follows up automatically \u2014 even while you\u2019re driving home.",
+                  description: "You attend 6\u201312 expos a year and meet hundreds of potential buyers. Your table is packed but your follow-up is nonexistent. Reptiscale captures every lead the moment they scan your QR code and follows up automatically \u2014 even while you\u2019re driving home.",
                 },
                 {
                   icon: "💬",
                   title: "The Online Seller",
-                  description: "You sell through MorphMarket and social media but you\u2019re drowning in messages across 5 apps. Buyers ghost you, you forget who wanted what, and your Instagram hasn\u2019t been updated in two weeks. HatchKit puts every conversation in one inbox and keeps your social media going without you lifting a finger.",
+                  description: "You sell through MorphMarket and social media but you\u2019re drowning in messages across 5 apps. Buyers ghost you, you forget who wanted what, and your Instagram hasn\u2019t been updated in two weeks. Reptiscale puts every conversation in one inbox and keeps your social media going without you lifting a finger.",
                 },
                 {
                   icon: "📈",
                   title: "The Growing Operation",
-                  description: "You\u2019re making real money \u2014 $50K+ a year \u2014 but you\u2019re doing everything by hand. Shipping eats your mornings, staying in touch with buyers is an afterthought, and you know you\u2019re leaving money on the table. HatchKit handles the business stuff so you can focus on breeding.",
+                  description: "You\u2019re making real money \u2014 $50K+ a year \u2014 but you\u2019re doing everything by hand. Shipping eats your mornings, staying in touch with buyers is an afterthought, and you know you\u2019re leaving money on the table. Reptiscale handles the business stuff so you can focus on breeding.",
                 },
               ].map((persona, i) => (
                 <div key={i} className="persona-card">
@@ -1234,7 +1234,7 @@ export default function HomePage() {
                 lineHeight: "1.65",
               }}
             >
-              Free, no-pressure 15-minute call. We&apos;ll show you exactly how HatchKit
+              Free, no-pressure 15-minute call. We&apos;ll show you exactly how Reptiscale
               would work for your specific species and show schedule.
             </p>
 

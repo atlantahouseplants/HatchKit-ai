@@ -131,7 +131,7 @@ export default function ShippingFlowDiagram() {
               fontSize: '13px',
               color: '#fff',
             }}>
-              HatchKit SMS
+              Reptiscale SMS
             </div>
             <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.4)' }}>
               Sent automatically
@@ -154,7 +154,7 @@ export default function ShippingFlowDiagram() {
           color: 'rgba(255,255,255,0.35)',
           textAlign: 'right',
         }}>
-          — Sent automatically by HatchKit on behalf of SunScale Geckos
+          — Sent automatically by Reptiscale on behalf of SunScale Geckos
         </p>
       </div>
 

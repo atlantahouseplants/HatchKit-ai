@@ -1,4 +1,4 @@
-// SVG Icons for each HatchKit module
+// SVG Icons for each Reptiscale module
 
 export function ShowLeadIcon({ size = 24 }: { size?: number }) {
   return (

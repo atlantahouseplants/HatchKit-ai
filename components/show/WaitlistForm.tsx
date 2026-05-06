@@ -63,7 +63,7 @@ export default function WaitlistForm() {
           breed: formData.breeds,
           pain_point: formData.biggestPain,
           submitted_at: new Date().toISOString(),
-          source: "hatchkitai.com/show",
+          source: "Reptiscaleai.com/show",
         }),
       });
 
@@ -184,7 +184,7 @@ export default function WaitlistForm() {
                   marginBottom: "20px",
                 }}
               >
-                That&apos;s HatchKit in action. We&apos;ll also be in touch at{" "}
+                That&apos;s Reptiscale in action. We&apos;ll also be in touch at{" "}
                 <strong style={{ color: "#1A1A1A" }}>{formData.phone}</strong>{" "}
                 to get you set up.
               </p>
