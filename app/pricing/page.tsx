@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PricingCard from "@/components/PricingCard";
 import ScrollReveal from "@/components/ScrollReveal";
+import SetupChecklist from "@/components/SetupChecklist";
 
 export const metadata: Metadata = {
   title: "Pricing - HatchKit Setup and Monthly Plans",
@@ -106,6 +107,14 @@ export default function PricingPage() {
                 <PricingCard key={plan.name} {...plan} />
               ))}
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <SetupChecklist compact />
           </ScrollReveal>
         </div>
       </section>

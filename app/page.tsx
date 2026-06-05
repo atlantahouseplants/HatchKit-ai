@@ -3,6 +3,7 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import PricingCard from "@/components/PricingCard";
 import FAQAccordion from "@/components/FAQAccordion";
+import SetupChecklist from "@/components/SetupChecklist";
 import VideoSection from "@/components/show/VideoSection";
 import {
   AIShippingIcon,
@@ -446,6 +447,14 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <SetupChecklist />
           </ScrollReveal>
         </div>
       </section>

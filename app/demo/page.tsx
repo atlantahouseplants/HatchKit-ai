@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import SetupChecklist from "@/components/SetupChecklist";
 import VideoSection from "@/components/show/VideoSection";
 
 type DemoFormData = {
@@ -234,6 +235,12 @@ export default function DemoPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="hk-section">
+        <div className="hk-shell">
+          <SetupChecklist compact showCta={false} />
         </div>
       </section>
 

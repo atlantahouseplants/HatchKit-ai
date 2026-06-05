@@ -589,6 +589,66 @@ h1, h2, h3, h4, h5, h6 {
   padding: 18px;
 }
 
+.hk-setup-checklist {
+  align-items: center;
+  display: grid;
+  gap: 42px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+}
+
+.hk-setup-checklist .hk-button {
+  margin-top: 28px;
+}
+
+.hk-setup-list {
+  background: #ffffff;
+  border: 1px solid rgba(16, 42, 67, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(16, 42, 67, 0.08);
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+}
+
+.hk-setup-list-compact {
+  box-shadow: none;
+}
+
+.hk-setup-item {
+  align-items: flex-start;
+  background: #F6F9FC;
+  border: 1px solid rgba(16, 42, 67, 0.08);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 28px 1fr;
+  padding: 14px;
+}
+
+.hk-setup-item span {
+  align-items: center;
+  background: rgba(0, 184, 169, 0.14);
+  border-radius: 999px;
+  color: #008C82;
+  display: flex;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  font-weight: 900;
+  height: 28px;
+  justify-content: center;
+  line-height: 1;
+  width: 28px;
+}
+
+.hk-setup-item p {
+  color: #102A43;
+  font-family: var(--font-subheading);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+  margin: 2px 0 0;
+}
+
 .hk-final-cta {
   background:
     linear-gradient(135deg, rgba(47, 128, 237, 0.18), transparent 38%),
@@ -601,7 +661,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 980px) {
   .hk-hero-layout,
-  .hk-split {
+  .hk-split,
+  .hk-setup-checklist {
     grid-template-columns: 1fr;
   }
 
