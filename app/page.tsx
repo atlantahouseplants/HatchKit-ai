@@ -3,35 +3,109 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import PricingCard from "@/components/PricingCard";
 import FAQAccordion from "@/components/FAQAccordion";
-import TestimonialCard from "@/components/TestimonialCard";
-import StepCard from "@/components/StepCard";
-import ShippingFlowDiagram from "@/components/ShippingFlowDiagram";
 import VideoSection from "@/components/show/VideoSection";
-import InfographicSection from "@/components/show/InfographicSection";
 import {
-  ShowLeadIcon,
   AIShippingIcon,
+  ContentEngineIcon,
+  ReportingIcon,
+  SalesPipelineIcon,
+  ShowLeadIcon,
   UnifiedInboxIcon,
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
+  title: "HatchKit - Software That Handles the Breeder Business Busywork",
   description:
-    "Reptiscale gives reptile sellers a storefront, CRM, follow-up, social content, checkout, safe shipping, care onboarding, reviews, referrals, and repeat-buyer campaigns.",
+    "HatchKit helps breeders capture leads, follow up with buyers, manage shipping, build their website, and keep marketing moving without doing everything by hand.",
 };
+
+const heroStats = [
+  { value: "1", label: "Place for leads, buyers, deals, shipping, and posts" },
+  { value: "80%", label: "Of the repetitive busywork can move to workflows" },
+  { value: "0", label: "Need to be a tech person" },
+];
+
+const breederPainPoints = [
+  "You leave a show with names, texts, DMs, and notes scattered everywhere.",
+  "You know you should post more, but you are busy feeding, cleaning, packing, and answering buyers.",
+  "Shipping days turn into weather checks, customer updates, and second-guessing.",
+  "Your website, email list, follow-up, and sales process are not as organized as your animals deserve.",
+];
+
+const operatingModules = [
+  {
+    icon: <ShowLeadIcon size={24} />,
+    title: "Stop losing people after shows",
+    description:
+      "QR forms and follow-up texts turn table traffic, DMs, and website inquiries into real contacts you can sell to later.",
+  },
+  {
+    icon: <AIShippingIcon size={24} />,
+    title: "Make shipping less stressful",
+    description:
+      "HatchKit helps check weather, route risk, species needs, hold decisions, and customer updates before a live animal moves.",
+  },
+  {
+    icon: <ContentEngineIcon size={24} />,
+    title: "Keep social media moving",
+    description:
+      "Use your available animals, care tips, show plans, and customer questions to create useful posts without starting from scratch.",
+  },
+  {
+    icon: <UnifiedInboxIcon size={24} />,
+    title: "Know who wants what",
+    description:
+      "Keep buyer messages, interest, budget, animal notes, and next steps together so serious buyers do not slip through.",
+  },
+  {
+    icon: <SalesPipelineIcon size={24} />,
+    title: "Track deals without a messy notebook",
+    description:
+      "See where every buyer stands: interested, deposit, paid, shipping review, delivered, care check-in, or repeat buyer.",
+  },
+  {
+    icon: <ReportingIcon size={24} />,
+    title: "See what is actually making money",
+    description:
+      "Know which shows, posts, species, and follow-up messages are creating sales instead of guessing.",
+  },
+];
+
+const workflowSteps = [
+  {
+    step: "01",
+    title: "Capture",
+    body: "A buyer scans, fills a form, sends a DM, or asks about an available animal.",
+  },
+  {
+    step: "02",
+    title: "Organize",
+    body: "HatchKit tags interest, source, species, budget, and next action in one customer record.",
+  },
+  {
+    step: "03",
+    title: "Move",
+    body: "The system drafts follow-up, updates the deal stage, and flags shipping requirements.",
+  },
+  {
+    step: "04",
+    title: "Grow",
+    body: "Care check-ins, review asks, content prompts, and repeat-buyer campaigns keep the relationship active.",
+  },
+];
 
 const pricingPlans = [
   {
     name: "Starter",
     price: "$199",
     setupFee: "$799",
-    subtitle: "Capture the Buyers You Already Meet",
-    description: "For small breeders who need lead capture, follow-up, and a simple online presence.",
+    subtitle: "Lead capture and follow-up",
+    description: "For smaller breeder businesses that need a clean intake system and basic buyer follow-up.",
     features: [
-      { text: "Lead magnet and QR lead capture funnel", included: true },
-      { text: "Starter storefront template", included: true },
-      { text: "Core CRM fields, tags, and smart lists", included: true },
-      { text: "New lead nurture plus review/referral workflow", included: true },
+      { text: "QR lead capture and buyer intake forms", included: true },
+      { text: "CRM fields, tags, and smart lists", included: true },
+      { text: "Starter storefront and inquiry workflow", included: true },
+      { text: "Review and referral follow-up", included: true },
     ],
     ctaLabel: "Start with Starter",
   },
@@ -39,14 +113,14 @@ const pricingPlans = [
     name: "Growth",
     price: "$349",
     setupFee: "$1,499",
-    subtitle: "Run the Full Buyer Journey",
-    description: "For active sellers who need the full buyer journey, shipping workflow, and content engine.",
+    subtitle: "Full buyer journey",
+    description: "For active breeders that need sales tracking, safe shipping flow, and content support.",
     popular: true,
     features: [
       { text: "Everything in Starter", included: true },
-      { text: "Animal reservation offer funnel", included: true },
-      { text: "Post-purchase care onboarding", included: true },
-      { text: "Safe shipping workflow and social content calendar", included: true },
+      { text: "Deal pipeline and reservation workflow", included: true },
+      { text: "Safe shipping review and customer updates", included: true },
+      { text: "Weekly content planning support", included: true },
     ],
     ctaLabel: "Get Growth",
   },
@@ -54,13 +128,13 @@ const pricingPlans = [
     name: "Scale",
     price: "$599",
     setupFee: "$2,499",
-    subtitle: "Grow Multiple Species or Drops",
-    description: "For established breeders with multiple species, regular drops, and higher support needs.",
+    subtitle: "Multi-species and repeat campaigns",
+    description: "For established operations with regular drops, multiple species, and more support needs.",
     features: [
       { text: "Everything in Growth", included: true },
-      { text: "Multi-species campaigns", included: true },
-      { text: "Drop launch campaign planning", included: true },
-      { text: "Advanced segmentation, VIP program, and priority support", included: true },
+      { text: "Multi-species segments and launch campaigns", included: true },
+      { text: "VIP buyer workflows and advanced reporting", included: true },
+      { text: "Priority implementation and support", included: true },
     ],
     ctaLabel: "Go Scale",
   },
@@ -68,1187 +142,453 @@ const pricingPlans = [
 
 const faqItems = [
   {
-    question: "Do I need to be technical?",
+    question: "Is HatchKit only for reptile breeders?",
     answer:
-      "Nope. We set everything up for you. If you can use Instagram, you can use Reptiscale. Our team handles all the technical stuff — you just show up to your next show.",
+      "No. HatchKit is built around breeder-business operations: leads, customers, inventory interest, safe movement, content, and follow-up. Reptile breeders are an early focus, but the brand and system are not pet-store or reptile-only.",
   },
   {
-    question: "Will this work for snakes, feeders, tarantulas, or frogs?",
+    question: "Do I have to replace my current sales channels?",
     answer:
-      "Yes. Reptiscale works for any live animal or feeder business. Smart Shipping knows the safe temperature ranges for hundreds of species — and we can add more. We also work with feeder insect and rodent sellers. If you ship live animals or sell at shows, Reptiscale is built for you.",
+      "No. HatchKit is designed to sit around the channels you already use and make the buyer journey more organized after someone finds you.",
   },
   {
-    question: "What about MorphMarket? Does this replace it?",
+    question: "What makes the shipping workflow different?",
     answer:
-      "No. MorphMarket is where buyers find you. Reptiscale is what happens before and after — follow-up, shipping, staying in touch with buyers, and keeping track of your deals. MorphMarket sends you leads, Reptiscale helps you close and keep them.",
+      "It treats shipping as a decision process, not just a label task. Weather, timing, species needs, hold decisions, and customer messages are reviewed before the shipment moves.",
   },
   {
-    question: "How does Smart Shipping work?",
+    question: "How technical do I need to be?",
     answer:
-      "It checks the weather along your shipping route, looks up the safe temperature range for your species, and decides whether to ship or hold. If it holds, it texts your buyer with a new ship date — you don\u2019t have to do a thing.",
-  },
-  {
-    question: "What if I only do shows and local pickup?",
-    answer:
-      "Reptiscale still helps a ton with lead capture, automatic follow-up, and social media. Smart Shipping is just one of ten tools — and you only pay for what you use.",
-  },
-  {
-    question: "Can I cancel anytime?",
-    answer:
-      "Yes. Month-to-month after your initial setup. No long-term contracts, no cancellation fees. We keep you because you love the results, not because you\u2019re locked in.",
-  },
-  {
-    question: "How long does setup take?",
-    answer:
-      "Most breeders are fully up and running within 5\u20137 business days. We handle all the technical stuff, build your lead capture forms, and walk you through everything on a single setup call.",
+      "You do not need to be technical. HatchKit is set up as a practical operating system for breeder teams, with forms, workflows, messaging, and content prompts prepared for daily use.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <>
-      <style>{`
-        .hero-btn-primary {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 16px 32px;
-          border-radius: 10px;
-          background: #FF6F00;
-          color: #fff;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: 700;
-          font-size: 16px;
-          text-decoration: none;
-          box-shadow: 0 4px 20px rgba(255,111,0,0.35);
-          transition: all 0.15s ease;
-        }
-        .hero-btn-primary:hover {
-          background: #FFA000;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 28px rgba(255,111,0,0.45);
-        }
-        .hero-btn-outline {
-          display: inline-flex;
-          align-items: center;
-          padding: 16px 28px;
-          border-radius: 10px;
-          border: 2px solid rgba(255,255,255,0.2);
-          color: rgba(255,255,255,0.85);
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: 600;
-          font-size: 16px;
-          text-decoration: none;
-          transition: all 0.15s ease;
-        }
-        .hero-btn-outline:hover {
-          border-color: rgba(255,255,255,0.5);
-          background: rgba(255,255,255,0.06);
-        }
-        .cta-link-green {
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: 600;
-          font-size: 15px;
-          color: #1B5E20;
-          text-decoration: none;
-          border-bottom: 2px solid rgba(27,94,32,0.25);
-          padding-bottom: 2px;
-          transition: border-color 0.15s ease;
-        }
-        .cta-link-green:hover {
-          border-color: #1B5E20;
-        }
-        .final-cta-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 18px 40px;
-          border-radius: 12px;
-          background: #FF6F00;
-          color: #fff;
-          font-family: 'Plus Jakarta Sans', sans-serif;
-          font-weight: 700;
-          font-size: 17px;
-          text-decoration: none;
-          box-shadow: 0 8px 32px rgba(255,111,0,0.4);
-          transition: all 0.15s ease;
-        }
-        .final-cta-btn:hover {
-          background: #FFA000;
-          transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(255,111,0,0.5);
-        }
-        .persona-card {
-          background: #fff;
-          border: 1px solid rgba(0,0,0,0.08);
-          border-radius: 20px;
-          padding: 32px 28px;
-          text-align: center;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .persona-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-        }
-        .before-after-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          padding: 14px 0;
-        }
-        .before-after-item + .before-after-item {
-          border-top: 1px solid rgba(0,0,0,0.06);
-        }
-        .hero-feature-card {
-          background: #fff;
-          border: 1px solid rgba(0,0,0,0.08);
-          border-radius: 20px;
-          padding: 36px 32px;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .hero-feature-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-        }
-        @media (max-width: 768px) {
-          .hero-feature-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
+    <div className="hk-page">
+      <section className="hk-hero scale-pattern">
+        <div className="hk-hero-layout">
+          <div>
+            <span className="hk-eyebrow">Breeder business software</span>
+            <h1>You breed the animals. HatchKit handles the busywork.</h1>
+            <p className="hk-hero-copy">
+              Built for breeders who are good with animals but tired of chasing leads,
+              forgetting follow-ups, checking shipping weather by hand, and trying to
+              figure out websites, emails, and social media on top of everything else.
+            </p>
+            <div className="hk-hero-actions">
+              <Link href="/demo/" className="hk-button hk-button-primary">
+                Talk to Brianna
+              </Link>
+              <Link href="/features/" className="hk-button hk-button-secondary">
+                See What It Handles
+              </Link>
+            </div>
+            <div className="hk-hero-stats">
+              {heroStats.map((stat) => (
+                <div className="hk-hero-stat" key={stat.label}>
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
-      {/* ===================== HERO ===================== */}
-      <section
-        style={{
-          background: "#111111",
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "120px 24px 80px",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "20%",
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "600px",
-            height: "400px",
-            background:
-              "radial-gradient(ellipse at center, rgba(27,94,32,0.25) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
+          <HeroDashboard />
+        </div>
+      </section>
 
-        <div
-          style={{
-            maxWidth: "820px",
-            textAlign: "center",
-            position: "relative",
-            zIndex: 1,
-            animation: "fadeInUp 0.7s ease both",
-          }}
-        >
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              background: "rgba(255,111,0,0.12)",
-              border: "1px solid rgba(255,111,0,0.25)",
-              borderRadius: "100px",
-              padding: "6px 14px",
-              marginBottom: "28px",
-            }}
-          >
-            <span style={{ fontSize: "18px" }}>🦎</span>
-            <span
+      <VideoSection />
+
+      <section className="hk-section">
+        <div className="hk-shell hk-grid-2" style={{ alignItems: "center" }}>
+          <ScrollReveal>
+            <div>
+              <span className="hk-kicker">Built from a real breeder business</span>
+              <h2 className="hk-section-heading">Brianna did it the hard way first.</h2>
+              <p className="hk-section-copy">
+                Brianna built YetiGex by selling at shows, answering buyer questions,
+                shipping animals safely, helping first-time keepers, and learning where
+                the business gets messy. HatchKit came from that work: build the systems
+                once, let automation handle the repeatable parts, and keep the human touch
+                where it matters.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "26px" }}>
+                {["100+ happy families at YetiGex", "Weather-checked shipping", "Real buyer support from a breeder"].map((item) => (
+                  <span
+                    key={item}
+                    style={{
+                      background: "rgba(0,184,169,0.1)",
+                      borderRadius: "999px",
+                      color: "#102A43",
+                      fontFamily: "var(--font-accent)",
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      padding: "9px 12px",
+                    }}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="https://yetigex.com"
+                target="_blank"
+                rel="noreferrer"
+                className="hk-link"
+                style={{ display: "inline-flex", marginTop: "20px" }}
+              >
+                See Brianna&apos;s YetiGex business
+              </a>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="hk-card">
+              <span className="hk-kicker">Plain English</span>
+              <h3 style={{ color: "#102A43", fontSize: "28px", marginTop: "12px" }}>
+                HatchKit sets up the robots so you can stay focused on the animals and the buyers.
+              </h3>
+              <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.75, marginTop: "16px" }}>
+                The point is not to make you learn a complicated tech stack. The point is
+                to give you a working system for the jobs you already know you should be
+                doing but never have enough hours for.
+              </p>
+              <Link href="/about/" className="hk-link" style={{ display: "inline-flex", marginTop: "20px" }}>
+                Read the HatchKit story
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-soft">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <span className="hk-kicker">Sound familiar?</span>
+            <h2 className="hk-section-heading">Most breeders do not have a reptile problem. They have a business follow-through problem.</h2>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="hk-grid-2" style={{ marginTop: "34px" }}>
+              {breederPainPoints.map((point) => (
+                <article className="hk-card" key={point}>
+                  <p style={{ color: "#102A43", fontFamily: "var(--font-subheading)", fontSize: "18px", fontWeight: 800, lineHeight: 1.55 }}>
+                    {point}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-soft">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <span className="hk-kicker">What HatchKit handles</span>
+            <h2 className="hk-section-heading">The business jobs that eat up your nights and Sundays.</h2>
+            <p className="hk-section-copy">
+              Leads, buyers, follow-up, shipping, websites, email, social posts, and
+              repeat customers all work better when they are connected instead of sitting
+              in your phone, notebook, and memory.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal stagger>
+            <div className="hk-module-list">
+              {operatingModules.map((module) => (
+                <article className="hk-module-item" key={module.title}>
+                  <div className="hk-icon-box">{module.icon}</div>
+                  <div>
+                    <h3
+                      style={{
+                        color: "#102A43",
+                        fontSize: "18px",
+                        marginBottom: "7px",
+                      }}
+                    >
+                      {module.title}
+                    </h3>
+                    <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.65 }}>
+                      {module.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <div style={{ maxWidth: "760px" }}>
+              <span className="hk-kicker">How it works</span>
+              <h2 className="hk-section-heading">From availability question to repeat buyer.</h2>
+              <p className="hk-section-copy">
+                Every workflow is designed around the same reality: buyers show up in
+                different places, and you need a simple way to keep them moving without
+                doing every step manually.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal stagger>
+            <div className="hk-workflow">
+              {workflowSteps.map((item) => (
+                <article className="hk-workflow-step" key={item.step}>
+                  <span>{item.step}</span>
+                  <h3 style={{ color: "#102A43", fontSize: "20px", marginBottom: "10px" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.65 }}>
+                    {item.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell hk-split">
+          <ScrollReveal>
+            <div>
+              <span className="hk-kicker">Shipping safety</span>
+              <h2 className="hk-section-heading">No more guessing and hoping on shipping day.</h2>
+              <p className="hk-section-copy">
+                HatchKit helps standardize the shipment review: route weather, safe windows,
+                packaging notes, hold decisions, and buyer updates all stay visible before
+                anything moves.
+              </p>
+              <div style={{ marginTop: "28px" }}>
+                <Link href="/features/" className="hk-link">
+                  Review shipping features
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="hk-shipping-board">
+              <BoardHeader title="Shipping review" status="3 decisions queued" />
+              {[
+                {
+                  lane: "Atlanta to Phoenix",
+                  detail: "Destination heat risk after 2 PM. Buyer update drafted.",
+                  status: "Hold",
+                  color: "#FF6B6B",
+                },
+                {
+                  lane: "Raleigh to Denver",
+                  detail: "Route temps stable. Insulation note confirmed.",
+                  status: "Clear",
+                  color: "#00B8A9",
+                },
+                {
+                  lane: "Nashville to Chicago",
+                  detail: "Overnight hub review needed before label.",
+                  status: "Review",
+                  color: "#2F80ED",
+                },
+              ].map((shipment) => (
+                <div className="hk-shipping-lane" key={shipment.lane}>
+                  <div className="hk-row">
+                    <strong style={{ color: "#102A43", fontFamily: "var(--font-subheading)" }}>
+                      {shipment.lane}
+                    </strong>
+                    <span
+                      className="hk-status-pill"
+                      style={{ background: `${shipment.color}18`, color: shipment.color }}
+                    >
+                      {shipment.status}
+                    </span>
+                  </div>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.55, marginTop: "8px" }}>
+                    {shipment.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section">
+        <div className="hk-shell">
+          <ScrollReveal>
+              <span className="hk-kicker">Social simplicity</span>
+              <h2 className="hk-section-heading">Stop staring at a blank caption box.</h2>
+            <p className="hk-section-copy">
+              The content engine is grounded in what breeders already have: available animals,
+              care guidance, show plans, customer questions, and real inventory updates.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal stagger>
+            <div className="hk-content-grid">
+              {[
+                { title: "Animal spotlight", body: "Turn available inventory into clean posts with buyer-ready details." },
+                { title: "Care education", body: "Use care basics and onboarding notes as helpful evergreen content." },
+                { title: "Show schedule", body: "Prep preview posts, QR lead capture, and post-show follow-up." },
+                { title: "Buyer questions", body: "Convert repeat questions into posts, emails, and saved replies." },
+                { title: "Shipping updates", body: "Explain safe movement standards in a professional brand voice." },
+                { title: "Repeat buyers", body: "Prompt return visits with updates that feel useful, not random." },
+              ].map((item) => (
+                <article className="hk-content-tile" key={item.title}>
+                  <h3 style={{ color: "#102A43", fontSize: "18px", marginBottom: "12px" }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.65 }}>
+                    {item.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-soft">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <div style={{ textAlign: "center" }}>
+              <span className="hk-kicker">Pricing</span>
+              <h2 className="hk-section-heading">Start with the amount of help your business needs now.</h2>
+              <p className="hk-section-copy" style={{ marginLeft: "auto", marginRight: "auto" }}>
+                We help set it up. You do not need to become a software expert first.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal stagger>
+            <div className="hk-grid-3" style={{ alignItems: "stretch", marginTop: "42px" }}>
+              {pricingPlans.map((plan) => (
+                <PricingCard key={plan.name} {...plan} />
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <div style={{ textAlign: "center" }}>
+              <span className="hk-kicker">Questions</span>
+              <h2 className="hk-section-heading">Straight answers before a demo.</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div style={{ marginTop: "24px" }}>
+              <FAQAccordion items={faqItems} />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-final-cta scale-pattern">
+        <div style={{ margin: "0 auto", maxWidth: "720px" }}>
+          <ScrollReveal>
+            <span className="hk-eyebrow">Ready to get help with the business side?</span>
+            <h2 style={{ color: "#ffffff", fontSize: "clamp(2.2rem, 4vw, 3.4rem)", marginTop: "22px" }}>
+              Let us show you what HatchKit would do for your business.
+            </h2>
+            <p
               style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: "13px",
-                color: "#FF6F00",
-                letterSpacing: "0.04em",
+                color: "rgba(255,255,255,0.72)",
+                fontSize: "17px",
+                lineHeight: 1.7,
+                margin: "18px auto 32px",
+                maxWidth: "590px",
               }}
             >
-              Built for Reptile Breeders
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
-              lineHeight: 1.1,
-              color: "#ffffff",
-              marginBottom: "24px",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Stop Losing Sales at{" "}
-            <span style={{ color: "#FF6F00" }}>Every Reptile Show</span>
-          </h1>
-
-          <p
-            style={{
-              fontSize: "clamp(1rem, 2vw, 1.2rem)",
-              lineHeight: "1.7",
-              color: "rgba(255,255,255,0.65)",
-              maxWidth: "620px",
-              margin: "0 auto 40px",
-            }}
-          >
-            You got into this because you love reptiles. Reptiscale handles the business
-            side — lead capture, follow-up, shipping, and marketing — so you can
-            get back to what you actually care about.
-          </p>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "14px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            <Link href="/demo/" className="hero-btn-primary">
-              Book a Free Demo →
+              Bring your animals, your current sales channels, and the parts of the
+              business that are driving you crazy. We will map the system around how you actually work.
+            </p>
+            <Link href="/demo/" className="hk-button hk-button-primary">
+              Talk to Brianna
             </Link>
-            <Link href="/show/" className="hero-btn-outline">
-              Join the Waitlist →
-            </Link>
-          </div>
+          </ScrollReveal>
+        </div>
+      </section>
+    </div>
+  );
+}
 
-          <div
-            style={{
-              marginTop: "56px",
-              display: "flex",
-              gap: "32px",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
-          >
-            {[
-              { value: "5+ Apps", label: "All in One Inbox" },
-              { value: "60 Seconds", label: "From Show Scan to Follow-Up" },
-              { value: "10 Tools", label: "All Working Together" },
-            ].map((stat) => (
-              <div key={stat.label} style={{ textAlign: "center" }}>
-                <div
-                  style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 800,
-                    fontSize: "28px",
-                    color: "#fff",
-                  }}
-                >
-                  {stat.value}
+function HeroDashboard() {
+  return (
+    <div className="hk-dashboard">
+      <div className="hk-dashboard-top">
+        <div className="hk-window-dots" aria-hidden="true">
+          <span style={{ background: "#FF6B6B" }} />
+          <span style={{ background: "#FFF7E6" }} />
+          <span style={{ background: "#00B8A9" }} />
+        </div>
+        <span style={{ color: "#52606D", fontFamily: "var(--font-accent)", fontSize: "12px", fontWeight: 700 }}>
+          HatchKit Command Center
+        </span>
+      </div>
+      <div className="hk-dashboard-body">
+        <div className="hk-tool-panel">
+          <BoardHeader title="Today" status="Live" />
+          {[
+            ["New show leads", "18"],
+            ["Buyer replies queued", "7"],
+            ["Shipments to review", "3"],
+            ["Posts awaiting approval", "5"],
+          ].map(([label, value]) => (
+            <div
+              className="hk-row"
+              key={label}
+              style={{ borderTop: "1px solid rgba(16,42,67,0.08)", padding: "13px 0" }}
+            >
+              <span style={{ color: "#52606D", fontSize: "14px" }}>{label}</span>
+              <strong style={{ color: "#102A43", fontFamily: "var(--font-accent)", fontSize: "18px" }}>
+                {value}
+              </strong>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <div className="hk-tool-panel">
+            <BoardHeader title="Buyer pipeline" status="Auto-routed" />
+            {["Interested", "Deposit", "Paid", "Ship", "Care"].map((stage, index) => (
+              <div key={stage} style={{ marginTop: index === 0 ? "14px" : "10px" }}>
+                <div className="hk-row" style={{ marginBottom: "7px" }}>
+                  <span style={{ color: "#102A43", fontFamily: "var(--font-subheading)", fontSize: "13px" }}>
+                    {stage}
+                  </span>
+                  <span style={{ color: "#52606D", fontSize: "12px" }}>{[12, 5, 4, 3, 9][index]}</span>
                 </div>
-                <div
-                  style={{
-                    fontSize: "12px",
-                    color: "rgba(255,255,255,0.4)",
-                    marginTop: "2px",
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                    fontWeight: 500,
-                  }}
-                >
-                  {stat.label}
+                <div style={{ background: "rgba(16,42,67,0.08)", borderRadius: "999px", height: "8px" }}>
+                  <div
+                    style={{
+                      background: index === 3 ? "#00B8A9" : "#2F80ED",
+                      borderRadius: "999px",
+                      height: "8px",
+                      width: `${[82, 52, 44, 36, 68][index]}%`,
+                    }}
+                  />
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  );
+}
 
-      {/* ===================== VIDEO ===================== */}
-      <VideoSection />
-
-      {/* ===================== PAIN POINTS + EMOTIONAL HOOK ===================== */}
-      <section style={{ background: "#F5F5F0", padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                Sound Familiar?
-              </h2>
-              <p style={{ fontSize: "17px", color: "#666", maxWidth: "520px", margin: "0 auto" }}>
-                You started breeding because you love reptiles. Somewhere along the way
-                it became a second job managing DMs, shipping logistics, and spreadsheets.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                gap: "20px",
-              }}
-            >
-              {[
-                { icon: "😤", text: "You meet 200 people at a show and sell to maybe 10. The other 190 disappear." },
-                { icon: "📱", text: "You're managing leads across MorphMarket DMs, Instagram, text messages, and email — and dropping half of them." },
-                { icon: "🌡️", text: "You check the weather in 3 cities, do mental math on heat packs, and hope for the best when you ship." },
-                { icon: "🌐", text: "You know you need a website and email list but you don't have time to figure it out." },
-              ].map((point, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: "#fff",
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    borderRadius: "16px",
-                    padding: "28px 24px",
-                  }}
-                >
-                  <div style={{ fontSize: "32px", marginBottom: "14px" }}>{point.icon}</div>
-                  <p style={{ fontSize: "15px", lineHeight: "1.65", color: "#333" }}>
-                    {point.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== BEFORE / AFTER ===================== */}
-      <section style={{ padding: "96px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                What Changes When You Have Reptiscale
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div
-              className="before-after-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "24px",
-              }}
-            >
-              {/* BEFORE */}
-              <div style={{
-                background: "#FFF8F5",
-                border: "1px solid rgba(230,81,0,0.12)",
-                borderRadius: "20px",
-                padding: "32px 28px",
-              }}>
-                <div style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "13px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "#E65100",
-                  marginBottom: "24px",
-                }}>
-                  Without Reptiscale
-                </div>
-
-                {[
-                  { time: "Saturday night", text: "Leave the show with 40 phone numbers scribbled on paper. Promise yourself you'll text them tomorrow." },
-                  { time: "Monday", text: "Check MorphMarket, Instagram, texts, email, Facebook. 45 minutes gone. Half the messages are 2 days old." },
-                  { time: "Wednesday", text: "Spend 30 minutes checking weather for a shipment to Phoenix. Google says 97°F. Do you ship? You're not sure." },
-                  { time: "Friday", text: "Realize you never texted back the guy from the show. He bought from someone else." },
-                ].map((item, i) => (
-                  <div key={i} className="before-after-item">
-                    <span style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "11px",
-                      color: "#E65100",
-                      minWidth: "90px",
-                      paddingTop: "2px",
-                    }}>
-                      {item.time}
-                    </span>
-                    <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#555" }}>
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* AFTER */}
-              <div style={{
-                background: "#F5FFF5",
-                border: "1px solid rgba(27,94,32,0.15)",
-                borderRadius: "20px",
-                padding: "32px 28px",
-              }}>
-                <div style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "13px",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "#1B5E20",
-                  marginBottom: "24px",
-                }}>
-                  With Reptiscale
-                </div>
-
-                {[
-                  { time: "Saturday night", text: "Buyers scan your QR code at the table. By the time you're loading your car, they've already gotten a thank-you text and care sheet." },
-                  { time: "Monday", text: "Open one inbox. Three AI-drafted responses are waiting. Tap approve, approve, edit-and-send. Done in 2 minutes. Coffee's still hot." },
-                  { time: "Wednesday", text: "Reptiscale already held the Phoenix shipment automatically. Your customer got a text: \"We'll ship Thursday when it drops to 84°F.\" They thanked you for being professional." },
-                  { time: "Friday", text: "Check your numbers. 12 show leads turned into sales this week. Reptiscale posted a hatchling spotlight on your Instagram that got 200 likes." },
-                ].map((item, i) => (
-                  <div key={i} className="before-after-item">
-                    <span style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "11px",
-                      color: "#1B5E20",
-                      minWidth: "90px",
-                      paddingTop: "2px",
-                    }}>
-                      {item.time}
-                    </span>
-                    <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#333" }}>
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <style>{`
-              @media (max-width: 768px) {
-                .before-after-grid { grid-template-columns: 1fr !important; }
-                .before-after-item { flex-direction: column; gap: 4px; }
-              }
-            `}</style>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== 3 HERO FEATURES ===================== */}
-      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(27,94,32,0.07)",
-                  color: "#1B5E20",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                }}
-              >
-                What You Get
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                Three Features That Change Everything
-              </h2>
-              <p style={{ fontSize: "17px", color: "#666", maxWidth: "500px", margin: "0 auto" }}>
-                Reptiscale does 8 things for you, but these three are the ones breeders
-                say they can&apos;t live without.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-            {/* FEATURE 1: Show Lead Capture */}
-            <ScrollReveal>
-              <div className="hero-feature-card">
-                <div className="hero-feature-grid" style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "48px",
-                  alignItems: "center",
-                }}>
-                  <div>
-                    <div style={{
-                      width: "48px", height: "48px", borderRadius: "12px",
-                      background: "rgba(27,94,32,0.08)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#1B5E20", marginBottom: "16px",
-                    }}>
-                      <ShowLeadIcon size={24} />
-                    </div>
-                    <h3 style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "22px",
-                      color: "#1A1A1A",
-                      marginBottom: "12px",
-                    }}>
-                      Show Lead Capture
-                    </h3>
-                    <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
-                      Buyers scan your QR code at the table. Reptiscale captures their info, sends an instant
-                      thank-you text, and starts your follow-up sequence — all before they reach the next booth.
-                    </p>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                      {[
-                        "Follow-up starts within 60 seconds of scan",
-                        "Tag leads by species interest and budget",
-                        "Real-time lead count during the show",
-                      ].map((bullet, i) => (
-                        <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <div style={{
-                            width: "6px", height: "6px", borderRadius: "50%",
-                            background: "#1B5E20", flexShrink: 0,
-                          }} />
-                          <span style={{ fontSize: "14px", color: "#333" }}>{bullet}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Lead capture mockup */}
-                  <div style={{
-                    background: "#111",
-                    borderRadius: "16px",
-                    padding: "28px",
-                    color: "#fff",
-                  }}>
-                    <div style={{
-                      textAlign: "center",
-                      marginBottom: "20px",
-                    }}>
-                      <div style={{
-                        display: "inline-block",
-                        background: "#fff",
-                        borderRadius: "12px",
-                        padding: "16px",
-                        marginBottom: "12px",
-                      }}>
-                        {/* Simple QR code visual */}
-                        <div style={{
-                          width: "80px", height: "80px",
-                          display: "grid",
-                          gridTemplateColumns: "repeat(5, 1fr)",
-                          gridTemplateRows: "repeat(5, 1fr)",
-                          gap: "2px",
-                        }}>
-                          {[1,1,1,0,1, 1,0,1,1,0, 1,1,0,0,1, 0,1,1,0,1, 1,0,1,1,1].map((filled, i) => (
-                            <div key={i} style={{
-                              background: filled ? "#111" : "#eee",
-                              borderRadius: "2px",
-                            }} />
-                          ))}
-                        </div>
-                      </div>
-                      <p style={{
-                        fontSize: "11px",
-                        color: "rgba(255,255,255,0.4)",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                      }}>
-                        Buyer scans at your table
-                      </p>
-                    </div>
-                    <div style={{
-                      background: "rgba(27,94,32,0.2)",
-                      border: "1px solid rgba(27,200,32,0.3)",
-                      borderRadius: "12px",
-                      padding: "16px",
-                    }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                        <div style={{
-                          width: "8px", height: "8px", borderRadius: "50%",
-                          background: "#4CAF50",
-                        }} />
-                        <span style={{
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                          fontWeight: 700, fontSize: "12px",
-                          color: "#4CAF50",
-                        }}>
-                          New Lead Captured
-                        </span>
-                        <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.4)", marginLeft: "auto" }}>
-                          Just now
-                        </span>
-                      </div>
-                      <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", marginBottom: "6px" }}>
-                        Jake Henderson — Interested in Mack Snow
-                      </p>
-                      <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)" }}>
-                        ✓ Thank-you text sent &nbsp;·&nbsp; ✓ Follow-up sequence started
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* FEATURE 2: AI Shipping Agent */}
-            <ScrollReveal>
-              <div style={{
-                background: "#1B5E20",
-                borderRadius: "20px",
-                padding: "48px 32px",
-                position: "relative",
-                overflow: "hidden",
-              }} className="scale-pattern">
-                <div style={{
-                  position: "absolute",
-                  top: "50%", left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "600px", height: "400px",
-                  background: "radial-gradient(ellipse, rgba(255,111,0,0.08) 0%, transparent 70%)",
-                  pointerEvents: "none",
-                }} />
-                <div style={{ position: "relative", zIndex: 1 }}>
-                  <div style={{
-                    display: "flex", alignItems: "center", gap: "12px",
-                    marginBottom: "12px",
-                  }}>
-                    <div style={{
-                      width: "48px", height: "48px", borderRadius: "12px",
-                      background: "rgba(255,111,0,0.15)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#FF6F00",
-                    }}>
-                      <AIShippingIcon size={24} />
-                    </div>
-                    <h3 style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "22px",
-                      color: "#fff",
-                    }}>
-                      Smart Shipping
-                    </h3>
-                  </div>
-                  <p style={{
-                    fontSize: "16px", lineHeight: "1.7",
-                    color: "rgba(255,255,255,0.7)",
-                    maxWidth: "560px",
-                    marginBottom: "32px",
-                  }}>
-                    It checks the weather along the route, knows the safe temps for your species, decides
-                    whether to ship or hold, and texts your buyer — all on its own. You never check a forecast again.
-                  </p>
-                  <ShippingFlowDiagram />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* FEATURE 3: Unified Inbox */}
-            <ScrollReveal>
-              <div className="hero-feature-card">
-                <div className="hero-feature-grid" style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "48px",
-                  alignItems: "center",
-                }}>
-                  {/* Inbox mockup */}
-                  <div style={{
-                    background: "#FAFAFA",
-                    borderRadius: "16px",
-                    padding: "24px",
-                    border: "1px solid rgba(0,0,0,0.06)",
-                  }}>
-                    <div style={{
-                      display: "flex", alignItems: "center", justifyContent: "space-between",
-                      marginBottom: "16px", paddingBottom: "12px",
-                      borderBottom: "1px solid rgba(0,0,0,0.06)",
-                    }}>
-                      <span style={{
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 700, fontSize: "13px", color: "#1A1A1A",
-                      }}>
-                        One Inbox
-                      </span>
-                      <span style={{
-                        background: "#FF6F00", color: "#fff",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 700, fontSize: "11px",
-                        padding: "3px 8px", borderRadius: "100px",
-                      }}>
-                        3 new
-                      </span>
-                    </div>
-                    {[
-                      { platform: "MorphMarket", color: "#E65100", msg: "Is the Mack Snow still available?", time: "2m" },
-                      { platform: "Instagram", color: "#C13584", msg: "Saw your post — any Mack Snows left?", time: "1h" },
-                      { platform: "SMS", color: "#2196F3", msg: "Thanks for chatting at NARBC!", time: "3h" },
-                      { platform: "AI Draft", color: "#1B5E20", msg: "Yes! She's available at $185. Want photos?", time: "Auto" },
-                    ].map((m, i) => (
-                      <div key={i} style={{
-                        display: "flex", alignItems: "center", gap: "10px",
-                        padding: "10px 12px", marginBottom: "4px",
-                        borderRadius: "10px",
-                        background: i === 3 ? "rgba(27,94,32,0.06)" : "transparent",
-                        border: i === 3 ? "1px solid rgba(27,94,32,0.12)" : "1px solid transparent",
-                      }}>
-                        <div style={{
-                          width: "8px", height: "8px", borderRadius: "50%",
-                          background: m.color, flexShrink: 0,
-                        }} />
-                        <div style={{ flex: 1, minWidth: 0 }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                            <span style={{
-                              fontFamily: "'Plus Jakarta Sans', sans-serif",
-                              fontWeight: 700, fontSize: "11px", color: m.color,
-                            }}>{m.platform}</span>
-                            <span style={{ fontSize: "10px", color: "#bbb" }}>{m.time}</span>
-                          </div>
-                          <p style={{
-                            fontSize: "13px", color: "#555",
-                            overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap",
-                          }}>{m.msg}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div>
-                    <div style={{
-                      width: "48px", height: "48px", borderRadius: "12px",
-                      background: "rgba(255,111,0,0.1)",
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      color: "#FF6F00", marginBottom: "16px",
-                    }}>
-                      <UnifiedInboxIcon size={24} />
-                    </div>
-                    <h3 style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "22px",
-                      color: "#1A1A1A",
-                      marginBottom: "12px",
-                    }}>
-                      One Inbox
-                    </h3>
-                    <p style={{ fontSize: "15px", lineHeight: "1.7", color: "#555", marginBottom: "20px" }}>
-                      MorphMarket messages, Instagram DMs, Facebook messages, texts, and emails — all
-                      on one screen. AI writes draft replies for you. A buyer messages at 10pm, Reptiscale
-                      answers right away. By morning, you\u2019ve got a buyer ready to go.
-                    </p>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                      {[
-                        "Reply time drops from 6 hours to under 2 minutes",
-                        "AI writes draft replies — you approve or edit before sending",
-                        "New messages automatically save as new contacts",
-                      ].map((bullet, i) => (
-                        <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                          <div style={{
-                            width: "6px", height: "6px", borderRadius: "50%",
-                            background: "#FF6F00", flexShrink: 0,
-                          }} />
-                          <span style={{ fontSize: "14px", color: "#333" }}>{bullet}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-
-          <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <Link href="/features/" className="cta-link-green">
-              See all 10 tools in detail →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== TESTIMONIALS ===================== */}
-      <section style={{ background: "#fff", padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "40px" }}>
-              <p
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "13px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  color: "#888",
-                }}
-              >
-                From the Community
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "24px",
-            }}>
-              <TestimonialCard
-                quote="I used to leave every show with a pocket full of phone numbers I'd never call. After 3 months on Reptiscale, I'm converting 35% of my show leads into sales. Last month I sold 4 geckos to people I met at NARBC Arlington — all through the automated follow-up. I didn't send a single manual text."
-                name="Sarah M."
-                business="SunScale Geckos"
-                subtitle="Leopard Gecko Breeder, Raleigh NC"
-              />
-              <TestimonialCard
-                quote="Smart Shipping alone is worth the subscription. I used to spend 30 minutes checking weather before every shipment. Now Reptiscale handles it and texts my buyers for me. I had a shipment to Phoenix held automatically last week because of a heat wave — the buyer actually thanked me for being so professional."
-                name="Marcus R."
-                business="Desert Edge Reptiles"
-                subtitle="Ball Python Breeder, Atlanta GA"
-              />
-              <TestimonialCard
-                quote="I'm not a tech person at all. I was nervous about the setup but the Reptiscale team had everything running in 4 days. Now my Instagram posts basically write themselves and I haven't missed a lead since."
-                name="Jen T."
-                business="Emerald Scales"
-                subtitle="Crested Gecko Breeder, Nashville TN"
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== HOW IT WORKS ===================== */}
-      <section id="how-it-works" style={{ padding: "96px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "64px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(27,94,32,0.07)",
-                  color: "#1B5E20",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                }}
-              >
-                Getting Started
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                }}
-              >
-                How It Works
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                gap: "40px",
-              }}
-            >
-              <StepCard
-                number={1}
-                title="We set everything up for you"
-                description="Our team builds your lead capture forms, sets up your deal tracker, and turns on your automatic follow-ups — all within 5–7 days."
-              />
-              <StepCard
-                number={2}
-                title="You focus on your animals"
-                description="Go to shows, breed your animals, do what you love. Reptiscale runs in the background capturing leads and following up."
-              />
-              <StepCard
-                number={3}
-                title="You sell more reptiles"
-                description="Watch more leads turn into sales, more past buyers come back, and your shipping stress disappear."
-              />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== PERSONA CARDS ===================== */}
-      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(27,94,32,0.07)",
-                  color: "#1B5E20",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                }}
-              >
-                Who It&apos;s For
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                }}
-              >
-                Built For Breeders Like You
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "24px",
-              }}
-            >
-              {[
-                {
-                  icon: "🎪",
-                  title: "The Show Vendor",
-                  description: "You attend 6\u201312 expos a year and meet hundreds of potential buyers. Your table is packed but your follow-up is nonexistent. Reptiscale captures every lead the moment they scan your QR code and follows up automatically \u2014 even while you\u2019re driving home.",
-                },
-                {
-                  icon: "💬",
-                  title: "The Online Seller",
-                  description: "You sell through MorphMarket and social media but you\u2019re drowning in messages across 5 apps. Buyers ghost you, you forget who wanted what, and your Instagram hasn\u2019t been updated in two weeks. Reptiscale puts every conversation in one inbox and keeps your social media going without you lifting a finger.",
-                },
-                {
-                  icon: "📈",
-                  title: "The Growing Operation",
-                  description: "You\u2019re making real money \u2014 $50K+ a year \u2014 but you\u2019re doing everything by hand. Shipping eats your mornings, staying in touch with buyers is an afterthought, and you know you\u2019re leaving money on the table. Reptiscale handles the business stuff so you can focus on breeding.",
-                },
-              ].map((persona, i) => (
-                <div key={i} className="persona-card">
-                  <div style={{
-                    width: "64px", height: "64px", borderRadius: "16px",
-                    background: "rgba(27,94,32,0.07)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: "28px", margin: "0 auto 20px",
-                  }}>
-                    {persona.icon}
-                  </div>
-                  <h3 style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700, fontSize: "18px", color: "#1A1A1A",
-                    marginBottom: "12px",
-                  }}>
-                    {persona.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", lineHeight: "1.7", color: "#555", textAlign: "left" }}>
-                    {persona.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== INFOGRAPHIC ===================== */}
-      <InfographicSection />
-
-      {/* ===================== PRICING (SIMPLIFIED) ===================== */}
-      <section style={{ background: "#fff", padding: "96px 24px" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <div
-                style={{
-                  display: "inline-block",
-                  background: "rgba(27,94,32,0.07)",
-                  color: "#1B5E20",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 600,
-                  fontSize: "12px",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                  padding: "6px 14px",
-                  borderRadius: "100px",
-                  marginBottom: "16px",
-                }}
-              >
-                What It Costs
-              </div>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                Pick Your Plan
-              </h2>
-              <p style={{ fontSize: "17px", color: "#666", maxWidth: "460px", margin: "0 auto" }}>
-                Month-to-month after setup. Cancel anytime. Most breeders make their
-                money back within 60 days.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                gap: "24px",
-                alignItems: "start",
-              }}
-            >
-              {pricingPlans.map((plan, i) => (
-                <PricingCard key={i} {...plan} />
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <div style={{ textAlign: "center", marginTop: "32px" }}>
-            <Link href="/pricing/" className="cta-link-green">
-              See full pricing comparison →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===================== FAQ ===================== */}
-      <section style={{ padding: "96px 24px", background: "#F5F5F0" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <ScrollReveal>
-            <div style={{ textAlign: "center", marginBottom: "56px" }}>
-              <h2
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                  color: "#1A1A1A",
-                  marginBottom: "14px",
-                }}
-              >
-                Questions? We&apos;ve Got Answers.
-              </h2>
-              <p style={{ fontSize: "17px", color: "#666" }}>
-                The most common things breeders ask us before signing up.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <FAQAccordion items={faqItems} />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===================== FINAL CTA ===================== */}
-      <section
-        style={{
-          background: "#111111",
-          padding: "96px 24px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "600px",
-            height: "400px",
-            background: "radial-gradient(ellipse, rgba(255,111,0,0.07) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div style={{ maxWidth: "640px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <ScrollReveal>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(2rem, 5vw, 3.2rem)",
-                color: "#fff",
-                marginBottom: "16px",
-              }}
-            >
-              Ready to Stop{" "}
-              <span style={{ color: "#FF6F00" }}>Losing Sales?</span>
-            </h2>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "rgba(255,255,255,0.6)",
-                marginBottom: "36px",
-                lineHeight: "1.65",
-              }}
-            >
-              Free, no-pressure 15-minute call. We&apos;ll show you exactly how Reptiscale
-              would work for your specific species and show schedule.
-            </p>
-
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
-              <Link href="/demo/" className="final-cta-btn">
-                Book My Demo →
-              </Link>
-              <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.35)" }}>
-                Built by breeders. Trusted by reptile sellers across the Southeast.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-    </>
+function BoardHeader({ title, status }: { title: string; status: string }) {
+  return (
+    <div className="hk-row" style={{ marginBottom: "12px" }}>
+      <h3 style={{ color: "#102A43", fontSize: "16px" }}>{title}</h3>
+      <span className="hk-status-pill" style={{ background: "rgba(0,184,169,0.12)", color: "#008C82" }}>
+        {status}
+      </span>
+    </div>
   );
 }

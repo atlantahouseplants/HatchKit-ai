@@ -2,10 +2,9 @@ interface StepCardProps {
   number: number;
   title: string;
   description: string;
-  isLast?: boolean;
 }
 
-export default function StepCard({ number, title, description, isLast = false }: StepCardProps) {
+export default function StepCard({ number, title, description }: StepCardProps) {
   return (
     <div style={{
       display: 'flex',
@@ -19,17 +18,17 @@ export default function StepCard({ number, title, description, isLast = false }:
         width: '64px',
         height: '64px',
         borderRadius: '50%',
-        background: 'linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%)',
+        background: 'linear-gradient(135deg, #2F80ED 0%, #00B8A9 100%)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: '20px',
-        boxShadow: '0 8px 24px rgba(27,94,32,0.25)',
+        boxShadow: '0 8px 24px rgba(47,128,237,0.24)',
         position: 'relative',
         zIndex: 1,
       }}>
         <span style={{
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-accent)",
           fontWeight: 800,
           fontSize: '22px',
           color: '#fff',
@@ -39,10 +38,10 @@ export default function StepCard({ number, title, description, isLast = false }:
       </div>
 
       <h3 style={{
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontFamily: "var(--font-heading)",
         fontWeight: 700,
         fontSize: '19px',
-        color: '#1A1A1A',
+        color: '#102A43',
         marginBottom: '10px',
       }}>
         {title}
@@ -50,7 +49,7 @@ export default function StepCard({ number, title, description, isLast = false }:
       <p style={{
         fontSize: '15px',
         lineHeight: '1.65',
-        color: '#666',
+        color: '#52606D',
         maxWidth: '240px',
       }}>
         {description}

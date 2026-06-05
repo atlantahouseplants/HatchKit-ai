@@ -15,64 +15,62 @@ export default function VideoSection() {
 
   return (
     <section
+      className="scale-pattern hk-video-section"
       style={{
-        background: "#111111",
-        padding: "72px 24px",
+        background: "#102A43",
+        padding: "86px 24px",
       }}
     >
-      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        {/* Label */}
+      <div style={{ maxWidth: "880px", margin: "0 auto" }}>
         <p
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            color: "#00B8A9",
+            fontFamily: "var(--font-accent)",
             fontSize: "12px",
             fontWeight: 700,
-            letterSpacing: "2px",
-            textTransform: "uppercase",
-            color: "#FF6F00",
-            textAlign: "center",
+            letterSpacing: 0,
             marginBottom: "12px",
+            textAlign: "center",
+            textTransform: "uppercase",
           }}
         >
           See it in action
         </p>
 
-        {/* Heading */}
         <h2
           style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 800,
-            fontSize: "clamp(1.5rem, 3.5vw, 2.2rem)",
             color: "#ffffff",
-            textAlign: "center",
-            marginBottom: "8px",
+            fontFamily: "var(--font-heading)",
+            fontSize: "clamp(1.5rem, 3.5vw, 2.2rem)",
+            fontWeight: 800,
             lineHeight: 1.2,
+            marginBottom: "8px",
+            textAlign: "center",
           }}
         >
-          Watch how it works
+          Watch HatchKit in action
         </h2>
         <p
           style={{
-            fontFamily: "'DM Sans', sans-serif",
+            color: "rgba(255,255,255,0.62)",
+            fontFamily: "var(--font-body)",
             fontSize: "15px",
-            color: "rgba(255,255,255,0.55)",
-            textAlign: "center",
-            marginBottom: "36px",
             lineHeight: 1.6,
+            marginBottom: "36px",
+            textAlign: "center",
           }}
         >
-          Two minutes. The whole picture.
+          See the kind of system HatchKit can put behind your breeder business.
         </p>
 
-        {/* Video wrapper */}
         <div
           style={{
-            position: "relative",
-            borderRadius: "16px",
-            overflow: "hidden",
             background: "#000",
-            boxShadow: "0 24px 80px rgba(0,0,0,0.6)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: "8px",
+            boxShadow: "0 24px 80px rgba(0,0,0,0.5)",
+            overflow: "hidden",
+            position: "relative",
           }}
         >
           <video
@@ -84,53 +82,46 @@ export default function VideoSection() {
             onPlay={() => setPlaying(true)}
             onPause={() => setPlaying(false)}
             style={{
-              width: "100%",
+              background: "#000",
               display: "block",
               maxHeight: "480px",
               objectFit: "contain",
-              background: "#000",
+              width: "100%",
             }}
           />
 
-          {/* Custom play overlay — shown before first play */}
           {!playing && (
-            <div
+            <button
               onClick={handlePlay}
+              aria-label="Play HatchKit video"
               style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
                 background: "rgba(0,0,0,0.35)",
+                border: "none",
                 cursor: "pointer",
+                display: "flex",
+                inset: 0,
+                justifyContent: "center",
+                position: "absolute",
               }}
             >
-              <div
+              <span
                 style={{
-                  width: "72px",
-                  height: "72px",
-                  borderRadius: "50%",
-                  background: "#FF6F00",
-                  display: "flex",
                   alignItems: "center",
+                  background: "#2F80ED",
+                  borderRadius: "50%",
+                  boxShadow: "0 8px 32px rgba(47,128,237,0.38)",
+                  display: "flex",
+                  height: "72px",
                   justifyContent: "center",
-                  boxShadow: "0 8px 32px rgba(255,111,0,0.5)",
-                  transition: "transform 0.15s ease",
+                  width: "72px",
                 }}
               >
-                {/* Play triangle */}
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                  style={{ marginLeft: "4px" }}
-                >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="white" style={{ marginLeft: "4px" }}>
                   <polygon points="5,3 19,12 5,21" />
                 </svg>
-              </div>
-            </div>
+              </span>
+            </button>
           )}
         </div>
       </div>

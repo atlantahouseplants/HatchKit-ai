@@ -13,8 +13,8 @@ export default function FeatureCard({ icon, title, description, accent = false }
       className="card-hover"
       style={{
         background: '#fff',
-        border: '1px solid rgba(0,0,0,0.08)',
-        borderRadius: '16px',
+        border: '1px solid rgba(16,42,67,0.1)',
+        borderRadius: '8px',
         padding: '28px 24px',
         display: 'flex',
         flexDirection: 'column',
@@ -24,20 +24,20 @@ export default function FeatureCard({ icon, title, description, accent = false }
       <div style={{
         width: '48px',
         height: '48px',
-        borderRadius: '12px',
-        background: accent ? 'rgba(255,111,0,0.1)' : 'rgba(27,94,32,0.08)',
+        borderRadius: '8px',
+        background: accent ? 'rgba(0,184,169,0.1)' : 'rgba(47,128,237,0.1)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: accent ? '#FF6F00' : '#1B5E20',
+        color: accent ? '#00B8A9' : '#2F80ED',
       }}>
         {icon}
       </div>
       <h3 style={{
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontFamily: "var(--font-heading)",
         fontWeight: 700,
         fontSize: '17px',
-        color: '#1A1A1A',
+        color: '#102A43',
         lineHeight: 1.3,
       }}>
         {title}
@@ -45,7 +45,7 @@ export default function FeatureCard({ icon, title, description, accent = false }
       <p style={{
         fontSize: '14px',
         lineHeight: '1.7',
-        color: '#555555',
+        color: '#52606D',
       }}>
         {description}
       </p>

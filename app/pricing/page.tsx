@@ -1,490 +1,165 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PricingCard from "@/components/PricingCard";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Pricing - Plans Starting at $199/mo",
+  title: "Pricing - HatchKit Setup and Monthly Plans",
   description:
-    "Three productized Reptiscale plans for reptile breeders: Starter at $199/mo, Growth at $349/mo, and Scale at $599/mo.",
+    "HatchKit pricing for breeders who want help setting up lead capture, CRM, website, follow-up, shipping review, content, and buyer workflows.",
 };
 
-const tiers = [
+const plans = [
   {
     name: "Starter",
-    subtitle: "Capture the Buyers You Already Meet",
-    price: 199,
-    setupFee: 799,
-    description: "For small breeders who need lead capture, follow-up, and a simple online presence.",
-    popular: false,
+    price: "$199",
+    setupFee: "$799",
+    subtitle: "Get leads organized",
+    description: "For breeders who need to stop losing names, DMs, show leads, and basic follow-up.",
+    features: [
+      { text: "Lead forms and show QR capture", included: true },
+      { text: "Buyer records, tags, and smart lists", included: true },
+      { text: "Basic inquiry and follow-up workflow", included: true },
+      { text: "Review and referral prompts", included: true },
+      { text: "Shipping review workflow", included: false },
+    ],
+    ctaLabel: "Start with Starter",
   },
   {
     name: "Growth",
-    subtitle: "Run the Full Buyer Journey",
-    price: 349,
-    setupFee: 1499,
-    description: "For active sellers who need the full buyer journey, shipping workflow, and content engine.",
+    price: "$349",
+    setupFee: "$1,499",
+    subtitle: "Run the buyer journey",
+    description: "For active breeders who need help with deals, shipping, content, and customer follow-through.",
     popular: true,
+    features: [
+      { text: "Everything in Starter", included: true },
+      { text: "Deal pipeline and reservation tracking", included: true },
+      { text: "Safe shipping review and buyer updates", included: true },
+      { text: "Social content planning and approvals", included: true },
+      { text: "Care onboarding after delivery", included: true },
+    ],
+    ctaLabel: "Get Growth",
   },
   {
     name: "Scale",
-    subtitle: "Grow Multiple Species or Drops",
-    price: 599,
-    setupFee: 2499,
-    description: "For established breeders with multiple species, regular drops, and higher support needs.",
-    popular: false,
+    price: "$599",
+    setupFee: "$2,499",
+    subtitle: "Scale the operation",
+    description: "For established breeders with regular drops, multiple categories, and more moving parts.",
+    features: [
+      { text: "Everything in Growth", included: true },
+      { text: "Multi-species or multi-category segmentation", included: true },
+      { text: "Drop launch and event campaigns", included: true },
+      { text: "VIP buyer and repeat purchase workflows", included: true },
+      { text: "Priority implementation and support", included: true },
+    ],
+    ctaLabel: "Go Scale",
   },
 ];
 
-const comparisonRows = [
-  {
-    category: "Lead Capture",
-    features: [
-      { name: "Show lead capture (QR codes)", starter: true, growth: true, pro: true },
-      { name: "Instant automatic follow-up", starter: true, growth: true, pro: true },
-      { name: "Tag leads across multiple shows", starter: false, growth: true, pro: true },
-      { name: "GPS show check-in", starter: false, growth: true, pro: true },
-      { name: "Turn social media comments into leads", starter: false, growth: false, pro: true },
-    ],
-  },
-  {
-    category: "Animal Profiles",
-    features: [
-      { name: "Animal list with photos, morph, and price", starter: true, growth: true, pro: true },
-      { name: "Full animal profiles (personality, videos, lineage)", starter: false, growth: true, pro: true },
-      { name: "Track who asked about each animal", starter: false, growth: true, pro: true },
-      { name: "See which animals get the most buyer interest", starter: false, growth: true, pro: true },
-      { name: "Message everyone who asked about an animal (one click)", starter: false, growth: true, pro: true },
-      { name: "Inventory auto-updates when an animal sells", starter: true, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "Contacts & Deals",
-    features: [
-      { name: "Contact list with buyer profiles", starter: true, growth: true, pro: true },
-      { name: "Deal tracker (visual board)", starter: false, growth: true, pro: true },
-      { name: "Payment & deposit tracking", starter: false, growth: true, pro: true },
-      { name: "Send real invoices (Square & Stripe)", starter: false, growth: true, pro: true },
-      { name: "Full purchase history per customer", starter: false, growth: true, pro: true },
-      { name: "Automatic repeat buyer & VIP recognition", starter: false, growth: true, pro: true },
-      { name: "Waitlist for upcoming clutches", starter: false, growth: true, pro: true },
-      { name: "Export sales history to spreadsheet", starter: false, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "One Inbox",
-    features: [
-      { name: "Basic inbox (email + text)", starter: true, growth: true, pro: true },
-      { name: "Full inbox (all apps in one place)", starter: false, growth: true, pro: true },
-      { name: "AI writes draft replies for you", starter: false, growth: true, pro: true },
-      { name: "AI answers common questions on its own", starter: false, growth: false, pro: true },
-      { name: "Buyer interest detection (browser vs. serious buyer)", starter: false, growth: true, pro: true },
-      { name: "Remembers which animal each person asked about", starter: false, growth: true, pro: true },
-      { name: "New messages auto-save as contacts", starter: false, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "Automatic Follow-Up",
-    features: [
-      { name: "Email follow-up (5 sequences)", starter: true, growth: true, pro: true },
-      { name: "Email follow-up (unlimited)", starter: false, growth: true, pro: true },
-      { name: "Text message follow-up", starter: false, growth: true, pro: true },
-      { name: "New animal alerts to interested buyers", starter: false, growth: true, pro: true },
-      { name: "1-month check-in after purchase", starter: false, growth: true, pro: true },
-      { name: "6-month upgrade reminder", starter: false, growth: true, pro: true },
-      { name: "1-year anniversary offer", starter: false, growth: true, pro: true },
-      { name: "Browser-to-buyer conversion sequences", starter: false, growth: true, pro: true },
-      { name: "Automatic care guides when people ask questions", starter: false, growth: true, pro: true },
-      { name: "Test different subject lines and send times", starter: false, growth: false, pro: true },
-    ],
-  },
-  {
-    category: "Smart Shipping",
-    features: [
-      { name: "Weather-based ship/hold decisions", starter: false, growth: false, pro: true },
-      { name: "Safe temp ranges for 500+ species", starter: false, growth: false, pro: true },
-      { name: "Automatic text to buyer on hold", starter: false, growth: false, pro: true },
-      { name: "Heat pack recommendations", starter: false, growth: false, pro: true },
-      { name: "Works with multiple carriers", starter: false, growth: false, pro: true },
-    ],
-  },
-  {
-    category: "Media Library",
-    features: [
-      { name: "Upload and organize photos by animal", starter: true, growth: true, pro: true },
-      { name: "Folders for photos, videos, clips, and b-roll", starter: false, growth: true, pro: true },
-      { name: "AI auto-selects best photos for social posts", starter: false, growth: true, pro: true },
-      { name: "Track which photos have been used in posts", starter: false, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "Auto Social Posts",
-    features: [
-      { name: "Social media template library (do it yourself)", starter: true, growth: true, pro: true },
-      { name: "AI-written posts (3/week, you approve first)", starter: false, growth: true, pro: true },
-      { name: "Posts directly to Instagram/Facebook", starter: false, growth: true, pro: true },
-      { name: "AI-written posts (daily, posts automatically — no approval)", starter: false, growth: false, pro: true },
-      { name: "Tells you which animal to post next", starter: false, growth: true, pro: true },
-      { name: "Tracks engagement per animal across all posts", starter: false, growth: true, pro: true },
-      { name: "Rotates through 8 types of posts", starter: false, growth: true, pro: true },
-      { name: "Approve posts by text message", starter: false, growth: true, pro: true },
-      { name: "Turns comments into leads automatically", starter: false, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "Your Website",
-    features: [
-      { name: "Professional website with your branding", starter: false, growth: true, pro: true },
-      { name: "Public animal profile pages", starter: false, growth: true, pro: true },
-      { name: "Contact forms built in", starter: false, growth: true, pro: true },
-      { name: "Your own domain name", starter: false, growth: true, pro: true },
-    ],
-  },
-  {
-    category: "Your Numbers",
-    features: [
-      { name: "Basic lead reports", starter: true, growth: true, pro: true },
-      { name: "See where your buyers come from (by platform)", starter: false, growth: false, pro: true },
-      { name: "Full number tracking dashboard", starter: false, growth: false, pro: true },
-      { name: "Sales by show & morph", starter: false, growth: false, pro: true },
-      { name: "Repeat buyer rate & customer lifetime value", starter: false, growth: false, pro: true },
-      { name: "Filter by date range & export to spreadsheet", starter: false, growth: false, pro: true },
-    ],
-  },
-  {
-    category: "Support & Setup",
-    features: [
-      { name: "Email support", starter: true, growth: false, pro: false },
-      { name: "Priority support", starter: false, growth: true, pro: true },
-      { name: "Priority Reptiscale support", starter: false, growth: false, pro: true },
-      { name: "Quarterly check-in calls", starter: false, growth: false, pro: true },
-      { name: "Custom setup and extras", starter: false, growth: false, pro: true },
-      { name: "Multiple species and locations", starter: false, growth: false, pro: true },
-      { name: "Early access to new features", starter: false, growth: false, pro: true },
-      { name: "Up and running in 5\u20137 business days", starter: true, growth: true, pro: true },
-    ],
-  },
+const comparison = [
+  ["Lead capture and buyer CRM", "Included", "Included", "Included"],
+  ["Deal pipeline", "Basic", "Full", "Advanced"],
+  ["Shipping safety workflow", "Add-on", "Included", "Included"],
+  ["Content planning", "Starter prompts", "Weekly workflow", "Launch campaigns"],
+  ["Reporting", "Source basics", "Pipeline visibility", "Advanced segments"],
+  ["Setup help", "Included", "Included", "Priority"],
 ];
 
-type CheckProps = {
-  value: boolean;
-  isPopular: boolean;
-};
-
-function Check({ value, isPopular }: CheckProps) {
-  if (value) {
-    return (
-      <div style={{
-        width: "24px",
-        height: "24px",
-        borderRadius: "50%",
-        background: isPopular ? "rgba(255,111,0,0.2)" : "rgba(27,94,32,0.1)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        margin: "0 auto",
-      }}>
-        <svg width="12" height="9" viewBox="0 0 12 9" fill="none">
-          <path d="M1 4.5L4.5 8L11 1" stroke={isPopular ? "#FF6F00" : "#1B5E20"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-    );
-  }
-  return (
-    <div style={{ textAlign: "center", color: "#ccc", fontSize: "18px" }}>&mdash;</div>
-  );
-}
+const faqs = [
+  {
+    q: "Why is there a setup fee?",
+    a: "Because we help build the system with you. Setup covers forms, CRM structure, workflows, buyer tags, page templates, and the starting operating process for your business.",
+  },
+  {
+    q: "Can I switch plans later?",
+    a: "Yes. Most breeders start with the system that fixes their biggest current leak, then move up when they add shipping workflows, content operations, or more segments.",
+  },
+  {
+    q: "Do I need to connect every sales channel on day one?",
+    a: "No. The cleanest launch usually starts with the channels where you already lose leads or time, then expands after the workflow is proven.",
+  },
+];
 
 export default function PricingPage() {
   return (
-    <>
-      {/* HERO */}
-      <section
-        style={{
-          background: "#111111",
-          padding: "140px 24px 80px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "600px",
-            height: "400px",
-            background: "radial-gradient(ellipse, rgba(27,94,32,0.2) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div style={{ maxWidth: "680px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <h1
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 5vw, 3.6rem)",
-              color: "#fff",
-              marginBottom: "20px",
-              lineHeight: 1.1,
-            }}
-          >
-            Simple, Transparent Pricing
+    <div className="hk-page">
+      <section className="hk-hero scale-pattern" style={{ minHeight: "auto" }}>
+        <div className="hk-shell" style={{ maxWidth: "880px", textAlign: "center" }}>
+          <span className="hk-eyebrow">Pricing</span>
+          <h1 style={{ color: "#fff", fontSize: "clamp(2.8rem, 6vw, 5rem)", marginTop: "22px" }}>
+            Pick the amount of help your business needs now.
           </h1>
-          <p
-            style={{
-              fontSize: "18px",
-              color: "rgba(255,255,255,0.6)",
-              lineHeight: "1.65",
-              marginBottom: "12px",
-            }}
-          >
-            Month-to-month after your initial setup period. No long-term contracts.
-            Cancel anytime.
-          </p>
-          <p
-            style={{
-              fontSize: "15px",
-              color: "rgba(255,255,255,0.4)",
-            }}
-          >
-            Most breeders make their money back within 60 days.
+          <p className="hk-hero-copy" style={{ marginLeft: "auto", marginRight: "auto" }}>
+            This is not just a blank software login. We help set up the system around
+            how you actually sell, ship, and follow up.
           </p>
         </div>
       </section>
 
-      {/* PRICING CARDS */}
-      <section style={{ padding: "80px 24px", background: "#F5F5F0" }}>
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+      <section className="hk-section hk-section-soft">
+        <div className="hk-shell">
           <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-                gap: "24px",
-                alignItems: "start",
-              }}
-            >
-              {tiers.map((tier, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: tier.popular ? "#1B5E20" : "#fff",
-                    border: tier.popular ? "2px solid #1B5E20" : "1px solid rgba(0,0,0,0.08)",
-                    borderRadius: "20px",
-                    padding: "36px 32px",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  {tier.popular && (
-                    <div style={{
-                      position: "absolute",
-                      top: "22px",
-                      right: "-30px",
-                      background: "#FF6F00",
-                      color: "#fff",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "11px",
-                      letterSpacing: "0.06em",
-                      textTransform: "uppercase",
-                      padding: "5px 44px",
-                      transform: "rotate(45deg)",
-                    }}>
-                      Most Popular
-                    </div>
-                  )}
-
-                  <h3 style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 800,
-                    fontSize: "22px",
-                    color: tier.popular ? "#fff" : "#1A1A1A",
-                    marginBottom: "4px",
-                  }}>
-                    {tier.name}
-                  </h3>
-                  <p style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 600,
-                    fontSize: "14px",
-                    color: tier.popular ? "#FFA000" : "#FF6F00",
-                    marginBottom: "12px",
-                  }}>
-                    {tier.subtitle}
-                  </p>
-                  <p style={{
-                    fontSize: "14px",
-                    color: tier.popular ? "rgba(255,255,255,0.6)" : "#777",
-                    lineHeight: 1.5,
-                    marginBottom: "24px",
-                  }}>
-                    {tier.description}
-                  </p>
-
-                  <div style={{ marginBottom: "6px" }}>
-                    <span style={{
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "52px",
-                      color: tier.popular ? "#fff" : "#1A1A1A",
-                      lineHeight: 1,
-                    }}>
-                      ${tier.price}
-                    </span>
-                    <span style={{
-                      fontSize: "16px",
-                      color: tier.popular ? "rgba(255,255,255,0.55)" : "#888",
-                      marginLeft: "4px",
-                    }}>
-                      /month
-                    </span>
-                  </div>
-                  <p style={{
-                    fontSize: "13px",
-                    color: tier.popular ? "rgba(255,255,255,0.45)" : "#aaa",
-                    marginBottom: "28px",
-                  }}>
-                    + ${tier.setupFee.toLocaleString()} one-time setup fee
-                  </p>
-
-                  <Link
-                    href="/demo/"
-                    style={{
-                      display: "block",
-                      textAlign: "center",
-                      padding: "14px 20px",
-                      borderRadius: "10px",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "15px",
-                      textDecoration: "none",
-                      background: tier.popular ? "#FF6F00" : "transparent",
-                      color: tier.popular ? "#fff" : "#1B5E20",
-                      border: tier.popular ? "2px solid #FF6F00" : "2px solid #1B5E20",
-                      transition: "all 0.15s ease",
-                    }}
-                  >
-                    Get Started with {tier.name}
-                  </Link>
-                </div>
+            <div className="hk-grid-3" style={{ alignItems: "stretch" }}>
+              {plans.map((plan) => (
+                <PricingCard key={plan.name} {...plan} />
               ))}
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* COMPARISON TABLE */}
-      <section style={{ padding: "80px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+      <section className="hk-section">
+        <div className="hk-shell">
           <ScrollReveal>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                color: "#1A1A1A",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              Full Feature Comparison
-            </h2>
+            <span className="hk-kicker">Compare plans</span>
+            <h2 className="hk-section-heading">Designed around how much busywork you want off your plate.</h2>
+            <p className="hk-section-copy">
+              Starter gets leads organized. Growth connects sales, shipping, and content.
+              Scale adds deeper campaigns, more segments, and priority help.
+            </p>
           </ScrollReveal>
-
-          <div style={{ overflowX: "auto" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <div className="hk-card" style={{ marginTop: "34px", overflowX: "auto", padding: 0 }}>
+            <table style={{ borderCollapse: "collapse", minWidth: "720px", width: "100%" }}>
               <thead>
                 <tr>
-                  <th style={{
-                    padding: "16px 20px",
-                    textAlign: "left",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "14px",
-                    color: "#888",
-                    borderBottom: "2px solid rgba(0,0,0,0.08)",
-                    width: "40%",
-                  }}>
-                    Feature
-                  </th>
-                  {tiers.map(tier => (
-                    <th key={tier.name} style={{
-                      padding: "16px 20px",
-                      textAlign: "center",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "15px",
-                      color: tier.popular ? "#1B5E20" : "#1A1A1A",
-                      borderBottom: "2px solid rgba(0,0,0,0.08)",
-                      background: tier.popular ? "rgba(27,94,32,0.03)" : "transparent",
-                    }}>
-                      {tier.name}
+                  {["Capability", "Starter", "Growth", "Scale"].map((head) => (
+                    <th
+                      key={head}
+                      style={{
+                        background: "#F6F9FC",
+                        borderBottom: "1px solid rgba(16,42,67,0.1)",
+                        color: "#102A43",
+                        fontFamily: "var(--font-subheading)",
+                        fontSize: "14px",
+                        padding: "16px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {head}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {comparisonRows.map((section, si) => (
-                  <>
-                    <tr key={`cat-${si}`}>
+                {comparison.map((row) => (
+                  <tr key={row[0]}>
+                    {row.map((cell, index) => (
                       <td
-                        colSpan={4}
+                        key={cell}
                         style={{
-                          padding: "20px 20px 10px",
-                          fontFamily: "'Plus Jakarta Sans', sans-serif",
-                          fontWeight: 700,
-                          fontSize: "12px",
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                          color: "#1B5E20",
-                          borderTop: si > 0 ? "1px solid rgba(0,0,0,0.06)" : "none",
+                          borderBottom: "1px solid rgba(16,42,67,0.08)",
+                          color: index === 0 ? "#102A43" : "#52606D",
+                          fontSize: "14px",
+                          fontWeight: index === 0 ? 700 : 500,
+                          padding: "16px",
                         }}
                       >
-                        {section.category}
+                        {cell}
                       </td>
-                    </tr>
-                    {section.features.map((feat, fi) => (
-                      <tr key={`feat-${si}-${fi}`} style={{
-                        background: fi % 2 === 0 ? "transparent" : "rgba(0,0,0,0.018)",
-                      }}>
-                        <td style={{
-                          padding: "12px 20px",
-                          fontSize: "14px",
-                          color: "#333",
-                          borderBottom: "1px solid rgba(0,0,0,0.04)",
-                        }}>
-                          {feat.name}
-                        </td>
-                        <td style={{
-                          padding: "12px 20px",
-                          textAlign: "center",
-                          borderBottom: "1px solid rgba(0,0,0,0.04)",
-                        }}>
-                          <Check value={feat.starter} isPopular={false} />
-                        </td>
-                        <td style={{
-                          padding: "12px 20px",
-                          textAlign: "center",
-                          borderBottom: "1px solid rgba(0,0,0,0.04)",
-                          background: "rgba(27,94,32,0.025)",
-                        }}>
-                          <Check value={feat.growth} isPopular={true} />
-                        </td>
-                        <td style={{
-                          padding: "12px 20px",
-                          textAlign: "center",
-                          borderBottom: "1px solid rgba(0,0,0,0.04)",
-                        }}>
-                          <Check value={feat.pro} isPopular={false} />
-                        </td>
-                      </tr>
                     ))}
-                  </>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -492,111 +167,35 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* FAQ / Guarantee */}
-      <section style={{ background: "#F5F5F0", padding: "80px 24px" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <ScrollReveal stagger>
-            <div style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "24px",
-            }}>
-              {[
-                {
-                  icon: "\ud83d\udd12",
-                  title: "Month-to-Month",
-                  desc: "No long-term contracts. Cancel anytime after your initial setup.",
-                },
-                {
-                  icon: "\u26a1",
-                  title: "5\u20137 Day Setup",
-                  desc: "We handle everything. You\u2019ll be up and running in under a week.",
-                },
-                {
-                  icon: "\ud83c\udfaf",
-                  title: "Money-Back Guarantee",
-                  desc: "If you don\u2019t make back your setup fee in 90 days, we\u2019ll work for free until you do.",
-                },
-                {
-                  icon: "\ud83e\udd1d",
-                  title: "Real Breeder Support",
-                  desc: "Our support team actually keeps reptiles. You\u2019ll get help from people who get it.",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: "#fff",
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    borderRadius: "16px",
-                    padding: "24px",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{ fontSize: "32px", marginBottom: "12px" }}>{item.icon}</div>
-                  <h3 style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                    color: "#1A1A1A",
-                    marginBottom: "8px",
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", lineHeight: "1.6", color: "#666" }}>
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell hk-grid-2">
+          <div>
+            <span className="hk-kicker">Pricing questions</span>
+            <h2 className="hk-section-heading">Straight answers before a demo.</h2>
+          </div>
+          <div style={{ display: "grid", gap: "14px" }}>
+            {faqs.map((item) => (
+              <article className="hk-card" key={item.q}>
+                <h3 style={{ color: "#102A43", fontSize: "18px", marginBottom: "8px" }}>{item.q}</h3>
+                <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.65 }}>{item.a}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "#1B5E20", padding: "80px 24px", textAlign: "center" }}>
-        <ScrollReveal>
-          <h2 style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 800,
-            fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
-            color: "#fff",
-            marginBottom: "16px",
-          }}>
-            Not Sure Which Plan?
+      <section className="hk-final-cta scale-pattern">
+        <div style={{ margin: "0 auto", maxWidth: "700px" }}>
+          <span className="hk-eyebrow">Not sure where to start?</span>
+          <h2 style={{ color: "#fff", fontSize: "clamp(2rem, 4vw, 3.2rem)", marginTop: "20px" }}>
+            We will recommend the smallest plan that fixes the current bottleneck.
           </h2>
-          <p style={{
-            fontSize: "17px",
-            color: "rgba(255,255,255,0.65)",
-            marginBottom: "32px",
-            maxWidth: "440px",
-            margin: "0 auto 32px",
-            lineHeight: "1.65",
-          }}>
-            Book a free 15-minute call and we&apos;ll help you pick the right plan for your
-            species, show schedule, and how you sell.
+          <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
+            A demo gives us enough context to understand what is actually slowing you down.
           </p>
-          <Link
-            href="/demo/"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "16px 36px",
-              borderRadius: "10px",
-              background: "#FF6F00",
-              color: "#fff",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: "16px",
-              textDecoration: "none",
-              boxShadow: "0 8px 24px rgba(255,111,0,0.35)",
-            }}
-          >
-            Book My Free Demo →
-          </Link>
-        </ScrollReveal>
+          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+        </div>
       </section>
-    </>
+    </div>
   );
 }

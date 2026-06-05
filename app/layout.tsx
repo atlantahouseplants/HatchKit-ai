@@ -6,33 +6,33 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://hatchkit.ai"),
   title: {
-    default: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
-    template: "%s | Reptiscale",
+    default: "HatchKit - Software That Handles Breeder Business Busywork",
+    template: "%s | HatchKit",
   },
   description:
-    "Reptiscale gives reptile sellers the storefront, CRM, follow-up, social content, checkout, safe shipping, care onboarding, reviews, referrals, and repeat-buyer campaigns they need.",
+    "HatchKit helps breeders stop losing leads, follow up with buyers, plan safer shipping, post more consistently, and run the business side without becoming a tech person.",
   keywords: [
-    "reptile breeder software",
-    "reptile business automation",
-    "herpetology business tools",
-    "snake breeder crm",
-    "gecko breeder platform",
-    "AI shipping agent reptiles",
-    "reptile show leads",
-    "morphmarket alternative",
+    "breeder business software",
+    "animal breeder crm",
+    "live animal shipping software",
+    "breeder marketing automation",
+    "breeder customer journey",
+    "breeder command center",
+    "AI shipping agent",
+    "social content for breeders",
   ],
   openGraph: {
     type: "website",
-    siteName: "Reptiscale",
-    title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
+    siteName: "HatchKit",
+    title: "HatchKit - Software That Handles Breeder Business Busywork",
     description:
-      "Reptiscale gives reptile sellers a complete buyer journey from first lead to repeat customer.",
+      "Stop losing leads, missing follow-ups, stressing over shipping day, and trying to run the business side from memory.",
     url: "https://hatchkit.ai",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reptiscale - The Customer Journey Engine for Reptile Breeders",
-    description: "Reptiscale gives reptile sellers a complete buyer journey from first lead to repeat customer.",
+    title: "HatchKit - Software That Handles Breeder Business Busywork",
+    description: "HatchKit helps breeders run the business side without becoming tech people.",
   },
   robots: {
     index: true,
@@ -65,7 +65,7 @@ export default function RootLayout({
               left: 0;
               right: 0;
               padding: 12px 16px;
-              background: rgba(17,17,17,0.95);
+              background: rgba(16,42,67,0.96);
               backdrop-filter: blur(12px);
               border-top: 1px solid rgba(255,255,255,0.08);
               z-index: 999;
@@ -82,15 +82,15 @@ export default function RootLayout({
               width: '100%',
               padding: '14px',
               borderRadius: '10px',
-              background: '#FF6F00',
+              background: '#2F80ED',
               color: '#fff',
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontFamily: "var(--font-subheading)",
               fontWeight: 700,
               fontSize: '15px',
               textDecoration: 'none',
             }}
           >
-            Book a Free Demo →
+            Talk to Brianna
           </a>
         </div>
       </body>

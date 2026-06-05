@@ -3,284 +3,133 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "About — Built by Breeders",
+  title: "About HatchKit - Built From a Real Breeder Business",
   description:
-    "Reptiscale was built because we lived the problem. Learn about our origin story, mission, and the team behind the platform.",
+    "HatchKit was built from Brianna's real breeder business experience at YetiGex: shows, buyer follow-up, shipping, content, websites, and automation.",
 };
 
-const team = [
+const storySteps = [
   {
-    name: "Marcus Webb",
-    role: "Co-Founder & CEO",
-    bio: "Ball python breeder of 12 years. Built his first lead capture tool out of frustration after losing $4,000 in show leads in a single weekend.",
-    species: "Ball Pythons, Colubrids",
-    initials: "MW",
+    title: "Brianna built the business the real way",
+    body: "Shows, messages, buyer questions, care support, shipping decisions, content, and every little follow-up that keeps customers happy.",
   },
   {
-    name: "Elena Vasquez",
-    role: "Co-Founder & CTO",
-    bio: "Software engineer who got into crested geckos during COVID. Saw Marcus's spreadsheet nightmare and said 'I can fix that.'",
-    species: "Crested Geckos, Leopard Geckos",
-    initials: "EV",
+    title: "Then the work started stacking up",
+    body: "The more the business grew, the more time got eaten by admin: remembering who wanted what, posting consistently, checking weather, and keeping buyers warm.",
   },
   {
-    name: "James Thornton",
-    role: "Head of Breeder Success",
-    bio: "Former reptile show promoter with 200+ shows under his belt. Knows every pain point from both sides of the table.",
-    species: "Chameleons, Day Geckos",
-    initials: "JT",
+    title: "So the systems got built",
+    body: "HatchKit came from setting up automations, AI help, CRM structure, websites, forms, content workflows, and shipping guardrails around a real breeder business.",
   },
   {
-    name: "Priya Nair",
-    role: "AI & Shipping Systems Lead",
-    bio: "Machine learning engineer obsessed with logistics optimization. Built the species-tolerance database from scratch with real field data.",
-    species: "Tree monitors, Tegus",
-    initials: "PN",
+    title: "Now other breeders can use the same playbook",
+    body: "The goal is simple: let software handle the repeatable work so breeders can spend more time on animals, buyers, and the parts that require a human.",
   },
 ];
 
-const values = [
-  {
-    icon: "🦎",
-    title: "Breeders First",
-    desc: "Every feature we build starts with a conversation with actual breeders. We don't ship anything that doesn't solve a real problem.",
-  },
-  {
-    icon: "🤖",
-    title: "AI That Actually Helps",
-    desc: "We use AI where it genuinely makes breeders' lives easier — not as a buzzword. The shipping agent saves real time and real animals.",
-  },
-  {
-    icon: "🌱",
-    title: "Community-Grown",
-    desc: "We're active in the reptile community — at shows, in Facebook groups, on MorphMarket. We're not outsiders building for a market we don't understand.",
-  },
-  {
-    icon: "📊",
-    title: "Know Your Numbers",
-    desc: "The best breeders know what\u2019s making them money and what isn\u2019t. We give you the tools to understand your business as well as you understand your animals.",
-  },
+const missionItems = [
+  "Help breeders look professional without hiring a full marketing team",
+  "Keep show leads, DMs, website inquiries, and buyer notes from getting lost",
+  "Make live-animal shipping safer and easier to explain to customers",
+  "Turn real inventory and care knowledge into useful social content",
+  "Give self-employed breeders tools that normally only bigger e-commerce businesses have",
+];
+
+const notFor = [
+  "People looking for a cute pet-store website template",
+  "Breeders who want to keep everything manual forever",
+  "Anyone who wants a blank software login with no setup help",
 ];
 
 export default function AboutPage() {
   return (
-    <>
-      {/* HERO */}
-      <section
-        style={{
-          background: "#111111",
-          padding: "140px 24px 80px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "40%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "600px",
-            height: "400px",
-            background: "radial-gradient(ellipse, rgba(27,94,32,0.2) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div style={{ maxWidth: "720px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <h1
-            style={{
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
-              color: "#fff",
-              marginBottom: "20px",
-              lineHeight: 1.1,
-            }}
-          >
-            We Built Reptiscale Because We Lived the Problem
-          </h1>
-          <p
-            style={{
-              fontSize: "18px",
-              color: "rgba(255,255,255,0.6)",
-              lineHeight: "1.65",
-              maxWidth: "560px",
-              margin: "0 auto",
-            }}
-          >
-            We&apos;re breeders who got tired of losing leads, fumbling spreadsheets,
-            and hoping animals survived shipping. So we built something better.
-          </p>
+    <div className="hk-page">
+      <section className="hk-hero scale-pattern" style={{ minHeight: "auto" }}>
+        <div className="hk-shell hk-grid-2" style={{ alignItems: "center" }}>
+          <div>
+            <span className="hk-eyebrow">Our story</span>
+            <h1 style={{ color: "#fff", fontSize: "clamp(2.8rem, 6vw, 5rem)", marginTop: "22px" }}>
+              HatchKit started with a breeder who needed her business to stop running on memory.
+            </h1>
+            <p className="hk-hero-copy">
+              Brianna from YetiGex is proof of the model. She grew by taking great care
+              of buyers, shipping responsibly, teaching first-time keepers, and building
+              trust. HatchKit is the software system built around that kind of business.
+            </p>
+            <div className="hk-hero-actions">
+              <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+              <Link href="/features/" className="hk-button hk-button-secondary">See What It Handles</Link>
+            </div>
+          </div>
+          <div className="hk-dashboard" style={{ padding: "24px" }}>
+            <span className="hk-kicker">The purpose</span>
+            <h2 style={{ color: "#102A43", fontSize: "30px", marginTop: "12px" }}>
+              Use the robots for the repeat work. Keep the breeder for the human part.
+            </h2>
+            <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.75, marginTop: "16px" }}>
+              HatchKit is not here to replace the relationship buyers have with a breeder.
+              It is here to handle the follow-up, reminders, organization, drafts, checks,
+              and marketing work that usually falls through the cracks.
+            </p>
+            <a
+              href="https://yetigex.com"
+              target="_blank"
+              rel="noreferrer"
+              className="hk-link"
+              style={{ display: "inline-flex", marginTop: "20px" }}
+            >
+              Visit YetiGex
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* ORIGIN STORY */}
-      <section style={{ padding: "80px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+      <section className="hk-section hk-section-soft">
+        <div className="hk-shell">
           <ScrollReveal>
-            <div
-              style={{
-                display: "inline-block",
-                background: "rgba(27,94,32,0.07)",
-                color: "#1B5E20",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: "12px",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                padding: "6px 14px",
-                borderRadius: "100px",
-                marginBottom: "24px",
-              }}
-            >
-              Origin Story
-            </div>
-
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                color: "#1A1A1A",
-                marginBottom: "24px",
-                lineHeight: 1.2,
-              }}
-            >
-              One lost show. One bad shipment. One really angry customer.
-            </h2>
-
-            <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
-              {[
-                "It was the Tinley Park show in 2019. Marcus had been breeding ball pythons for a decade. He set up his table, met hundreds of people, handed out cards, and sold 18 animals. He went home feeling good.",
-                "Two weeks later, he followed up. Out of 200+ contacts he'd met, he had 40 email addresses — and only 12 responded to his follow-up. He'd lost over 150 potential customers in a single weekend.",
-                "That same month, he shipped a ball python to Dallas during a heat wave. He'd checked the weather, thought it would be fine. The animal made it — barely — and the customer never bought from him again.",
-                "Marcus started building a spreadsheet. Then another. Then he called his friend Elena, who was knee-deep in crested geckos and equally frustrated. She started coding.",
-                "Two years, hundreds of breeder interviews, and one real shipping AI later — Reptiscale was born. We've been refining it ever since, with our own animals and yours.",
-              ].map((para, i) => (
-                <p
-                  key={i}
-                  style={{
-                    fontSize: "17px",
-                    lineHeight: "1.75",
-                    color: i === 0 ? "#333" : "#555",
-                    fontStyle: i === 4 ? "italic" : "normal",
-                  }}
-                >
-                  {para}
-                </p>
+            <span className="hk-kicker">How it happened</span>
+            <h2 className="hk-section-heading">The business grew. The backend had to catch up.</h2>
+            <p className="hk-section-copy">
+              A lot of breeders are great at animals and customer trust, but the marketing,
+              e-commerce, CRM, and automation side can feel like a second full-time job.
+              HatchKit was built to close that gap.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="hk-workflow" style={{ marginTop: "36px" }}>
+              {storySteps.map((step, index) => (
+                <article className="hk-workflow-step" key={step.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3 style={{ color: "#102A43", fontSize: "20px", marginBottom: "10px" }}>{step.title}</h3>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.65 }}>{step.body}</p>
+                </article>
               ))}
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* MISSION */}
-      <section
-        style={{
-          background: "#1B5E20",
-          padding: "80px 24px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden",
-        }}
-        className="scale-pattern"
-      >
-        <div style={{ maxWidth: "720px", margin: "0 auto", position: "relative", zIndex: 1 }}>
+      <section className="hk-section">
+        <div className="hk-shell hk-grid-2" style={{ alignItems: "start" }}>
           <ScrollReveal>
-            <p
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: "13px",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-                marginBottom: "20px",
-              }}
-            >
-              Our Mission
-            </p>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-                color: "#fff",
-                lineHeight: 1.2,
-                marginBottom: "20px",
-              }}
-            >
-              Every breeder deserves the same tools the big guys have.
-            </h2>
-            <p
-              style={{
-                fontSize: "17px",
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: "1.7",
-                maxWidth: "560px",
-                margin: "0 auto",
-              }}
-            >
-              The reptile community is full of passionate, knowledgeable people running
-              incredible breeding programs. You shouldn&apos;t be held back by software that
-              was made for some other industry. Reptiscale is built for you.
-            </p>
+            <div>
+              <span className="hk-kicker">Our mission</span>
+              <h2 className="hk-section-heading">Give breeder businesses the systems they should not have to figure out alone.</h2>
+              <p className="hk-section-copy">
+                Most self-employed breeders do not need a lecture about funnels, pixels,
+                nurture sequences, and CRMs. They need someone to set up a practical system
+                that helps them sell more animals, stay organized, and protect the customer experience.
+              </p>
+            </div>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* VALUES */}
-      <section style={{ padding: "80px 24px", background: "#F5F5F0" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
           <ScrollReveal>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                color: "#1A1A1A",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              What We Believe
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "20px",
-              }}
-            >
-              {values.map((v, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: "#fff",
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    borderRadius: "16px",
-                    padding: "28px 24px",
-                  }}
-                >
-                  <div style={{ fontSize: "32px", marginBottom: "14px" }}>{v.icon}</div>
-                  <h3 style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "17px",
-                    color: "#1A1A1A",
-                    marginBottom: "10px",
-                  }}>
-                    {v.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", lineHeight: "1.65", color: "#666" }}>
-                    {v.desc}
-                  </p>
+            <div style={{ display: "grid", gap: "12px" }}>
+              {missionItems.map((item) => (
+                <div className="hk-card" key={item} style={{ alignItems: "center", display: "flex", gap: "12px", padding: "18px" }}>
+                  <span style={{ background: "#00B8A9", borderRadius: "999px", height: "10px", width: "10px" }} />
+                  <strong style={{ color: "#102A43", fontFamily: "var(--font-subheading)", fontSize: "15px", lineHeight: 1.45 }}>
+                    {item}
+                  </strong>
                 </div>
               ))}
             </div>
@@ -288,144 +137,50 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* TEAM */}
-      <section style={{ padding: "80px 24px", background: "#fff" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell hk-grid-2" style={{ alignItems: "center" }}>
           <ScrollReveal>
-            <h2
-              style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
-                color: "#1A1A1A",
-                textAlign: "center",
-                marginBottom: "48px",
-              }}
-            >
-              The Team (We Keep Animals Too)
-            </h2>
+            <div className="hk-card">
+              <span className="hk-kicker">Who this is for</span>
+              <h2 style={{ color: "#102A43", fontSize: "30px", marginTop: "12px" }}>
+                Breeders who know they could sell more if the business side was not so scattered.
+              </h2>
+              <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.75, marginTop: "16px" }}>
+                Reptile breeders, aquatics breeders, insect and feeder sellers, and other
+                animal sellers can use the same core system: capture the lead, remember
+                what they wanted, follow up, ship safely when needed, and keep the relationship alive.
+              </p>
+            </div>
           </ScrollReveal>
-
-          <ScrollReveal stagger>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: "24px",
-              }}
-            >
-              {team.map((member, i) => (
-                <div
-                  key={i}
-                  className="card-hover"
-                  style={{
-                    background: "#fff",
-                    border: "1px solid rgba(0,0,0,0.08)",
-                    borderRadius: "16px",
-                    padding: "28px 24px",
-                    textAlign: "center",
-                  }}
-                >
-                  <div style={{
-                    width: "72px",
-                    height: "72px",
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #1B5E20, #2E7D32)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    margin: "0 auto 16px",
-                    color: "#fff",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 800,
-                    fontSize: "22px",
-                  }}>
-                    {member.initials}
+          <ScrollReveal>
+            <div>
+              <span className="hk-kicker">Who it is not for</span>
+              <div style={{ display: "grid", gap: "12px", marginTop: "18px" }}>
+                {notFor.map((item) => (
+                  <div className="hk-card" key={item} style={{ padding: "18px" }}>
+                    <p style={{ color: "#102A43", fontFamily: "var(--font-subheading)", fontSize: "15px", fontWeight: 800, lineHeight: 1.5 }}>
+                      {item}
+                    </p>
                   </div>
-                  <h3 style={{
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    fontWeight: 700,
-                    fontSize: "17px",
-                    color: "#1A1A1A",
-                    marginBottom: "4px",
-                  }}>
-                    {member.name}
-                  </h3>
-                  <p style={{
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    color: "#1B5E20",
-                    marginBottom: "12px",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    {member.role}
-                  </p>
-                  <p style={{
-                    fontSize: "13px",
-                    lineHeight: "1.6",
-                    color: "#666",
-                    marginBottom: "12px",
-                  }}>
-                    {member.bio}
-                  </p>
-                  <p style={{
-                    fontSize: "12px",
-                    color: "#FF6F00",
-                    fontWeight: 600,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    🦎 {member.species}
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section style={{ background: "#111111", padding: "80px 24px", textAlign: "center" }} className="scale-pattern">
-        <ScrollReveal>
-          <h2 style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontWeight: 800,
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-            color: "#fff",
-            marginBottom: "16px",
-          }}>
-            Come Meet Us at a Show
+      <section className="hk-final-cta scale-pattern">
+        <div style={{ margin: "0 auto", maxWidth: "760px" }}>
+          <span className="hk-eyebrow">Talk to someone who gets it</span>
+          <h2 style={{ color: "#fff", fontSize: "clamp(2rem, 4vw, 3.2rem)", marginTop: "20px" }}>
+            If you are tired of doing the same business chores by hand, this is worth a conversation.
           </h2>
-          <p style={{
-            fontSize: "17px",
-            color: "rgba(255,255,255,0.6)",
-            marginBottom: "32px",
-            maxWidth: "440px",
-            margin: "0 auto 32px",
-            lineHeight: "1.65",
-          }}>
-            Or book a call. Either way, we&apos;d love to learn about your breeding program
-            and show you what Reptiscale can do for it.
+          <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
+            Bring your current sales mess. We will show what HatchKit can organize and automate first.
           </p>
-          <Link
-            href="/demo/"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "16px 36px",
-              borderRadius: "10px",
-              background: "#FF6F00",
-              color: "#fff",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: "16px",
-              textDecoration: "none",
-              boxShadow: "0 8px 24px rgba(255,111,0,0.35)",
-            }}
-          >
-            Book a Free Demo →
-          </Link>
-        </ScrollReveal>
+          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+        </div>
       </section>
-    </>
+    </div>
   );
 }

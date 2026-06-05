@@ -26,9 +26,9 @@ export default function CTAButton({
 
   const variantStyles: Record<string, React.CSSProperties> = {
     primary: {
-      background: '#FF6F00',
+      background: '#2F80ED',
       color: '#fff',
-      border: '2px solid #FF6F00',
+      border: '2px solid #2F80ED',
     },
     outline: {
       background: 'transparent',
@@ -37,15 +37,15 @@ export default function CTAButton({
     },
     'outline-dark': {
       background: 'transparent',
-      color: '#1B5E20',
-      border: '2px solid #1B5E20',
+      color: '#102A43',
+      border: '2px solid #2F80ED',
     },
   };
 
   const hoverMap: Record<string, React.CSSProperties> = {
-    primary: { background: '#FFA000', border: '2px solid #FFA000', boxShadow: '0 8px 24px rgba(255,111,0,0.4)', transform: 'translateY(-1px)' },
+    primary: { background: '#00B8A9', border: '2px solid #00B8A9', boxShadow: '0 8px 24px rgba(0,184,169,0.28)', transform: 'translateY(-1px)' },
     outline: { background: 'rgba(255,255,255,0.1)', border: '2px solid rgba(255,255,255,0.8)', transform: 'translateY(-1px)' },
-    'outline-dark': { background: '#1B5E20', color: '#fff', transform: 'translateY(-1px)' },
+    'outline-dark': { background: '#2F80ED', color: '#fff', transform: 'translateY(-1px)' },
   };
 
   return (
@@ -57,7 +57,7 @@ export default function CTAButton({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '10px',
-        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        fontFamily: "var(--font-subheading)",
         fontWeight: 700,
         textDecoration: 'none',
         cursor: 'pointer',

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book a Demo — Free 15-Minute Call",
+  title: "Book a HatchKit Demo - Breeder Business Software",
   description:
-    "Book a free 15-minute demo call with Reptiscale. We'll walk you through the platform live, tailored to your species and show schedule. No pressure.",
+    "Book a HatchKit demo and see how breeder businesses can capture leads, manage buyer follow-up, review shipping safety, and plan content in one system.",
 };
 
 export default function DemoLayout({ children }: { children: React.ReactNode }) {

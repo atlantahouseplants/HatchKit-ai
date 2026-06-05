@@ -34,9 +34,9 @@ export default function PricingCard({
     <div
       className="card-hover"
       style={{
-        background: popular ? '#1B5E20' : '#fff',
-        border: popular ? '2px solid #1B5E20' : '1px solid rgba(0,0,0,0.08)',
-        borderRadius: '20px',
+        background: popular ? '#102A43' : '#fff',
+        border: popular ? '2px solid #2F80ED' : '1px solid rgba(16,42,67,0.1)',
+        borderRadius: '8px',
         padding: '32px 28px',
         display: 'flex',
         flexDirection: 'column',
@@ -49,9 +49,9 @@ export default function PricingCard({
           position: 'absolute',
           top: '20px',
           right: '-28px',
-          background: '#FF6F00',
+          background: '#00B8A9',
           color: '#fff',
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-accent)",
           fontWeight: 700,
           fontSize: '11px',
           letterSpacing: '0.08em',
@@ -65,20 +65,20 @@ export default function PricingCard({
 
       <div style={{ marginBottom: '24px' }}>
         <h3 style={{
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-heading)",
           fontWeight: 800,
           fontSize: '20px',
-          color: popular ? '#fff' : '#1A1A1A',
+          color: popular ? '#fff' : '#102A43',
           marginBottom: '4px',
         }}>
           {name}
         </h3>
         {subtitle && (
           <p style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontFamily: "var(--font-subheading)",
             fontWeight: 600,
             fontSize: '13px',
-            color: popular ? '#FFA000' : '#FF6F00',
+            color: popular ? '#B9FBC0' : '#2F80ED',
             marginBottom: '8px',
           }}>
             {subtitle}
@@ -95,10 +95,10 @@ export default function PricingCard({
 
       <div style={{ marginBottom: '4px' }}>
         <span style={{
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-heading)",
           fontWeight: 800,
           fontSize: '44px',
-          color: popular ? '#fff' : '#1A1A1A',
+          color: popular ? '#fff' : '#102A43',
           lineHeight: 1,
         }}>
           {price}
@@ -128,7 +128,7 @@ export default function PricingCard({
               height: '18px',
               borderRadius: '50%',
               background: f.included
-                ? (popular ? 'rgba(255,111,0,0.25)' : 'rgba(27,94,32,0.1)')
+                ? (popular ? 'rgba(0,184,169,0.22)' : 'rgba(47,128,237,0.1)')
                 : 'rgba(0,0,0,0.05)',
               display: 'flex',
               alignItems: 'center',
@@ -137,7 +137,7 @@ export default function PricingCard({
             }}>
               {f.included ? (
                 <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                  <path d="M1 4L3.5 6.5L9 1" stroke={popular ? '#FF6F00' : '#1B5E20'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 4L3.5 6.5L9 1" stroke={popular ? '#B9FBC0' : '#2F80ED'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               ) : (
                 <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
@@ -165,22 +165,22 @@ export default function PricingCard({
           textAlign: 'center',
           padding: '14px 20px',
           borderRadius: '10px',
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-subheading)",
           fontWeight: 700,
           fontSize: '15px',
           textDecoration: 'none',
-          background: popular ? '#FF6F00' : 'transparent',
-          color: popular ? '#fff' : '#1B5E20',
-          border: popular ? '2px solid #FF6F00' : '2px solid #1B5E20',
+          background: popular ? '#2F80ED' : 'transparent',
+          color: popular ? '#fff' : '#102A43',
+          border: popular ? '2px solid #2F80ED' : '2px solid #2F80ED',
           transition: 'all 0.15s ease',
         }}
         onMouseEnter={e => {
           const el = e.currentTarget as HTMLElement;
           if (popular) {
-            el.style.background = '#FFA000';
-            el.style.borderColor = '#FFA000';
+            el.style.background = '#00B8A9';
+            el.style.borderColor = '#00B8A9';
           } else {
-            el.style.background = '#1B5E20';
+            el.style.background = '#2F80ED';
             el.style.color = '#fff';
           }
           el.style.transform = 'translateY(-1px)';
@@ -188,12 +188,12 @@ export default function PricingCard({
         onMouseLeave={e => {
           const el = e.currentTarget as HTMLElement;
           if (popular) {
-            el.style.background = '#FF6F00';
-            el.style.borderColor = '#FF6F00';
+            el.style.background = '#2F80ED';
+            el.style.borderColor = '#2F80ED';
             el.style.color = '#fff';
           } else {
             el.style.background = 'transparent';
-            el.style.color = '#1B5E20';
+            el.style.color = '#102A43';
           }
           el.style.transform = 'none';
         }}

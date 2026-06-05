@@ -11,12 +11,12 @@ interface FAQAccordionProps {
   items: FAQItem[];
 }
 
-function FAQItem({ question, answer, index }: FAQItem & { index: number }) {
+function FAQItem({ question, answer }: FAQItem) {
   const [open, setOpen] = useState(false);
 
   return (
     <div style={{
-      borderBottom: '1px solid rgba(0,0,0,0.08)',
+      borderBottom: '1px solid rgba(16,42,67,0.1)',
     }}>
       <button
         onClick={() => setOpen(!open)}
@@ -35,10 +35,10 @@ function FAQItem({ question, answer, index }: FAQItem & { index: number }) {
         aria-expanded={open}
       >
         <span style={{
-          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          fontFamily: "var(--font-subheading)",
           fontWeight: 600,
           fontSize: '16px',
-          color: '#1A1A1A',
+          color: '#102A43',
           lineHeight: 1.4,
         }}>
           {question}
@@ -48,7 +48,7 @@ function FAQItem({ question, answer, index }: FAQItem & { index: number }) {
           width: '28px',
           height: '28px',
           borderRadius: '50%',
-          background: open ? '#1B5E20' : 'rgba(27,94,32,0.08)',
+          background: open ? '#2F80ED' : 'rgba(47,128,237,0.1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -66,7 +66,7 @@ function FAQItem({ question, answer, index }: FAQItem & { index: number }) {
           >
             <path
               d="M6 1V11M1 6H11"
-              stroke={open ? '#fff' : '#1B5E20'}
+              stroke={open ? '#fff' : '#2F80ED'}
               strokeWidth="1.8"
               strokeLinecap="round"
             />
@@ -85,7 +85,7 @@ function FAQItem({ question, answer, index }: FAQItem & { index: number }) {
         <p style={{
           fontSize: '15px',
           lineHeight: '1.7',
-          color: '#555',
+          color: '#52606D',
           paddingBottom: '20px',
         }}>
           {answer}
@@ -102,7 +102,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
       margin: '0 auto',
     }}>
       {items.map((item, i) => (
-        <FAQItem key={i} {...item} index={i} />
+        <FAQItem key={i} {...item} />
       ))}
     </div>
   );

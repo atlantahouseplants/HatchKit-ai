@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import HatchKitLogo from './HatchKitLogo';
 
@@ -15,14 +15,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change or resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileOpen(false);
@@ -31,57 +29,49 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const navStyle: React.CSSProperties = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    zIndex: 1000,
-    transition: 'background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease',
-    background: scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
-    boxShadow: scrolled ? '0 1px 0 rgba(0,0,0,0.08)' : 'none',
-    backdropFilter: scrolled ? 'blur(12px)' : 'none',
-  };
+  const textColor = scrolled || mobileOpen ? '#102A43' : 'rgba(255,255,255,0.9)';
 
   return (
-    <nav style={navStyle}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 24px',
-        height: '70px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-      }}>
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: 'none' }}>
-          <HatchKitLogo
-            size={36}
-            variant={scrolled ? 'dark' : 'light'}
-            showText={true}
-          />
+    <nav
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: scrolled || mobileOpen ? 'rgba(255,255,255,0.97)' : 'transparent',
+        borderBottom: scrolled || mobileOpen ? '1px solid rgba(16,42,67,0.1)' : '1px solid transparent',
+        backdropFilter: scrolled || mobileOpen ? 'blur(14px)' : 'none',
+        transition: 'background 0.25s ease, border-color 0.25s ease, backdrop-filter 0.25s ease',
+      }}
+    >
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          height: '72px',
+          justifyContent: 'space-between',
+          margin: '0 auto',
+          maxWidth: '1200px',
+          padding: '0 24px',
+        }}
+      >
+        <Link href="/" style={{ textDecoration: 'none' }} onClick={() => setMobileOpen(false)}>
+          <HatchKitLogo size={42} variant={scrolled || mobileOpen ? 'dark' : 'light'} showText />
         </Link>
 
-        {/* Desktop nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }} className="hidden-mobile">
+        <div className="hk-nav-desktop" style={{ alignItems: 'center', display: 'flex', gap: '30px' }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               style={{
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
+                color: textColor,
+                fontFamily: 'var(--font-subheading)',
                 fontSize: '15px',
-                color: scrolled ? '#1A1A1A' : 'rgba(255,255,255,0.9)',
+                fontWeight: 700,
                 textDecoration: 'none',
                 transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={e => {
-                (e.target as HTMLElement).style.color = scrolled ? '#1B5E20' : '#FF6F00';
-              }}
-              onMouseLeave={e => {
-                (e.target as HTMLElement).style.color = scrolled ? '#1A1A1A' : 'rgba(255,255,255,0.9)';
               }}
             >
               {link.label}
@@ -89,82 +79,54 @@ export default function Navbar() {
           ))}
           <Link
             href="/demo/"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              padding: '10px 20px',
-              borderRadius: '8px',
-              background: '#FF6F00',
-              color: '#fff',
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: '14px',
-              textDecoration: 'none',
-              transition: 'background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease',
-            }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = '#FFA000';
-              el.style.transform = 'translateY(-1px)';
-              el.style.boxShadow = '0 6px 20px rgba(255,111,0,0.35)';
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.background = '#FF6F00';
-              el.style.transform = 'none';
-              el.style.boxShadow = 'none';
-            }}
+            className="hk-button hk-button-primary"
+            style={{ minHeight: '42px', padding: '0 18px' }}
           >
-            Book a Demo
+            Talk to Brianna
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
         <button
-          className="show-mobile"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          className="hk-nav-toggle"
+          onClick={() => setMobileOpen((open) => !open)}
           style={{
-            background: 'none',
-            border: 'none',
+            alignItems: 'center',
+            background: scrolled || mobileOpen ? 'rgba(16,42,67,0.06)' : 'rgba(255,255,255,0.1)',
+            border: scrolled || mobileOpen ? '1px solid rgba(16,42,67,0.12)' : '1px solid rgba(255,255,255,0.18)',
+            borderRadius: '8px',
             cursor: 'pointer',
-            padding: '8px',
             display: 'none',
-            flexDirection: 'column',
-            gap: '5px',
+            height: '42px',
+            justifyContent: 'center',
+            width: '42px',
           }}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
-          {[0, 1, 2].map(i => (
-            <span
-              key={i}
-              style={{
-                display: 'block',
-                width: '22px',
-                height: '2px',
-                background: scrolled ? '#1A1A1A' : '#fff',
-                borderRadius: '2px',
-                transition: 'transform 0.2s ease, opacity 0.2s ease',
-                transform: mobileOpen
-                  ? i === 0 ? 'rotate(45deg) translateY(7px)' : i === 1 ? 'scaleX(0)' : 'rotate(-45deg) translateY(-7px)'
-                  : 'none',
-                opacity: mobileOpen && i === 1 ? 0 : 1,
-              }}
-            />
-          ))}
+          <span
+            style={{
+              background: textColor,
+              borderRadius: '999px',
+              boxShadow: `0 ${mobileOpen ? 0 : 7}px 0 ${textColor}, 0 ${mobileOpen ? 0 : -7}px 0 ${textColor}`,
+              display: 'block',
+              height: '2px',
+              transform: mobileOpen ? 'rotate(45deg)' : 'none',
+              transition: 'box-shadow 0.18s ease, transform 0.18s ease',
+              width: '20px',
+            }}
+          />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div
+          className="hk-nav-mobile"
           style={{
-            background: '#fff',
-            borderTop: '1px solid rgba(0,0,0,0.08)',
-            padding: '16px 24px 24px',
-            animation: 'fadeIn 0.2s ease both',
+            background: '#ffffff',
+            borderTop: '1px solid rgba(16,42,67,0.1)',
             display: 'none',
+            padding: '8px 24px 24px',
           }}
-          className="show-mobile-block"
         >
           {navLinks.map((link) => (
             <Link
@@ -172,14 +134,14 @@ export default function Navbar() {
               href={link.href}
               onClick={() => setMobileOpen(false)}
               style={{
+                borderBottom: '1px solid rgba(16,42,67,0.08)',
+                color: '#102A43',
                 display: 'block',
-                padding: '14px 0',
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontWeight: 600,
+                fontFamily: 'var(--font-subheading)',
                 fontSize: '16px',
-                color: '#1A1A1A',
+                fontWeight: 700,
+                padding: '15px 0',
                 textDecoration: 'none',
-                borderBottom: '1px solid rgba(0,0,0,0.06)',
               }}
             >
               {link.label}
@@ -187,36 +149,32 @@ export default function Navbar() {
           ))}
           <Link
             href="/demo/"
+            className="hk-button hk-button-primary"
             onClick={() => setMobileOpen(false)}
-            style={{
-              display: 'block',
-              marginTop: '16px',
-              padding: '14px 20px',
-              borderRadius: '8px',
-              background: '#FF6F00',
-              color: '#fff',
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              fontWeight: 700,
-              fontSize: '15px',
-              textDecoration: 'none',
-              textAlign: 'center',
-            }}
+            style={{ marginTop: '18px' }}
           >
-            Book a Free Demo
+            Talk to Brianna
           </Link>
         </div>
       )}
 
       <style>{`
-        @media (max-width: 767px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: flex !important; }
-          .show-mobile-block { display: block !important; }
+        .hk-nav-desktop a:hover {
+          color: #00B8A9 !important;
         }
-        @media (min-width: 768px) {
-          .hidden-mobile { display: flex !important; }
-          .show-mobile { display: none !important; }
-          .show-mobile-block { display: none !important; }
+
+        @media (max-width: 767px) {
+          .hk-nav-desktop {
+            display: none !important;
+          }
+
+          .hk-nav-toggle {
+            display: flex !important;
+          }
+
+          .hk-nav-mobile {
+            display: block !important;
+          }
         }
       `}</style>
     </nav>

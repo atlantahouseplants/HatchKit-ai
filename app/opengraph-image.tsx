@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const dynamic = "force-static";
 
-export const alt = "Reptiscale — The All-in-One Tool for Reptile Breeders";
+export const alt = "HatchKit - Breeder Business Busywork Software";
 export const size = {
   width: 1200,
   height: 630,
@@ -14,109 +14,82 @@ export default function OGImage() {
     (
       <div
         style={{
-          width: "100%",
-          height: "100%",
+          background:
+            "radial-gradient(circle at 18% 18%, rgba(0,184,169,0.18), transparent 32%), radial-gradient(circle at 80% 18%, rgba(47,128,237,0.28), transparent 30%), #102A43",
+          color: "#FFFFFF",
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          height: "100%",
           justifyContent: "center",
-          background: "#111111",
+          padding: "76px",
           position: "relative",
+          width: "100%",
         }}
       >
-        {/* Subtle gradient */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background:
-              "radial-gradient(ellipse at center, rgba(27,94,32,0.3) 0%, transparent 70%)",
-            display: "flex",
-          }}
-        />
-
-        {/* Logo egg */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            marginBottom: "40px",
-          }}
-        >
-          <svg
-            width="80"
-            height="80"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <ellipse cx="20" cy="22" rx="14" ry="16" fill="#1B5E20" />
-            <ellipse cx="15" cy="14" rx="4" ry="5" fill="rgba(255,255,255,0.12)" />
-            <path
-              d="M20 6 L17 14 L21 14 L18 22"
-              stroke="#FF6F00"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-            />
-            <circle cx="18" cy="22" r="1.5" fill="#FFA000" />
-          </svg>
-          <span
+        <div style={{ alignItems: "center", display: "flex", gap: "28px", marginBottom: "52px" }}>
+          <div
             style={{
-              fontSize: "64px",
-              fontWeight: 800,
-              color: "#FFFFFF",
-              letterSpacing: "-1px",
+              alignItems: "center",
+              background: "#FFFFFF",
+              borderRadius: "16px",
+              display: "flex",
+              height: "96px",
+              justifyContent: "center",
+              width: "96px",
             }}
           >
-            Reptiscale
-          </span>
+            <svg width="76" height="76" viewBox="0 0 48 48" fill="none">
+              <path d="M16.2 27.2V35.8L5.3 31.1V19.9L16.2 27.2Z" fill="#102A43" />
+              <path d="M17.8 27.2V35.8L42.7 31.1V19.9L17.8 27.2Z" fill="#2F80ED" />
+              <path
+                d="M11.2 21.1C10.9 10.8 16.1 3.9 23.9 3.9C31.6 3.9 36.9 10.8 36.6 21.1"
+                stroke="#102A43"
+                strokeLinecap="round"
+                strokeWidth="3.4"
+              />
+              <path
+                d="M8.9 20.1L14.2 24.4L20.1 20.3L25.8 24.4L31.6 20.3L37.7 23.9"
+                stroke="#2F80ED"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3.3"
+              />
+              <path
+                d="M16.1 14.7L21.1 19.4L31 9.6"
+                stroke="#00B8A9"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="3.8"
+              />
+            </svg>
+          </div>
+          <div style={{ display: "flex", fontSize: "72px", fontWeight: 800, letterSpacing: 0 }}>
+            <span>Hatch</span>
+            <span style={{ color: "#66B2FF" }}>Kit</span>
+          </div>
         </div>
 
-        {/* Tagline */}
-        <div
-          style={{
-            fontSize: "36px",
-            fontWeight: 700,
-            color: "rgba(255,255,255,0.85)",
-            textAlign: "center",
-            maxWidth: "800px",
-            lineHeight: 1.3,
-            marginBottom: "24px",
-            display: "flex",
-          }}
-        >
-          The All-in-One Tool for Reptile Breeders
+        <div style={{ display: "flex", flexDirection: "column", maxWidth: "900px" }}>
+          <div style={{ color: "#00B8A9", display: "flex", fontSize: "24px", fontWeight: 800 }}>
+            Breeder business software
+          </div>
+          <div style={{ display: "flex", fontSize: "54px", fontWeight: 800, lineHeight: 1.08, marginTop: "18px" }}>
+            Capture leads, ship safely, and turn buyers into repeat customers.
+          </div>
+          <div style={{ color: "rgba(255,255,255,0.66)", display: "flex", fontSize: "25px", lineHeight: 1.45, marginTop: "24px" }}>
+            Practical help with leads, buyer follow-up, shipping checks, content, and growth.
+          </div>
         </div>
 
-        {/* Subtitle */}
         <div
           style={{
-            fontSize: "22px",
-            color: "rgba(255,255,255,0.5)",
-            textAlign: "center",
-            maxWidth: "600px",
-            display: "flex",
-          }}
-        >
-          Shipping, follow-up, inbox, social media, and more.
-        </div>
-
-        {/* Bottom accent bar */}
-        <div
-          style={{
-            position: "absolute",
+            background: "linear-gradient(90deg, #2F80ED, #00B8A9, #B9FBC0)",
             bottom: 0,
-            left: 0,
-            right: 0,
-            height: "6px",
-            background: "linear-gradient(90deg, #1B5E20, #FF6F00, #FFA000)",
             display: "flex",
+            height: "8px",
+            left: 0,
+            position: "absolute",
+            right: 0,
           }}
         />
       </div>
