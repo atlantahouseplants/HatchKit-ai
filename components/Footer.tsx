@@ -13,6 +13,13 @@ const companyLinks = [
   { label: 'Terms of Service', href: '/terms/' },
 ];
 
+const socialLinks = [
+  { label: 'YouTube', href: 'https://www.youtube.com/@hatch_kit' },
+  { label: 'Instagram', href: 'https://www.instagram.com/hatch_kit' },
+  { label: 'Facebook', href: 'https://www.facebook.com/share/1Dj5PxUyMU/' },
+  { label: 'X', href: 'https://x.com/hatch_kit' },
+];
+
 export default function Footer() {
   return (
     <footer
@@ -56,6 +63,40 @@ export default function Footer() {
             <p style={{ color: 'rgba(255,255,255,0.64)', fontSize: '14px' }}>
               hello@hatchkit.ai
             </p>
+            <div
+              aria-label="HatchKit social media links"
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '8px',
+                marginTop: '18px',
+              }}
+            >
+              {socialLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    alignItems: 'center',
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                    borderRadius: '8px',
+                    color: 'rgba(255,255,255,0.78)',
+                    display: 'inline-flex',
+                    fontFamily: 'var(--font-subheading)',
+                    fontSize: '13px',
+                    fontWeight: 800,
+                    minHeight: '36px',
+                    padding: '0 11px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
             <p
               style={{
                 color: 'rgba(255,255,255,0.42)',
