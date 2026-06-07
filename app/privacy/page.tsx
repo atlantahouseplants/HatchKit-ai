@@ -65,8 +65,8 @@ export default function PrivacyPage() {
               </h2>
               <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.75 }}>
                 Questions about this policy can be sent to{" "}
-                <a href="mailto:hello@hatchkit.ai" style={{ color: "#2F80ED", fontWeight: 800 }}>
-                  hello@hatchkit.ai
+                <a href="mailto:brianna@hatchkitai.com" style={{ color: "#2F80ED", fontWeight: 800 }}>
+                  brianna@hatchkitai.com
                 </a>.
               </p>
             </section>

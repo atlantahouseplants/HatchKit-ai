@@ -73,8 +73,8 @@ export default function TermsPage() {
               </h2>
               <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.75 }}>
                 Questions about these terms can be sent to{" "}
-                <a href="mailto:hello@hatchkit.ai" style={{ color: "#2F80ED", fontWeight: 800 }}>
-                  hello@hatchkit.ai
+                <a href="mailto:brianna@hatchkitai.com" style={{ color: "#2F80ED", fontWeight: 800 }}>
+                  brianna@hatchkitai.com
                 </a>. You can also{" "}
                 <Link href="/demo/" style={{ color: "#2F80ED", fontWeight: 800 }}>
                   request a demo

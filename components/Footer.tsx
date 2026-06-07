@@ -61,7 +61,7 @@ export default function Footer() {
           <div>
             <h4 style={footerHeadingStyle}>Contact</h4>
             <p style={{ color: 'rgba(255,255,255,0.64)', fontSize: '14px' }}>
-              hello@hatchkit.ai
+              brianna@hatchkitai.com
             </p>
             <div
               aria-label="HatchKit social media links"
