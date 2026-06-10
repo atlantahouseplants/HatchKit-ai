@@ -5,6 +5,7 @@ import Link from 'next/link';
 import HatchKitLogo from './HatchKitLogo';
 
 const navLinks = [
+  { label: 'Live Demo', href: '/experience/' },
   { label: 'Features', href: '/features/' },
   { label: 'Pricing', href: '/pricing/' },
   { label: 'About', href: '/about/' },

@@ -45,7 +45,15 @@ export default function DemoPage() {
               ))}
             </div>
 
-            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "14px", lineHeight: 1.6, marginTop: "28px" }}>
+            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", lineHeight: 1.6, marginTop: "24px" }}>
+              Want to see it first?{" "}
+              <a href="/experience/" style={{ color: "#B9FBC0", fontWeight: 800 }}>
+                Try the live demo yourself →
+              </a>{" "}
+              (2 minutes, no signup, no call needed).
+            </p>
+
+            <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "14px", lineHeight: 1.6, marginTop: "16px" }}>
               Prefer email? Reach the team directly at{" "}
               <a href="mailto:brianna@hatchkitai.com" style={{ color: "#B9FBC0", fontWeight: 700 }}>
                 brianna@hatchkitai.com

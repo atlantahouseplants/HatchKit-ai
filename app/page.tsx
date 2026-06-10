@@ -184,11 +184,11 @@ export default function HomePage() {
               lookers into paid, repeat buyers - without you becoming a tech person.
             </p>
             <div className="hk-hero-actions">
-              <Link href="/demo/" className="hk-button hk-button-primary">
-                Get a Free Demo
+              <Link href="/experience/" className="hk-button hk-button-primary">
+                Try the Live Demo →
               </Link>
-              <Link href="/features/" className="hk-button hk-button-secondary">
-                See What It Handles
+              <Link href="/demo/" className="hk-button hk-button-secondary">
+                Get a Free Demo
               </Link>
             </div>
             <div className="hk-hero-stats">
