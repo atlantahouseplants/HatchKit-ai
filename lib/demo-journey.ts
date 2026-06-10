@@ -1,8 +1,8 @@
 // Self-guided demo journey.
 //
-// These helpers POST to the SAME production webhooks the existing demo funnel
-// uses, so every existing SunScale automation fires unchanged. We only add the prospect's
-// own info; all other values match docs/demo-showroom/accelerated-workflow-recipes.md.
+// These helpers POST to the SAME production webhooks the existing demo funnel uses, so
+// every existing SunScale automation fires unchanged. We only add the prospect's own info;
+// all other values match docs/demo-showroom/accelerated-workflow-recipes.md.
 
 export const WEBHOOK_BASE = "https://reptiscale-demo.vercel.app";
 const SUNSCALE_LOCATION_ID = "oCn199rzTjj0rPgqXyXU"; // demo account the buyer journey runs in
@@ -67,136 +67,50 @@ export const postHatchkitLead = (v: Visitor, notes?: string) =>
     notes: notes || "Completed the self-guided demo on hatchkitai.com",
   });
 
+// ── Journey model ───────────────────────────────────────────────────────────
+// The buyer's first two weeks. `realDay` is when the buyer ACTUALLY gets it in real life
+// (the anti-spam proof: notice the natural spacing). The prospect sees it compressed.
+
+export const BOARD_STAGES = [
+  "New lead",
+  "Interested",
+  "Deposit paid",
+  "Safe-ship review",
+  "Shipped",
+  "Delivered",
+  "Repeat buyer",
+] as const;
+
 export type Channel = "email" | "text" | "system";
 
-export type Stage = {
-  title: string;
-  channel: Channel;
-  realTiming: string; // what the real-world delay would be
-  detail: string; // what the buyer experiences
-  breeder: string; // what the breeder sees inside HatchKit
+export type JourneyEvent = {
+  group: 1 | 2 | 3; // which buyer action reveals it
+  channel: Channel; // "system" = no buyer message, just a dashboard change
+  realDay: number; // 0–14: the real-world day the buyer gets this
+  buyer?: string; // the message the buyer sees (email/text)
+  stage: string; // board stage active after this event (one of BOARD_STAGES)
+  note: string; // plain-language "what you see in HatchKit"
 };
 
-// Group 1 — after the prospect requests the starter guide
-export const STARTER_STAGES: Stage[] = [
-  {
-    title: "Lead captured instantly",
-    channel: "system",
-    realTiming: "the moment they raise a hand",
-    detail: "Your new buyer is saved with their name, email, and what they were interested in.",
-    breeder: "New contact appears in HatchKit, tagged “new lead · crested gecko.”",
-  },
-  {
-    title: "Welcome + starter guide email",
-    channel: "email",
-    realTiming: "instant",
-    detail: "They get the guide they asked for right away — no waiting on you.",
-    breeder: "Email logged on the contact timeline automatically.",
-  },
-  {
-    title: "Care-basics follow-up",
-    channel: "email",
-    realTiming: "normally Day 1",
-    detail: "A helpful care email keeps you top of mind without you lifting a finger.",
-    breeder: "Contact moves to the “Nurture” stage.",
-  },
-  {
-    title: "Available-animals nudge",
-    channel: "text",
-    realTiming: "normally Day 2",
-    detail: "They get pointed to animals that fit — like Mango.",
-    breeder: "Smart list “Hot Animal Buyers” starts filling up.",
-  },
+export const EVENTS: JourneyEvent[] = [
+  // Group 1 — buyer asks for the free starter guide
+  { group: 1, channel: "email", realDay: 0, buyer: "Here's your free Crested Gecko Starter Guide 🦎", stage: "New lead", note: "A new buyer is saved with exactly what they asked about." },
+  { group: 1, channel: "email", realDay: 1, buyer: "Day-1 care basics: enclosure, humidity, first feeding", stage: "New lead", note: "A helpful care email goes out on its own." },
+  { group: 1, channel: "text", realDay: 2, buyer: "Want a beginner-friendly gecko? Meet Mango 👀", stage: "New lead", note: "A gentle nudge toward an animal that fits their budget." },
+
+  // Group 2 — buyer shows interest in Mango
+  { group: 2, channel: "text", realDay: 2, buyer: "Mango's still available — a $75 deposit can hold him.", stage: "Interested", note: "Mango becomes a deal card on your buyer board." },
+  { group: 2, channel: "text", realDay: 3, buyer: "Still thinking about Mango? Happy to answer anything.", stage: "Interested", note: "If they go quiet, a friendly reminder fires + a task for you." },
+
+  // Group 3 — buyer pays the deposit; everything else runs itself
+  { group: 3, channel: "text", realDay: 3, buyer: "Got your deposit — Mango's on hold for you! 🎉", stage: "Deposit paid", note: "The sale is logged and Mango is marked held." },
+  { group: 3, channel: "system", realDay: 4, stage: "Safe-ship review", note: "Before anything ships, HatchKit checks the weather and route for you." },
+  { group: 3, channel: "text", realDay: 5, buyer: "Good news — the weather looks safe to ship Thursday.", stage: "Safe-ship review", note: "No shipping label is created until you approve it. (Your edge.)" },
+  { group: 3, channel: "text", realDay: 7, buyer: "Mango's on the way! Here's your tracking link.", stage: "Shipped", note: "Marked shipped, tracking shared with the buyer." },
+  { group: 3, channel: "text", realDay: 8, buyer: "Did Mango arrive safely? Reply YES once he's settled.", stage: "Delivered", note: "Delivery + a live-arrival check, automatically." },
+  { group: 3, channel: "email", realDay: 9, buyer: "Welcome home! Mango's first-week care 🏡", stage: "Delivered", note: "New-keeper care guidance keeps the buyer happy." },
+  { group: 3, channel: "email", realDay: 12, buyer: "How's Mango settling in? Mind leaving a quick review?", stage: "Delivered", note: "Happy-buyer review and referral ask." },
+  { group: 3, channel: "text", realDay: 14, buyer: "Want first dibs on future geckos? Join the VIP list.", stage: "Repeat buyer", note: "One sale turns into a repeat buyer." },
 ];
 
-// Group 2 — after the prospect shows interest in Mango
-export const INTEREST_STAGES: Stage[] = [
-  {
-    title: "Tagged a hot lead",
-    channel: "system",
-    realTiming: "instant",
-    detail: "The system knows they want Mango specifically.",
-    breeder: "Contact tagged “hot lead,” Animal Interest = Mango.",
-  },
-  {
-    title: "Deal created in your pipeline",
-    channel: "system",
-    realTiming: "instant",
-    detail: "A real sales opportunity is opened so nothing falls through the cracks.",
-    breeder: "Opportunity appears in the Lead Pipeline at “Interested.”",
-  },
-  {
-    title: "Reservation offer sent",
-    channel: "text",
-    realTiming: "normally within the hour",
-    detail: "They’re invited to hold Mango with a simple $75 deposit.",
-    breeder: "Next Best Action: invite the $75 reservation deposit.",
-  },
-  {
-    title: "Reminder if they go quiet",
-    channel: "text",
-    realTiming: "normally next day",
-    detail: "If no deposit yet, a friendly nudge brings them back — automatically.",
-    breeder: "Reservation Abandonment workflow + a follow-up task for you.",
-  },
-];
-
-// Group 3 — cascades automatically after the deposit
-export const CASCADE_STAGES: Stage[] = [
-  {
-    title: "Deposit recorded — Mango held",
-    channel: "system",
-    realTiming: "instant",
-    detail: "The sale is logged and the animal is marked as held.",
-    breeder: "Sales pipeline → “Payment Received.” Customer tag added.",
-  },
-  {
-    title: "Safe-shipping review starts",
-    channel: "system",
-    realTiming: "normally Day 1",
-    detail: "Before anything ships, HatchKit checks the route and weather.",
-    breeder: "Shipping pipeline → “Pending Review,” weather checked for you.",
-  },
-  {
-    title: "Weather-checked shipping decision",
-    channel: "text",
-    realTiming: "before every live shipment",
-    detail: "Buyer is told it ships only on a safe weather window — no guessing.",
-    breeder: "No label is created until you approve. This is the differentiator.",
-  },
-  {
-    title: "Shipped + tracking",
-    channel: "text",
-    realTiming: "normally Day 3–5",
-    detail: "They get a heads-up that Mango is on the way.",
-    breeder: "Shipping pipeline → “In Transit.”",
-  },
-  {
-    title: "Delivered + live-arrival check",
-    channel: "text",
-    realTiming: "delivery day",
-    detail: "A check-in confirms a safe, live arrival.",
-    breeder: "Shipping pipeline → “Delivered → LAG Confirmed.”",
-  },
-  {
-    title: "Care onboarding (Day 0 → 7)",
-    channel: "email",
-    realTiming: "first week after arrival",
-    detail: "New-keeper care tips keep the buyer happy and confident.",
-    breeder: "Care onboarding sequence runs on autopilot.",
-  },
-  {
-    title: "Review + referral request",
-    channel: "email",
-    realTiming: "normally Day 10",
-    detail: "Happy buyers are asked for a review and to refer a friend.",
-    breeder: "Contact moves to the “Advocacy” stage.",
-  },
-  {
-    title: "VIP repeat-buyer invite",
-    channel: "text",
-    realTiming: "ongoing",
-    detail: "They’re invited to get first look at future geckos — turning one sale into many.",
-    breeder: "Added to the VIP / availability-alerts list.",
-  },
-];
+export const groupEvents = (group: 1 | 2 | 3) => EVENTS.filter((e) => e.group === group);
