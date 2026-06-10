@@ -115,7 +115,7 @@ export default function FeaturesPage() {
             and sales tracking in one setup your business can actually use.
           </p>
           <div className="hk-hero-actions" style={{ justifyContent: "center" }}>
-            <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+            <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
             <Link href="/pricing/" className="hk-button hk-button-secondary">See Pricing</Link>
           </div>
         </div>
@@ -209,7 +209,7 @@ export default function FeaturesPage() {
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
             Bring your sales mess, your shipping process, and the parts of the business where you know you need help.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
         </div>
       </section>
     </div>

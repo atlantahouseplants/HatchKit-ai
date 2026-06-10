@@ -57,7 +57,7 @@ export default function AboutPage() {
               trust. HatchKit is the software system built around that kind of business.
             </p>
             <div className="hk-hero-actions">
-              <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+              <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
               <Link href="/features/" className="hk-button hk-button-secondary">See What It Handles</Link>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
             Bring your current sales mess. We will show what HatchKit can organize and automate first.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
         </div>
       </section>
     </div>

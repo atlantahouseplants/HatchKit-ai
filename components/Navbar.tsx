@@ -82,7 +82,7 @@ export default function Navbar() {
             className="hk-button hk-button-primary"
             style={{ minHeight: '42px', padding: '0 18px' }}
           >
-            Talk to Brianna
+            Get a Free Demo
           </Link>
         </div>
 
@@ -153,7 +153,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen(false)}
             style={{ marginTop: '18px' }}
           >
-            Talk to Brianna
+            Get a Free Demo
           </Link>
         </div>
       )}

@@ -58,7 +58,7 @@ export default function ShowPage() {
               follow up fast, and keep selling after the show is over.
             </p>
             <div className="hk-hero-actions">
-              <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+              <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
               <Link href="/features/" className="hk-button hk-button-secondary">See Features</Link>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function ShowPage() {
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
             We will map your table setup, buyer intake, and Monday follow-up during the demo.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
         </div>
       </section>
     </div>

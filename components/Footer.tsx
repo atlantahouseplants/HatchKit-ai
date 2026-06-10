@@ -4,7 +4,7 @@ import HatchKitLogo from './HatchKitLogo';
 const productLinks = [
   { label: 'Features', href: '/features/' },
   { label: 'Pricing', href: '/pricing/' },
-  { label: 'Talk to Brianna', href: '/demo/' },
+  { label: 'Get a Free Demo', href: '/demo/' },
 ];
 
 const companyLinks = [

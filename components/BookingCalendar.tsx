@@ -26,7 +26,7 @@ export default function BookingCalendar() {
       style={{ width: "100%", minHeight: "720px", border: "none", overflow: "hidden" }}
       scrolling="no"
       id={`${CALENDAR_ID}_booking`}
-      title="Book a HatchKit demo with Brianna"
+      title="Book your free HatchKit demo"
     />
   );
 }

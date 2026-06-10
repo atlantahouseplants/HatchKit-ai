@@ -90,7 +90,7 @@ export default function RootLayout({
               textDecoration: 'none',
             }}
           >
-            Talk to Brianna
+            Get a Free Demo
           </a>
         </div>
       </body>

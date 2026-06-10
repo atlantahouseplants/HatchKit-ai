@@ -202,7 +202,7 @@ export default function PricingPage() {
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
             A demo gives us enough context to understand what is actually slowing you down.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Talk to Brianna</Link>
+          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
         </div>
       </section>
     </div>

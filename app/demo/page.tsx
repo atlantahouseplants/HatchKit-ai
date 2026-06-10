@@ -5,7 +5,7 @@ import VideoSection from "@/components/show/VideoSection";
 const outcomes = [
   "Where your leads are coming from and where they are getting lost",
   "Which repetitive jobs the robots can handle first",
-  "How HatchKit can help with website, follow-up, shipping, content, and CRM",
+  "How HatchKit can help with your website, follow-up, shipping, and content",
   "The smallest setup that makes sense for your operation",
 ];
 
@@ -22,15 +22,15 @@ export default function DemoPage() {
       <section className="hk-hero scale-pattern" style={{ minHeight: "auto", paddingBottom: "72px" }}>
         <div className="hk-shell hk-grid-2" style={{ alignItems: "start" }}>
           <div>
-            <span className="hk-eyebrow">Breeder business strategy call</span>
+            <span className="hk-eyebrow">Free 15-minute demo</span>
             <h1 style={{ color: "#fff", fontSize: "clamp(2.7rem, 5vw, 4.8rem)", marginTop: "22px" }}>
-              Show us where the business gets messy. We will show what HatchKit can take off your plate.
+              See how breeders like you are using HatchKit to sell more.
             </h1>
             <p className="hk-hero-copy">
-              This is not a fancy software pitch. Tell us how you sell, where buyers find
-              you, how you ship, and what keeps falling through the cracks. On the call we
-              will walk you through a live demo account so you can see exactly what HatchKit
-              does and how other breeders are using it.
+              No pressure and no cost. Tell us how you sell, where buyers find you, and what
+              keeps falling through the cracks. We will walk you through a live demo account so
+              you can see exactly what HatchKit does and how other breeders are using it to
+              get more sales.
             </p>
 
             <div style={{ marginTop: "28px", display: "grid", gap: "12px" }}>
@@ -57,11 +57,11 @@ export default function DemoPage() {
           <div className="hk-card" style={{ padding: "20px" }}>
             <div style={{ marginBottom: "8px" }}>
               <h2 style={{ color: "#102A43", fontSize: "22px", marginBottom: "6px" }}>
-                Pick a time with Brianna
+                Get your free HatchKit demo
               </h2>
               <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.6 }}>
-                30 minutes. No tech homework. Choose a slot and you are booked — you will get
-                a confirmation by email.
+                15 minutes. Free, no pressure, no obligation. Pick a slot and you are booked — you
+                will get a confirmation by email.
               </p>
             </div>
             <BookingCalendar />

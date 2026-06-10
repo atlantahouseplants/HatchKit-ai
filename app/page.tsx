@@ -15,9 +15,9 @@ import {
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "HatchKit - Software That Handles the Breeder Business Busywork",
+  title: "HatchKit - Helping Reptile Breeders Sell More with Less Busywork",
   description:
-    "HatchKit helps breeders capture leads, follow up with buyers, manage shipping, build their website, and keep marketing moving without doing everything by hand.",
+    "HatchKit helps breeders capture more leads, follow up with every buyer, ship safely, and turn one-time buyers into repeat customers - so you sell more without doing it all by hand.",
 };
 
 const heroStats = [
@@ -162,6 +162,11 @@ const faqItems = [
     answer:
       "You do not need to be technical. HatchKit is set up as a practical operating system for breeder teams, with forms, workflows, messaging, and content prompts prepared for daily use.",
   },
+  {
+    question: "Does the demo cost anything?",
+    answer:
+      "No. The demo is completely free and there is no obligation. It is a quick 15-minute look at how HatchKit could help you sell more - no pressure and no commitment to buy.",
+  },
 ];
 
 export default function HomePage() {
@@ -170,16 +175,17 @@ export default function HomePage() {
       <section className="hk-hero scale-pattern">
         <div className="hk-hero-layout">
           <div>
-            <span className="hk-eyebrow">Breeder business software</span>
-            <h1>You breed the animals. HatchKit handles the busywork.</h1>
+            <span className="hk-eyebrow">Software that helps breeders sell more</span>
+            <h1>You raise the animals. HatchKit helps you sell more of them.</h1>
             <p className="hk-hero-copy">
-              Built for breeders who are good with animals but tired of chasing leads,
-              forgetting follow-ups, checking shipping weather by hand, and trying to
-              figure out websites, emails, and social media on top of everything else.
+              Built for breeders who are great with animals but tired of losing leads,
+              forgetting to follow up, and watching interested buyers go cold. HatchKit
+              captures every lead, follows up for you, keeps shipping safe, and turns more
+              lookers into paid, repeat buyers - without you becoming a tech person.
             </p>
             <div className="hk-hero-actions">
               <Link href="/demo/" className="hk-button hk-button-primary">
-                Talk to Brianna
+                Get a Free Demo
               </Link>
               <Link href="/features/" className="hk-button hk-button-secondary">
                 See What It Handles
@@ -205,17 +211,17 @@ export default function HomePage() {
         <div className="hk-shell hk-grid-2" style={{ alignItems: "center" }}>
           <ScrollReveal>
             <div>
-              <span className="hk-kicker">Built from a real breeder business</span>
-              <h2 className="hk-section-heading">Brianna did it the hard way first.</h2>
+              <span className="hk-kicker">Built by a real breeder business</span>
+              <h2 className="hk-section-heading">Made by breeders who got tired of losing sales.</h2>
               <p className="hk-section-copy">
-                Brianna built YetiGex by selling at shows, answering buyer questions,
-                shipping animals safely, helping first-time keepers, and learning where
-                the business gets messy. HatchKit came from that work: build the systems
-                once, let automation handle the repeatable parts, and keep the human touch
-                where it matters.
+                HatchKit came out of a working breeder operation - shows, buyer DMs, shipping
+                days, and endless follow-up. We got tired of watching good leads slip away and
+                built the systems to stop it: capture every buyer, follow up automatically, and
+                turn more inquiries into paid, repeat sales. Now you get those same systems
+                without building them yourself.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "26px" }}>
-                {["100+ happy families at YetiGex", "Weather-checked shipping", "Real buyer support from a breeder"].map((item) => (
+                {["Built by working breeders", "Weather-checked shipping", "More follow-up, more repeat buyers"].map((item) => (
                   <span
                     key={item}
                     style={{
@@ -232,15 +238,13 @@ export default function HomePage() {
                   </span>
                 ))}
               </div>
-              <a
-                href="https://yetigex.com"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/about/"
                 className="hk-link"
                 style={{ display: "inline-flex", marginTop: "20px" }}
               >
-                See Brianna&apos;s YetiGex business
-              </a>
+                See how HatchKit was built
+              </Link>
             </div>
           </ScrollReveal>
           <ScrollReveal>
@@ -486,7 +490,7 @@ export default function HomePage() {
           <ScrollReveal>
             <div style={{ textAlign: "center" }}>
               <span className="hk-kicker">Questions</span>
-              <h2 className="hk-section-heading">Straight answers before a demo.</h2>
+              <h2 className="hk-section-heading">Straight answers before your free demo.</h2>
             </div>
           </ScrollReveal>
           <ScrollReveal>
@@ -500,9 +504,9 @@ export default function HomePage() {
       <section className="hk-final-cta scale-pattern">
         <div style={{ margin: "0 auto", maxWidth: "720px" }}>
           <ScrollReveal>
-            <span className="hk-eyebrow">Ready to get help with the business side?</span>
+            <span className="hk-eyebrow">Ready to sell more with less hassle?</span>
             <h2 style={{ color: "#ffffff", fontSize: "clamp(2.2rem, 4vw, 3.4rem)", marginTop: "22px" }}>
-              Let us show you what HatchKit would do for your business.
+              See what HatchKit would do for your sales.
             </h2>
             <p
               style={{
@@ -513,11 +517,12 @@ export default function HomePage() {
                 maxWidth: "590px",
               }}
             >
-              Bring your animals, your current sales channels, and the parts of the
-              business that are driving you crazy. We will map the system around how you actually work.
+              It is a free, no-pressure 15-minute demo. Bring your animals and the sales
+              channels you already use - we will show you how other breeders are getting more
+              sales and map it to how you actually work. No cost, no obligation.
             </p>
             <Link href="/demo/" className="hk-button hk-button-primary">
-              Talk to Brianna
+              Get a Free Demo
             </Link>
           </ScrollReveal>
         </div>

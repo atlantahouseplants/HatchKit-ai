@@ -29,7 +29,7 @@ export default function SetupChecklist({ compact = false, showCta = true }: Setu
         </p>
         {showCta && (
           <Link href="/demo/" className="hk-button hk-button-primary">
-            Talk to Brianna
+            Get a Free Demo
           </Link>
         )}
       </div>
