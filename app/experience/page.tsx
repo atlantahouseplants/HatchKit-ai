@@ -88,8 +88,8 @@ export default function ExperiencePage() {
               <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.7 }}>
                 SunScale is a demo crested-gecko breeder running on HatchKit. Enter your details and
                 we&apos;ll treat you exactly like one of their buyers — including the{" "}
-                <strong>real automated emails</strong> a buyer would receive. That&apos;s the experience
-                your own buyers would get.
+                <strong>real automated emails and texts</strong> a buyer would receive. That&apos;s the
+                experience your own buyers would get.
               </p>
               <form
                 onSubmit={(e) => {
@@ -100,7 +100,7 @@ export default function ExperiencePage() {
               >
                 <Input label="Your name" value={visitor.name} onChange={(v) => setVisitor({ ...visitor, name: v })} required />
                 <Input label="Your email (where the demo emails go)" type="email" value={visitor.email} onChange={(v) => setVisitor({ ...visitor, email: v })} required />
-                <Input label="Mobile (optional)" type="tel" value={visitor.phone || ""} onChange={(v) => setVisitor({ ...visitor, phone: v })} />
+                <Input label="Mobile (add it to feel the live texts too)" type="tel" value={visitor.phone || ""} onChange={(v) => setVisitor({ ...visitor, phone: v })} />
                 <button className="hk-button hk-button-primary" type="submit" style={{ border: "none", cursor: "pointer", marginTop: "4px" }}>
                   Start the Experience →
                 </button>
@@ -211,9 +211,9 @@ function Finish({ visitor }: { visitor: Visitor }) {
           Every message and update you just saw happened on its own.
         </h2>
         <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.7, marginLeft: "auto", marginRight: "auto", maxWidth: "560px" }}>
-          📬 The real emails are landing in <strong>{visitor.email || "your inbox"}</strong> right now —
-          that&apos;s exactly what your buyers would feel. Now imagine it running for your animals,
-          your buyers, your shows. That&apos;s HatchKit.
+          📬 The real emails — and texts, if you added your mobile — are landing right now,
+          exactly what your buyers would feel. Now imagine it running for your animals, your
+          buyers, and your shows. That&apos;s HatchKit.
         </p>
       </div>
 

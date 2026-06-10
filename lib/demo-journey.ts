@@ -1,6 +1,6 @@
 // Self-guided demo journey.
 //
-// These helpers POST to the SAME production webhooks the existing GoHighLevel funnel
+// These helpers POST to the SAME production webhooks the existing demo funnel
 // uses, so every existing SunScale automation fires unchanged. We only add the prospect's
 // own info; all other values match docs/demo-showroom/accelerated-workflow-recipes.md.
 
@@ -74,7 +74,7 @@ export type Stage = {
   channel: Channel;
   realTiming: string; // what the real-world delay would be
   detail: string; // what the buyer experiences
-  breeder: string; // what the breeder sees inside HighLevel
+  breeder: string; // what the breeder sees inside HatchKit
 };
 
 // Group 1 — after the prospect requests the starter guide
@@ -84,7 +84,7 @@ export const STARTER_STAGES: Stage[] = [
     channel: "system",
     realTiming: "the moment they raise a hand",
     detail: "Your new buyer is saved with their name, email, and what they were interested in.",
-    breeder: "New contact appears in HighLevel, tagged “new lead · crested gecko.”",
+    breeder: "New contact appears in HatchKit, tagged “new lead · crested gecko.”",
   },
   {
     title: "Welcome + starter guide email",
