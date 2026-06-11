@@ -238,8 +238,9 @@ function Finale({ hasPhone }: { hasPhone: boolean }) {
         <div style={{ marginBottom: "10px", textAlign: "center" }}>
           <h3 style={{ color: "#102A43", fontSize: "22px", marginBottom: "6px" }}>Want this running for your business?</h3>
           <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.6 }}>
-            Book a free 15-minute call — we&apos;ll map HatchKit to your species, your shows, and how you
-            actually sell. No cost, no obligation, no pressure.
+            Everything you just felt comes with your own branded website and online store — built
+            for you. Book a free 15-minute call — we&apos;ll map HatchKit to your species, your shows,
+            and how you actually sell. No cost, no obligation, no pressure.
           </p>
         </div>
         <BookingCalendar />

@@ -3,7 +3,6 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal";
 import PricingCard from "@/components/PricingCard";
 import FAQAccordion from "@/components/FAQAccordion";
-import SetupChecklist from "@/components/SetupChecklist";
 import VideoSection from "@/components/show/VideoSection";
 import {
   AIShippingIcon,
@@ -65,6 +64,41 @@ const speciesSegments = [
     label: "Birds & Small Mammals",
     pain: "Buyers who inquire months before an animal is ready forget about you - and you have no easy way to stay in front of them.",
     benefit: "Waitlist follow-up and pre-availability campaigns keep you top of mind, so the sale happens when the timing is right.",
+  },
+];
+
+const deliverables = [
+  {
+    title: "Your own branded website + online store",
+    body: "A professional storefront under your name — list animals, show availability, run waitlists. Not a listing that looks like everyone else's.",
+  },
+  {
+    title: "Payments + deposits built in",
+    body: "Buyers hold an animal or pay in full right on your site. Invoices, receipts, and confirmations send themselves.",
+  },
+  {
+    title: "One inbox for every conversation",
+    body: "Website messages, texts, and emails land in one dashboard. Answer everything from one place — nothing gets buried.",
+  },
+  {
+    title: "The follow-up engine from the demo",
+    body: "Instant replies, reminders, shipping updates, care tips, review asks — running for your buyers around the clock.",
+  },
+  {
+    title: "A live buyer board",
+    body: "Every prospect and exactly where they stand — new, interested, deposit paid, shipped, repeat — so you always know who's hot.",
+  },
+  {
+    title: "Reviews, referrals + repeat sales",
+    body: "Review collection after every happy delivery, referral asks, and VIP-list campaigns that bring buyers back.",
+  },
+  {
+    title: "QR codes + show kit",
+    body: "Table-ready QR lead capture for expos and shows, wired straight into your follow-up.",
+  },
+  {
+    title: "All of it built FOR you",
+    body: "We set up the store, the automations, and the workflows around how you already sell. You don't design, code, or configure anything.",
   },
 ];
 
@@ -140,7 +174,7 @@ const pricingPlans = [
     features: [
       { text: "QR lead capture and buyer intake forms", included: true },
       { text: "CRM fields, tags, and smart lists", included: true },
-      { text: "Starter storefront and inquiry workflow", included: true },
+      { text: "Your own branded website + online store", included: true },
       { text: "Review and referral follow-up", included: true },
     ],
     ctaLabel: "Start with Starter",
@@ -181,6 +215,11 @@ const faqItems = [
     question: "Is HatchKit only for reptile breeders?",
     answer:
       "No. HatchKit is built for any breeder running a real sales operation - reptiles and amphibians, aquatics and fish rooms, insects and feeders, birds, and small mammals. The core jobs are the same across species: capture the lead, follow up, track deals, ship safely when needed, and keep buyers coming back.",
+  },
+  {
+    question: "What exactly do I get when I sign up?",
+    answer:
+      "Your own professionally branded website and online store for your animals (payments and deposits built in), one inbox for all buyer messages, the automated follow-up engine you can feel in the live demo, a buyer board that shows who is hot, review and referral collection, QR show kits, and reporting - all built for you around how you already sell. You do not have to build anything.",
   },
   {
     question: "Do I have to replace my current sales channels?",
@@ -647,7 +686,52 @@ export default function HomePage() {
       <section className="hk-section hk-section-eggshell">
         <div className="hk-shell">
           <ScrollReveal>
-            <SetupChecklist />
+            <div style={{ maxWidth: "760px" }}>
+              <span className="hk-kicker">What you actually get</span>
+              <h2 className="hk-section-heading">Your own store. Your own brand. Your own buyers.</h2>
+              <p className="hk-section-copy">
+                Most breeders sell from a marketplace listing or a social page — rented space
+                where the brand, the buyer list, and the follow-up belong to someone else&apos;s
+                platform. HatchKit hands you the whole package, under your name:
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="hk-grid-3" style={{ marginTop: "36px" }}>
+              {deliverables.map((item, index) => (
+                <article className="hk-card" key={item.title}>
+                  <span
+                    style={{
+                      color: "#00B8A9",
+                      display: "block",
+                      fontFamily: "var(--font-accent)",
+                      fontSize: "13px",
+                      fontWeight: 800,
+                      marginBottom: "10px",
+                    }}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 style={{ color: "#102A43", fontSize: "18px", marginBottom: "8px" }}>{item.title}</h3>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.65 }}>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <p
+              style={{
+                color: "#52606D",
+                fontFamily: "var(--font-subheading)",
+                fontSize: "15px",
+                fontWeight: 700,
+                marginTop: "30px",
+                textAlign: "center",
+              }}
+            >
+              Every plan includes the core package — the plans below are about how much of the
+              busywork we take on for you.
+            </p>
           </ScrollReveal>
         </div>
       </section>

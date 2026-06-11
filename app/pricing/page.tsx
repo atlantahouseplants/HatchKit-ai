@@ -18,6 +18,7 @@ const plans = [
     subtitle: "Get leads organized",
     description: "For breeders who need to stop losing names, DMs, show leads, and basic follow-up.",
     features: [
+      { text: "Your own branded website + online store", included: true },
       { text: "Lead forms and show QR capture", included: true },
       { text: "Buyer records, tags, and smart lists", included: true },
       { text: "Basic inquiry and follow-up workflow", included: true },
@@ -84,6 +85,10 @@ const faqs = [
   {
     q: "Does HatchKit work for fish, insects, birds, or small mammals - not just reptiles?",
     a: "Yes. The system is built around breeder-business operations - leads, follow-up, deals, shipping, content - not a single animal category. Aquatics breeders, insect and feeder sellers, bird breeders, and small-mammal operations all use the same core workflows.",
+  },
+  {
+    q: "What is actually included when I sign up?",
+    a: "Your own branded website and online store (with payments and deposits built in), one inbox for all buyer messages, the automated follow-up engine, a buyer pipeline that shows who is hot, review and referral collection, QR show kits, and reporting. Setup means we build all of it for you - you do not have to design, code, or configure anything.",
   },
 ];
 

@@ -111,8 +111,8 @@ export default function FeaturesPage() {
             The business chores you should not have to do by hand forever.
           </h1>
           <p className="hk-hero-copy" style={{ marginLeft: "auto", marginRight: "auto" }}>
-            Leads, buyer follow-up, websites, emails, social media, shipping checks,
-            and sales tracking in one setup your business can actually use.
+            Your own branded website and store, leads, buyer follow-up, emails, social media,
+            shipping checks, and sales tracking in one setup your business can actually use.
           </p>
           <div className="hk-hero-actions" style={{ justifyContent: "center" }}>
             <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
