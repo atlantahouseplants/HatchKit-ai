@@ -165,7 +165,7 @@ const faqItems = [
   {
     question: "Does the demo cost anything?",
     answer:
-      "No. The demo is completely free and there is no obligation. It is a quick 15-minute look at how HatchKit could help you sell more - no pressure and no commitment to buy.",
+      "No. There are two free ways to see HatchKit. The instant one: our guided live demo on this site - you play one of your buyers for about 3 minutes and the real automated emails and texts land on your own phone. Then, if you like what you felt, book a free 15-minute call and we map it to your business - no pressure and no commitment to buy.",
   },
 ];
 
@@ -185,12 +185,24 @@ export default function HomePage() {
             </p>
             <div className="hk-hero-actions">
               <Link href="/experience/" className="hk-button hk-button-primary">
-                Try the Live Demo →
+                Experience HatchKit Live — Free →
               </Link>
               <Link href="/demo/" className="hk-button hk-button-secondary">
-                Get a Free Demo
+                Book a Free Demo Call
               </Link>
             </div>
+            <p
+              style={{
+                color: "rgba(255,255,255,0.7)",
+                fontSize: "13.5px",
+                fontWeight: 600,
+                lineHeight: 1.6,
+                margin: "14px 0 0",
+              }}
+            >
+              Play one of your buyers in a guided demo — real texts &amp; emails hit your phone ·
+              about 3 minutes · no signup
+            </p>
             <div className="hk-hero-stats">
               {heroStats.map((stat) => (
                 <div className="hk-hero-stat" key={stat.label}>
@@ -206,6 +218,57 @@ export default function HomePage() {
       </section>
 
       <VideoSection />
+
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <div style={{ textAlign: "center" }}>
+              <span className="hk-kicker">Don&apos;t take our word for it</span>
+              <h2 className="hk-section-heading">Feel it work — before anyone calls you.</h2>
+              <p className="hk-section-copy" style={{ marginLeft: "auto", marginRight: "auto" }}>
+                Our guided live demo walks you through a real buyer&apos;s journey, one easy step at a
+                time — and the automated emails and texts land on <strong>your</strong> phone while
+                you watch the breeder&apos;s side run itself. You can&apos;t do it wrong.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="hk-grid-3" style={{ marginTop: "36px" }}>
+              {[
+                { step: "01", title: "Type your name and email", body: "That's the whole setup. Add your mobile if you want to feel the real texts too." },
+                { step: "02", title: "Click through a buyer's journey", body: "Free guide → falling for a gecko → deposit → safe shipping → review. We guide every click." },
+                { step: "03", title: "Watch the magic land on your devices", body: "Every automated email and text a real buyer gets arrives on YOUR phone — live, as you click." },
+              ].map((item) => (
+                <article className="hk-card" key={item.step}>
+                  <span
+                    style={{
+                      color: "#00B8A9",
+                      fontFamily: "var(--font-accent)",
+                      fontSize: "14px",
+                      fontWeight: 800,
+                      letterSpacing: "0.08em",
+                    }}
+                  >
+                    {item.step}
+                  </span>
+                  <h3 style={{ color: "#102A43", fontSize: "19px", margin: "10px 0 8px" }}>{item.title}</h3>
+                  <p style={{ color: "#52606D", fontSize: "14px", lineHeight: 1.65 }}>{item.body}</p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div style={{ marginTop: "34px", textAlign: "center" }}>
+              <Link href="/experience/" className="hk-button hk-button-primary">
+                Experience HatchKit Live →
+              </Link>
+              <p style={{ color: "#8795A1", fontSize: "13px", fontWeight: 600, margin: "12px 0 0" }}>
+                Free · about 3 minutes · no signup, no card, no sales call
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <section className="hk-section">
         <div className="hk-shell hk-grid-2" style={{ alignItems: "center" }}>
@@ -517,13 +580,18 @@ export default function HomePage() {
                 maxWidth: "590px",
               }}
             >
-              It is a free, no-pressure 15-minute demo. Bring your animals and the sales
-              channels you already use - we will show you how other breeders are getting more
-              sales and map it to how you actually work. No cost, no obligation.
+              Feel it yourself first: play one of your buyers in the guided live demo and watch
+              the follow-up land on your own phone. Then book a free, no-pressure 15-minute call
+              and we will map it to how you actually sell. No cost, no obligation.
             </p>
-            <Link href="/demo/" className="hk-button hk-button-primary">
-              Get a Free Demo
-            </Link>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+              <Link href="/experience/" className="hk-button hk-button-primary">
+                Experience HatchKit Live →
+              </Link>
+              <Link href="/demo/" className="hk-button hk-button-secondary">
+                Book a Free Demo Call
+              </Link>
+            </div>
           </ScrollReveal>
         </div>
       </section>

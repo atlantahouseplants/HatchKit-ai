@@ -74,7 +74,7 @@ export default function RootLayout({
         `}</style>
         <div className="mobile-sticky-cta">
           <a
-            href="/demo/"
+            href="/experience/"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -90,7 +90,7 @@ export default function RootLayout({
               textDecoration: 'none',
             }}
           >
-            Get a Free Demo
+            Try HatchKit Live — Free
           </a>
         </div>
       </body>

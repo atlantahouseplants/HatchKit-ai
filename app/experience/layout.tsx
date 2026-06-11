@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Try the Live HatchKit Demo - Feel It Work in 2 Minutes",
+  title: "Experience HatchKit Live - A Guided Demo in 3 Minutes",
   description:
-    "Play the buyer and watch HatchKit's follow-up, safe-shipping, and repeat-buyer automations fire in real time - the messages that normally take days, landing in seconds. Free, no signup.",
+    "Play one of your own buyers in a guided, step-by-step demo. Real automated emails and texts land on your devices while you watch the breeder's side run itself. Free, no signup.",
 };
 
 export default function ExperienceLayout({ children }: { children: React.ReactNode }) {

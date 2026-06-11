@@ -58,13 +58,27 @@ export const postOrderSubmitted = (v: Visitor) =>
     source: "website-self-demo",
   });
 
+// The buyer leaves a review (advocacy). Fires the real referral + VIP-invite automation
+// (the server texts the same referral ask a real happy buyer would get).
+export const postReviewSubmitted = (v: Visitor) =>
+  post("/webhooks/ghl/review-submitted", {
+    locationId: SUNSCALE_LOCATION_ID,
+    firstName: v.name,
+    email: v.email,
+    phone: v.phone || "",
+    species_interest: "Crested Gecko",
+    source: "website-self-demo",
+  });
+
 // Captures the prospect as a HatchKit sales lead (separate account) + notifies Brianna.
-export const postHatchkitLead = (v: Visitor, notes?: string) =>
+// stage:'started' = capture-only (no follow-up task yet); 'completed' = hot lead + task.
+export const postHatchkitLead = (v: Visitor, notes?: string, stage?: "started" | "completed") =>
   post("/webhooks/hatchkit/demo-lead", {
     name: v.name,
     email: v.email,
     phone: v.phone || "",
     notes: notes || "Completed the self-guided demo on hatchkitai.com",
+    ...(stage ? { stage } : {}),
   });
 
 // ── Journey model ───────────────────────────────────────────────────────────
@@ -84,7 +98,7 @@ export const BOARD_STAGES = [
 export type Channel = "email" | "text" | "system";
 
 export type JourneyEvent = {
-  group: 1 | 2 | 3; // which buyer action reveals it
+  group: 1 | 2 | 3 | 4; // which buyer action reveals it
   channel: Channel; // "system" = no buyer message, just a dashboard change
   realDay: number; // 0–14: the real-world day the buyer gets this
   buyer?: string; // the message the buyer sees (email/text)
@@ -111,6 +125,10 @@ export const EVENTS: JourneyEvent[] = [
   { group: 3, channel: "email", realDay: 9, buyer: "Welcome home! Mango's first-week care 🏡", stage: "Delivered", note: "New-keeper care guidance keeps the buyer happy." },
   { group: 3, channel: "email", realDay: 12, buyer: "How's Mango settling in? Mind leaving a quick review?", stage: "Delivered", note: "Happy-buyer review and referral ask." },
   { group: 3, channel: "text", realDay: 14, buyer: "Want first dibs on future geckos? Join the VIP list.", stage: "Repeat buyer", note: "One sale turns into a repeat buyer." },
+
+  // Group 4 — buyer leaves a review; the referral engine kicks in
+  { group: 4, channel: "system", realDay: 14, stage: "Repeat buyer", note: "Review saved. The buyer is tagged as a happy customer — referral + VIP invites go out on their own." },
+  { group: 4, channel: "text", realDay: 14, buyer: "Thank you for the review! If you know someone researching crested geckos, I can send them the same starter guide and VIP availability list. 💚", stage: "Repeat buyer", note: "One happy sale just became your next lead source — automatically." },
 ];
 
-export const groupEvents = (group: 1 | 2 | 3) => EVENTS.filter((e) => e.group === group);
+export const groupEvents = (group: 1 | 2 | 3 | 4) => EVENTS.filter((e) => e.group === group);
