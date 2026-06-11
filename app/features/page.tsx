@@ -115,7 +115,7 @@ export default function FeaturesPage() {
             and sales tracking in one setup your business can actually use.
           </p>
           <div className="hk-hero-actions" style={{ justifyContent: "center" }}>
-            <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
+            <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
             <Link href="/pricing/" className="hk-button hk-button-secondary">See Pricing</Link>
           </div>
         </div>
@@ -202,14 +202,19 @@ export default function FeaturesPage() {
 
       <section className="hk-final-cta scale-pattern">
         <div style={{ margin: "0 auto", maxWidth: "760px" }}>
-          <span className="hk-eyebrow">See it with your animals and your process</span>
+          <span className="hk-eyebrow">Feel it before any call</span>
           <h2 style={{ color: "#fff", fontSize: "clamp(2rem, 4vw, 3.2rem)", marginTop: "20px" }}>
-            No generic software tour. We will show what HatchKit would handle first.
+            Feel these features working before anyone calls you.
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
-            Bring your sales mess, your shipping process, and the parts of the business where you know you need help.
+            Play one of your buyers in the guided live demo — the real follow-up emails and
+            texts land on your phone in about 3 minutes. Then bring your sales mess to a
+            free call and we will show what HatchKit would handle first.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
+            <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
+          </div>
         </div>
       </section>
     </div>

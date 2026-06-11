@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           <div className="hk-card" style={{ marginTop: "32px" }}>
             <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.8 }}>
               HatchKit is committed to protecting your privacy. This policy explains how we
-              collect and use information when you visit hatchkit.ai, request a demo, or use
+              collect and use information when you visit hatchkitai.com, request a demo, or use
               HatchKit services.
             </p>
 

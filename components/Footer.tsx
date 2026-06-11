@@ -2,9 +2,11 @@ import Link from 'next/link';
 import HatchKitLogo from './HatchKitLogo';
 
 const productLinks = [
+  { label: 'Try It Live', href: '/experience/' },
   { label: 'Features', href: '/features/' },
   { label: 'Pricing', href: '/pricing/' },
-  { label: 'Get a Free Demo', href: '/demo/' },
+  { label: 'Shows & Expos', href: '/show/' },
+  { label: 'Book a Demo Call', href: '/demo/' },
 ];
 
 const companyLinks = [

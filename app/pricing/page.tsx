@@ -81,6 +81,10 @@ const faqs = [
     q: "Do I need to connect every sales channel on day one?",
     a: "No. The cleanest launch usually starts with the channels where you already lose leads or time, then expands after the workflow is proven.",
   },
+  {
+    q: "Does HatchKit work for fish, insects, birds, or small mammals - not just reptiles?",
+    a: "Yes. The system is built around breeder-business operations - leads, follow-up, deals, shipping, content - not a single animal category. Aquatics breeders, insect and feeder sellers, bird breeders, and small-mammal operations all use the same core workflows.",
+  },
 ];
 
 export default function PricingPage() {
@@ -96,6 +100,10 @@ export default function PricingPage() {
             This is not just a blank software login. We help set up the system around
             how you actually sell, ship, and follow up.
           </p>
+          <div className="hk-hero-actions" style={{ justifyContent: "center" }}>
+            <Link href="/experience/" className="hk-button hk-button-primary">Try It Live First — Free →</Link>
+            <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
+          </div>
         </div>
       </section>
 
@@ -156,7 +164,7 @@ export default function PricingPage() {
                   <tr key={row[0]}>
                     {row.map((cell, index) => (
                       <td
-                        key={cell}
+                        key={`${row[0]}-${index}`}
                         style={{
                           borderBottom: "1px solid rgba(16,42,67,0.08)",
                           color: index === 0 ? "#102A43" : "#52606D",
@@ -200,9 +208,13 @@ export default function PricingPage() {
             We will recommend the smallest plan that fixes the current bottleneck.
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
-            A demo gives us enough context to understand what is actually slowing you down.
+            Feel the system in the live demo, then a free 15-minute call gives us enough
+            context to recommend what would actually fix your bottleneck.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
+            <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
+          </div>
         </div>
       </section>
     </div>

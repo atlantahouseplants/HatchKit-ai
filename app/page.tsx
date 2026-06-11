@@ -15,9 +15,21 @@ import {
 } from "@/components/ModuleIcons";
 
 export const metadata: Metadata = {
-  title: "HatchKit - Helping Reptile Breeders Sell More with Less Busywork",
+  title: "HatchKit - Software That Helps Pet Breeders Sell More with Less Busywork",
   description:
-    "HatchKit helps breeders capture more leads, follow up with every buyer, ship safely, and turn one-time buyers into repeat customers - so you sell more without doing it all by hand.",
+    "HatchKit helps reptile, fish, insect, bird, and small-mammal breeders capture more leads, follow up with every buyer, ship safely, and turn one-time buyers into repeat customers - without becoming a tech person.",
+  keywords: [
+    "pet breeder software",
+    "reptile breeder crm",
+    "fish breeder software",
+    "aquatics breeder sales tools",
+    "insect breeder software",
+    "bird breeder crm",
+    "small mammal breeder software",
+    "breeder lead capture",
+    "breeder marketing automation",
+    "live animal shipping software",
+  ],
 };
 
 const heroStats = [
@@ -31,6 +43,29 @@ const breederPainPoints = [
   "You know you should post more, but you are busy feeding, cleaning, packing, and answering buyers.",
   "Shipping days turn into weather checks, customer updates, and second-guessing.",
   "Your website, email list, follow-up, and sales process are not as organized as your animals deserve.",
+];
+
+const speciesSegments = [
+  {
+    label: "Reptiles & Amphibians",
+    pain: "You answer the same five questions about morphs, care, and availability every week - and half those buyers never hear from you again.",
+    benefit: "HatchKit captures every inquiry automatically, sends the basics for you, and keeps serious buyers moving toward a deposit.",
+  },
+  {
+    label: "Aquatics & Fish Rooms",
+    pain: "Fish buyers ask fast, want fast answers, and move on to the next seller if you take a day to reply.",
+    benefit: "Instant first replies and a clean buyer list close more sales from the same traffic - without being glued to your phone.",
+  },
+  {
+    label: "Insects & Inverts",
+    pain: "You repeat the same colony math, care explanations, and bulk-pricing conversations with every new customer.",
+    benefit: "Saved replies, care onboarding, and repeat-order follow-up turn one-time feeder customers into regulars.",
+  },
+  {
+    label: "Birds & Small Mammals",
+    pain: "Buyers who inquire months before an animal is ready forget about you - and you have no easy way to stay in front of them.",
+    benefit: "Waitlist follow-up and pre-availability campaigns keep you top of mind, so the sale happens when the timing is right.",
+  },
 ];
 
 const operatingModules = [
@@ -145,7 +180,7 @@ const faqItems = [
   {
     question: "Is HatchKit only for reptile breeders?",
     answer:
-      "No. HatchKit is built around breeder-business operations: leads, customers, inventory interest, safe movement, content, and follow-up. Reptile breeders are an early focus, but the brand and system are not pet-store or reptile-only.",
+      "No. HatchKit is built for any breeder running a real sales operation - reptiles and amphibians, aquatics and fish rooms, insects and feeders, birds, and small mammals. The core jobs are the same across species: capture the lead, follow up, track deals, ship safely when needed, and keep buyers coming back.",
   },
   {
     question: "Do I have to replace my current sales channels?",
@@ -172,10 +207,45 @@ const faqItems = [
 export default function HomePage() {
   return (
     <div className="hk-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "HatchKit",
+            applicationCategory: "BusinessApplication",
+            operatingSystem: "Web",
+            url: "https://hatchkitai.com",
+            description:
+              "Business software for pet breeders - lead capture, buyer follow-up, safe shipping workflows, social content, and sales tracking.",
+            offers: pricingPlans.map((plan) => ({
+              "@type": "Offer",
+              name: plan.name,
+              price: plan.price.replace("$", ""),
+              priceCurrency: "USD",
+            })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: { "@type": "Answer", text: item.answer },
+            })),
+          }),
+        }}
+      />
       <section className="hk-hero scale-pattern">
         <div className="hk-hero-layout">
           <div>
-            <span className="hk-eyebrow">Software that helps breeders sell more</span>
+            <span className="hk-eyebrow">For reptile · aquatic · insect · bird · small-mammal breeders</span>
             <h1>You raise the animals. HatchKit helps you sell more of them.</h1>
             <p className="hk-hero-copy">
               Built for breeders who are great with animals but tired of losing leads,
@@ -333,7 +403,7 @@ export default function HomePage() {
         <div className="hk-shell">
           <ScrollReveal>
             <span className="hk-kicker">Sound familiar?</span>
-            <h2 className="hk-section-heading">Most breeders do not have a reptile problem. They have a business follow-through problem.</h2>
+            <h2 className="hk-section-heading">Most breeders do not have an animal problem. They have a business follow-through problem.</h2>
           </ScrollReveal>
           <ScrollReveal stagger>
             <div className="hk-grid-2" style={{ marginTop: "34px" }}>
@@ -344,6 +414,62 @@ export default function HomePage() {
                   </p>
                 </article>
               ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <section className="hk-section hk-section-eggshell">
+        <div className="hk-shell">
+          <ScrollReveal>
+            <div style={{ textAlign: "center" }}>
+              <span className="hk-kicker">Built for your species, not just one</span>
+              <h2 className="hk-section-heading">
+                Geckos, cichlids, roaches, finches, or rabbits — the business problems are the same.
+              </h2>
+              <p className="hk-section-copy" style={{ marginLeft: "auto", marginRight: "auto" }}>
+                HatchKit is built around breeder-business operations, not a single animal category.
+                The same lead capture, follow-up, shipping safety, and content tools work across
+                every species you raise.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal stagger>
+            <div className="hk-grid-2" style={{ marginTop: "36px" }}>
+              {speciesSegments.map((seg) => (
+                <article className="hk-card" key={seg.label} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                  <span
+                    style={{
+                      background: "rgba(0,184,169,0.12)",
+                      borderRadius: "999px",
+                      color: "#007A72",
+                      fontFamily: "var(--font-accent)",
+                      fontSize: "12px",
+                      fontWeight: 800,
+                      letterSpacing: "0.04em",
+                      padding: "6px 12px",
+                      textTransform: "uppercase",
+                      width: "fit-content",
+                    }}
+                  >
+                    {seg.label}
+                  </span>
+                  <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.65 }}>
+                    <strong style={{ color: "#102A43" }}>Sound familiar? </strong>
+                    {seg.pain}
+                  </p>
+                  <p style={{ color: "#008C82", fontFamily: "var(--font-subheading)", fontSize: "15px", fontWeight: 700, lineHeight: 1.55 }}>
+                    {seg.benefit}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div style={{ marginTop: "34px", textAlign: "center" }}>
+              <Link href="/experience/" className="hk-button hk-button-primary">
+                See it work for your operation →
+              </Link>
             </div>
           </ScrollReveal>
         </div>

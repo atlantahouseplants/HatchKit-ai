@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://hatchkit.ai"),
+  metadataBase: new URL("https://hatchkitai.com"),
   title: {
     default: "HatchKit - Software That Handles Breeder Business Busywork",
     template: "%s | HatchKit",
@@ -12,8 +12,15 @@ export const metadata: Metadata = {
   description:
     "HatchKit helps breeders stop losing leads, follow up with buyers, plan safer shipping, post more consistently, and run the business side without becoming a tech person.",
   keywords: [
+    "pet breeder software",
     "breeder business software",
     "animal breeder crm",
+    "reptile breeder crm",
+    "fish breeder software",
+    "aquatics breeder sales tools",
+    "insect breeder software",
+    "bird breeder crm",
+    "small mammal breeder software",
     "live animal shipping software",
     "breeder marketing automation",
     "breeder customer journey",
@@ -27,7 +34,7 @@ export const metadata: Metadata = {
     title: "HatchKit - Software That Handles Breeder Business Busywork",
     description:
       "Stop losing leads, missing follow-ups, stressing over shipping day, and trying to run the business side from memory.",
-    url: "https://hatchkit.ai",
+    url: "https://hatchkitai.com",
   },
   twitter: {
     card: "summary_large_image",
@@ -93,6 +100,32 @@ export default function RootLayout({
             Try HatchKit Live — Free
           </a>
         </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "HatchKit",
+              url: "https://hatchkitai.com",
+              logo: "https://hatchkitai.com/hatchkit-logo-reference.png",
+              description:
+                "Business software for pet breeders — lead capture, buyer follow-up, safe shipping workflows, social content, and sales tracking.",
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "brianna@hatchkitai.com",
+                contactType: "customer support",
+              },
+              sameAs: [
+                "https://www.youtube.com/@hatch_kit",
+                "https://www.instagram.com/hatch_kit",
+                "https://www.facebook.com/share/1Dj5PxUyMU/",
+                "https://x.com/hatch_kit",
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Show Lead Capture - HatchKit for Breeder Events",
     description:
       "Capture event leads, organize buyer interest, and follow up after the show with HatchKit.",
-    url: "https://hatchkit.ai/show/",
+    url: "https://hatchkitai.com/show/",
     siteName: "HatchKit",
     type: "website",
   },
@@ -58,8 +58,8 @@ export default function ShowPage() {
               follow up fast, and keep selling after the show is over.
             </p>
             <div className="hk-hero-actions">
-              <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
-              <Link href="/features/" className="hk-button hk-button-secondary">See Features</Link>
+              <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
+              <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
             </div>
           </div>
 
@@ -144,9 +144,13 @@ export default function ShowPage() {
             See what your post-show follow-up could look like.
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
-            We will map your table setup, buyer intake, and Monday follow-up during the demo.
+            Feel the buyer follow-up yourself first in our live demo — then book a free call and
+            we will map it to your table setup, buyer intake, and Monday follow-up.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
+            <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
+          </div>
         </div>
       </section>
     </div>

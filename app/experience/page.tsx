@@ -128,6 +128,23 @@ export default function ExperiencePage() {
                 as you click through the journey. At every step we&apos;ll tell you what to do, what&apos;s
                 about to happen, and what HatchKit just did behind the scenes.
               </p>
+              <p
+                style={{
+                  background: "rgba(0,184,169,0.08)",
+                  border: "1px solid rgba(0,184,169,0.2)",
+                  borderRadius: "8px",
+                  color: "#007A72",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  lineHeight: 1.6,
+                  marginTop: "12px",
+                  padding: "12px 14px",
+                }}
+              >
+                🦎🐠🐦🕷️ Fish room, bird room, insect colony, or reptile rack — the system is
+                identical. Our demo breeder happens to raise geckos; every email, text, and
+                workflow you&apos;re about to feel works the same for your species.
+              </p>
               <form onSubmit={startDemo} style={{ display: "grid", gap: "14px", marginTop: "22px" }}>
                 <Input label="Your name" value={visitor.name} onChange={(v) => setVisitor({ ...visitor, name: v })} required />
                 <Input

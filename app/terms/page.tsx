@@ -52,7 +52,7 @@ export default function TermsPage() {
 
           <div className="hk-card" style={{ marginTop: "32px" }}>
             <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.8 }}>
-              These terms govern your use of HatchKit at hatchkit.ai and related HatchKit
+              These terms govern your use of HatchKit at hatchkitai.com and related HatchKit
               software, implementation, and support services.
             </p>
 

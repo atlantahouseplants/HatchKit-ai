@@ -52,9 +52,11 @@ export default function AboutPage() {
               HatchKit started with a breeder who needed her business to stop running on memory.
             </h1>
             <p className="hk-hero-copy">
-              Brianna from YetiGex is proof of the model. She grew by taking great care
-              of buyers, shipping responsibly, teaching first-time keepers, and building
-              trust. HatchKit is the software system built around that kind of business.
+              Brianna built and ran a real breeder operation — shows, buyer messages,
+              shipping decisions, content, and endless follow-up. HatchKit is the software
+              system built from solving those problems for real. And it is not designed for
+              one species or one kind of setup: if you sell animals like a business, the
+              system works.
             </p>
             <div className="hk-hero-actions">
               <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
@@ -145,10 +147,27 @@ export default function AboutPage() {
               <h2 style={{ color: "#102A43", fontSize: "30px", marginTop: "12px" }}>
                 Breeders who know they could sell more if the business side was not so scattered.
               </h2>
-              <p style={{ color: "#52606D", fontSize: "16px", lineHeight: 1.75, marginTop: "16px" }}>
-                Reptile breeders, aquatics breeders, insect and feeder sellers, and other
-                animal sellers can use the same core system: capture the lead, remember
-                what they wanted, follow up, ship safely when needed, and keep the relationship alive.
+              <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.75, marginTop: "16px" }}>
+                The same core system works for any breeder running a real sales operation:
+              </p>
+              <div style={{ display: "grid", gap: "9px", marginTop: "14px" }}>
+                {[
+                  "Reptiles & amphibians",
+                  "Aquatics & fish rooms",
+                  "Insects, inverts & feeders",
+                  "Birds & small mammals",
+                ].map((species) => (
+                  <div key={species} style={{ alignItems: "center", display: "flex", gap: "10px" }}>
+                    <span style={{ background: "#00B8A9", borderRadius: "999px", flexShrink: 0, height: "8px", width: "8px" }} />
+                    <span style={{ color: "#102A43", fontFamily: "var(--font-subheading)", fontSize: "15px", fontWeight: 700 }}>
+                      {species}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p style={{ color: "#52606D", fontSize: "15px", lineHeight: 1.7, marginTop: "14px" }}>
+                Capture the lead, remember what they wanted, follow up, ship safely when
+                needed, and keep the relationship alive.
               </p>
             </div>
           </ScrollReveal>
@@ -176,9 +195,13 @@ export default function AboutPage() {
             If you are tired of doing the same business chores by hand, this is worth a conversation.
           </h2>
           <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "17px", lineHeight: 1.7, margin: "18px auto 30px" }}>
-            Bring your current sales mess. We will show what HatchKit can organize and automate first.
+            Feel it yourself in the live demo, then bring your current sales mess to a free
+            call. We will show what HatchKit can organize and automate first.
           </p>
-          <Link href="/demo/" className="hk-button hk-button-primary">Get a Free Demo</Link>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "14px", justifyContent: "center" }}>
+            <Link href="/experience/" className="hk-button hk-button-primary">Experience HatchKit Live →</Link>
+            <Link href="/demo/" className="hk-button hk-button-secondary">Book a Free Demo Call</Link>
+          </div>
         </div>
       </section>
     </div>
